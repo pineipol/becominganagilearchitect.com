@@ -1,0 +1,4 @@
+services:
+#    pineipol_baa.example:
+#        class: Pineipol\BaaBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

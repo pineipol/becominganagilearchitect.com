@@ -1,0 +1,3 @@
+pineipol_baa_homepage:
+    path:     /
+    defaults: { _controller: PineipolBaaBundle:Default:index }

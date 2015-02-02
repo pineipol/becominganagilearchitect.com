@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0">
+        <title>{% block title %}Becoming An Agile Architect{% endblock %}</title>
+        <link href="{{ asset('bundles/pineipolbaa/css/styles.css') }}" rel="stylesheet" />
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        {# Header #}
+        {#{{ render(controller('GamelearnTimeSupervisorBundle:Default:header')) }}#}
+        {{ include('PineipolBaaBundle:Layout:header.html.twig') }}
+
+        {# Middle content #}
+        {% block body %}{% endblock %}
+
+        {# Footer #}
+        {{ include('PineipolBaaBundle:Layout:footer.html.twig') }}
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

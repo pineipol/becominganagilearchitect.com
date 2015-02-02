@@ -1,0 +1,22 @@
+#post-list_outer_container {
+  min-height: 910px;
+  width: 100%;
+}
+#post-list_outer_container #post-list_inner_container {
+  border: 1px solid red;
+  margin: auto;
+  width: 1024px;
+}
+#post-list_outer_container #post-list_inner_container #post-list_left-column_container {
+  border: 1px solid green;
+  display: inline-block;
+  vertical-align: top;
+  width: 805px;
+}
+#post-list_outer_container #post-list_inner_container #post-list_right-column_container {
+  border: 1px solid green;
+  display: inline-block;
+  vertical-align: top;
+  width: 217px;
+}
+/*# sourceMappingURL=post-list.css.map */

@@ -1,0 +1,19 @@
+#header_outer_container {
+    background-color: @dark-gray;
+    margin-top: 10px;
+    width: @outer-container-width;
+    #header_inner_container {
+        border: 1px solid red;
+        margin: auto;
+        min-height: 80px;
+        width: @landscape-tablet-width;
+        @media (max-width: @landscape-tablet-width) {
+            border: 1px solid blue;
+            width: @tablet_inner-container_width;
+            @media (max-width: @vertical-tablet-width) {
+                border: 1px solid yellow;
+                width: @tablet_inner-container_width;
+            }
+        }
+    }
+}

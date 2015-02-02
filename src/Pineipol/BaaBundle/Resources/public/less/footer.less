@@ -1,0 +1,13 @@
+#footer_outer_container {
+    background-color: @dark-gray;
+    width: @outer-container-width;
+    #footer_inner_container {
+        border: 1px solid red;
+        margin: auto;
+        min-height: 80px;
+        width: @landscape-tablet-width;
+        @media (max-width: @landscape-tablet-width) {
+            width: @tablet_inner-container_width;
+        }
+    }
+}
