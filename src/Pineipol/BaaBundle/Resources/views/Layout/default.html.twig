@@ -4,20 +4,40 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width; initial-scale=1.0">
         <title>{% block title %}Becoming An Agile Architect{% endblock %}</title>
-        <link href="{{ asset('bundles/pineipolbaa/css/styles.css') }}" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/pineipolbaa/css/styles.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/pineipolbaa/vendor/css/normalize.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/pineipolbaa/vendor/css/component.css') }}" />
+        <script src="{{ asset('bundles/pineipolbaa/vendor/js/modernizr.custom.js') }}"></script>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {# Header #}
-        {#{{ render(controller('GamelearnTimeSupervisorBundle:Default:header')) }}#}
-        {{ include('PineipolBaaBundle:Layout:header.html.twig') }}
+        <div id="body-container" class="body-container">
+            <div class="mobile-menu mobile-menu-animation" id="mobile-menu">
+                {# Mobile menu #}
+                {{ render(controller('PineipolBaaBundle:Layout:mobileMenu')) }}
+            </div>
 
-        {# Middle content #}
-        {% block body %}{% endblock %}
+            <!-- content push wrapper -->
+            <div class="body-pusher">
+                <div class="body-content"><!-- this is the wrapper for the content -->
+                    <div class="body-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+                        {# Header #}
+                        {{ render(controller('PineipolBaaBundle:Layout:header')) }}
 
-        {# Footer #}
-        {{ include('PineipolBaaBundle:Layout:footer.html.twig') }}
+                        {# Middle content #}
+                        {% block body %}{% endblock %}
 
+                        {# Footer #}
+                        {{ include('PineipolBaaBundle:Layout:footer.html.twig') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="{{ asset('bundles/pineipolbaa/vendor/js/classie.js') }}"></script>
+        <script src="{{ asset('bundles/pineipolbaa/vendor/js/sidebarEffects.js') }}"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

@@ -22,80 +22,170 @@ a:visited {
 }
 #header_outer_container {
   background-color: #222222;
-  margin-top: 10px;
+  box-shadow: 0px 2px 2px #000000;
   width: 100%;
 }
 #header_outer_container #header_inner_container {
-  border: 1px solid red;
+  display: table;
   margin: auto;
+  height: 80px;
+  width: 1000px;
+}
+@media (max-width: 1000px) {
+  #header_outer_container #header_inner_container {
+    width: 100%;
+    /*            @media (max-width: @vertical-tablet-width) {
+                border: 1px solid yellow;
+            }*/
+  }
+}
+#header_outer_container #header_inner_container #header_mobile_menu_cell {
+  display: table-cell;
+}
+@media (min-width: 1000px) {
+  #header_outer_container #header_inner_container #header_mobile_menu_cell {
+    display: none;
+  }
+}
+#header_outer_container #header_inner_container #header_mobile_menu_cell #mobile_menu_button {
+  margin-left: 5px;
+  margin-top: 25px;
+  width: 60px;
+}
+#header_outer_container #header_inner_container #header_mobile_menu_cell #mobile_menu_button:hover {
+  cursor: pointer;
+}
+#header_outer_container #header_inner_container #header_mobile_menu_cell #mobile_menu_button:hover .line {
+  border-bottom: 2px solid #b4e767;
+  border-top: 2px solid #b4e767;
+}
+#header_outer_container #header_inner_container #header_mobile_menu_cell #mobile_menu_button .line {
+  border-bottom: 2px solid #ffffff;
+  border-top: 2px solid #ffffff;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 10px;
+  width: 40px;
+}
+#header_outer_container #header_inner_container #header_logo_cell {
+  /*border: 1px solid blue;*/
+  display: table-cell;
   min-height: 80px;
-  width: 1024px;
+  vertical-align: top;
+  width: 257px;
 }
-@media (max-width: 1023px) {
-  #header_outer_container #header_inner_container {
-    border: 1px solid blue;
-    width: 100%;
+#header_outer_container #header_inner_container #header_logo_cell #header_logo_img {
+  height: 49px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 16px;
+  width: 237px;
+}
+#header_outer_container #header_inner_container #header_menu_cell {
+  /*border: 1px solid red;*/
+  display: table-cell;
+  min-height: 80px;
+  vertical-align: bottom;
+}
+@media (max-width: 1000px) {
+  #header_outer_container #header_inner_container #header_menu_cell {
+    display: none;
   }
 }
-@media (max-width: 1023px) and (max-width: 700px) {
-  #header_outer_container #header_inner_container {
-    border: 1px solid yellow;
-    width: 100%;
-  }
+#header_outer_container #header_inner_container #header_menu_cell #header_menu_container {
+  margin-bottom: 5px;
+  text-align: right;
+}
+#header_outer_container #header_inner_container #header_menu_cell #header_menu_container #header_menu_item {
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+#header_outer_container #header_inner_container #header_menu_cell #header_menu_container #header_menu_item #header_menu_item_label {
+  color: #aaaaaa;
+  font: 11px Verdana;
+  text-transform: uppercase;
+}
+#header_outer_container #header_inner_container #header_menu_cell #header_menu_container #header_menu_item #header_menu_item_label:hover {
+  color: #ffffff;
+}
+#header_outer_container #header_inner_container #header_menu_cell #header_menu_container #header_menu_item #header_menu_item_label:hover div {
+  background-image: url('../images/menu/over_line.png');
+}
+#header_outer_container #header_inner_container #header_menu_cell #header_menu_container #header_menu_item #header_menu_item_label #header_menu_item_strip {
+  height: 9px;
+  margin: auto;
+  width: 37px;
+}
+.mobile-menu #menu_item {
+  cursor: pointer;
+  margin-bottom: 0px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.mobile-menu #menu_item #menu_item_label {
+  color: #aaaaaa;
+  font: 11px Verdana;
+  text-transform: uppercase;
+}
+.mobile-menu #menu_item #menu_item_label:hover {
+  color: #ffffff;
 }
 #post-list_outer_container {
   min-height: 910px;
   width: 100%;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1000px) {
   #post-list_outer_container {
     min-height: 700px;
   }
 }
-@media (max-width: 1023px) and (max-width: 800px) {
+@media (max-width: 1000px) and (max-width: 800px) {
   #post-list_outer_container {
     min-height: 500px;
   }
 }
 #post-list_outer_container #post-list_inner_container {
-  border: 1px solid red;
+  border: 0px solid red;
   margin: auto;
-  width: 1024px;
+  width: 1000px;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1000px) {
   #post-list_outer_container #post-list_inner_container {
     width: 100%;
   }
 }
 #post-list_outer_container #post-list_inner_container #post-list_left-column_container {
-  border: 1px solid green;
+  border: 0px solid green;
   display: inline-block;
   vertical-align: top;
   width: 805px;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1000px) {
   #post-list_outer_container #post-list_inner_container #post-list_left-column_container {
     width: 75%;
   }
 }
-@media (max-width: 1023px) and (max-width: 800px) {
+@media (max-width: 1000px) and (max-width: 800px) {
   #post-list_outer_container #post-list_inner_container #post-list_left-column_container {
     display: block;
     width: 100%;
   }
 }
 #post-list_outer_container #post-list_inner_container #post-list_right-column_container {
-  border: 1px solid green;
+  border: 0px solid green;
   display: inline-block;
   vertical-align: top;
   width: 217px;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1000px) {
   #post-list_outer_container #post-list_inner_container #post-list_right-column_container {
     width: 25%;
   }
 }
-@media (max-width: 1023px) and (max-width: 800px) {
+@media (max-width: 1000px) and (max-width: 800px) {
   #post-list_outer_container #post-list_inner_container #post-list_right-column_container {
     display: block;
     width: 100%;
@@ -106,12 +196,13 @@ a:visited {
   width: 100%;
 }
 #footer_outer_container #footer_inner_container {
+  background-color: yellow;
   border: 1px solid red;
   margin: auto;
   min-height: 80px;
-  width: 1024px;
+  width: 1000px;
 }
-@media (max-width: 1023px) {
+@media (max-width: 1000px) {
   #footer_outer_container #footer_inner_container {
     width: 100%;
   }
