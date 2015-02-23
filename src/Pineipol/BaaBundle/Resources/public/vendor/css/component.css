@@ -8,7 +8,7 @@ html, body, .body-container, .body-pusher, .body-content {
 }
 
 .body-content {
-/*    overflow-y: scroll;*/
+    overflow-y: scroll;
 }
 
 .body-content, .body-content-inner {
