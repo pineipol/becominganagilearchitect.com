@@ -1,84 +1,90 @@
-#header_outer_container {
-    background-color: @dark-gray;
-    box-shadow: 0px 2px 2px @black;
-    width: @outer-container-width;
-    #header_inner_container {
-        display: table;
-        margin: auto;
-        height: 80px;
-        width: @landscape-tablet-width;
-        @media (max-width: @landscape-tablet-width) {
-            width: @mobile-inner-container-width;
-        }
-        #header_mobile_menu_cell {
-            display: table-cell;
-            @media (min-width: @landscape-tablet-width) {
-                display: none;
+#header_outer_wrapper {
+    height: 50px;
+    width: 100%;
+    #header_outer_container {
+        background-color: @dark-gray;
+        box-shadow: 0px 2px 2px @black;
+        position: fixed;
+        top: 0px;
+        width: @outer-container-width;
+        z-index: 10;
+        #header_inner_container {
+            display: table;
+            margin: auto;
+            height: 50px;
+            width: @laptop-width;
+            @media (max-width: @laptop-width) {
+                width: @mobile-inner-container-width;
             }
-            #mobile_menu_button {
-                margin-left: 5px;
-                margin-top: 25px;
-                width: 60px;
-                &:hover {
-                    cursor: pointer;
+            #header_mobile_menu_cell {
+                display: table-cell;
+                @media (min-width: @landscape-tablet-width) {
+                    display: none;
                 }
-                &:hover .line {
-                    border-bottom: 2px solid @leds-green;
-                    border-top: 2px solid @leds-green;
+                #mobile_menu_button {
+                    margin-left: 8px;
+                    margin-top: 12px;
+                    width: 35px;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    &:hover .line {
+                        border-bottom: 2px solid @leds-green;
+                        border-top: 2px solid @leds-green;
+                    }
+                    .line {
+                        border-bottom: 2px solid @white;
+                        border-top: 2px solid @white;
+                        border-radius: 5px;
+                        margin: auto;
+                        margin-top: 8px;
+                        width: 100%;
+                    }
                 }
-                .line {
-                    border-bottom: 2px solid @white;
-                    border-top: 2px solid @white;
-                    border-radius: 5px;
-                    margin: auto;
-                    margin-top: 10px;
-                    width: 40px;
+            }
+            #header_logo_cell {
+                display: table-cell;
+                vertical-align: top;
+                width: 311px;
+                #header_logo_img {
+                    height: 21px;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    margin-top: 17px;
+                    width: 311px;
                 }
             }
-        }
-        #header_logo_cell {
-            display: table-cell;
-            min-height: 80px;
-            vertical-align: top;
-            width: 257px;
-            #header_logo_img {
-                height: 49px;
-                margin-left: 20px;
-                margin-right: 20px;
-                margin-top: 16px;
-                width: 237px;
-            }
-        }
-        #header_menu_cell {
-            display: table-cell;
-            min-height: 80px;
-            vertical-align: bottom;
-            @media (max-width: @landscape-tablet-width) {
-                display: none;
-            }
-            #header_menu_container {
-                margin-bottom: 5px;
-                text-align: right;
-                #header_menu_item {
-                    cursor: pointer;
-                    display: inline-block;
+            #header_menu_cell {
+                display: table-cell;
+                vertical-align: bottom;
+                @media (max-width: @landscape-tablet-width) {
+                    display: none;
+                }
+                #header_menu_container {
+                    margin-top: 5px;
                     margin-bottom: 5px;
-                    margin-left: 10px;
-                    margin-right: 10px;
-                    #header_menu_item_label {
-                        color: @light-gray;
-                        font: 11px Verdana;
-                        text-transform: uppercase;
-                        &:hover {
-                            color: @white;
-                        }
-                        &:hover div {
-                            background-image: url('@{image-path}menu/over_line.png');
-                        }
-                        #header_menu_item_strip {
-                            height: 9px;
-                            margin: auto;
-                            width: 37px;
+                    text-align: right;
+                    .header_menu_item {
+                        cursor: pointer;
+                        display: inline-block;
+                        margin-bottom: 5px;
+                        margin-left: 10px;
+                        margin-right: 10px;
+                        .header_menu_item_label {
+                            color: @light-gray;
+                            font: 11px Verdana;
+                            text-transform: uppercase;
+                            &:hover {
+                                color: @white;
+                            }
+                            &:hover div {
+                                background-image: url('@{image-path}menu/over_line.png');
+                            }
+                            .header_menu_item_strip {
+                                height: 9px;
+                                margin: auto;
+                                width: 37px;
+                            }
                         }
                     }
                 }
