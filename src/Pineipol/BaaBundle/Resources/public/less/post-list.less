@@ -21,11 +21,16 @@
             width: 75%;
             @media (max-width: @landscape-tablet-width) {
                 display: block;
-                padding-top: 20px;
+                padding-top: 0px;
                 width: 100%;
             }
             .post-container {
                 display: table;
+                margin-bottom: 60px;
+                @media (max-width: @landscape-tablet-width) {
+                    display: block;
+                    margin-bottom: 20px;
+                }
                 .left-column {
                     display: table-cell;
                     vertical-align: top;
@@ -40,57 +45,76 @@
                         font-size: 17px;
                         font-weight: 700;
                         margin-bottom: 20px;
+                        margin-top: 30px;
+                        padding-left: 5px;
+                        text-align: left;
                         @media (max-width: @landscape-tablet-width) {
                             display: block;
                         }
                     }
                     .image-container {
+                        margin: auto;
+                        position: relative;
+                        width: 90%;
+                        @media (max-width: @landscape-tablet-width) {
+                        }
                         .post-image {
                             height: auto;
                             width: 100%;
-                            @media (max-width: @landscape-tablet-width) {
-                                width: 90%;
-                            }
                         }
                         .tags-container {
-                            margin-left: -15px;
-                            position: relative;
-                            top: -430px;
+                            left: -15px;
+                            position: absolute;
+                            top: 15px;
                             width: 90px;
-                            @media (max-width: @laptop-width) {
-                                margin-left: 0px;
-                                top: -43vw;
-                                @media (max-width: @landscape-tablet-width) {
-                                    margin-left: 2.5vw;
-                                    top: -82vw;
+                            .one-tag-container {
+                                position: relative;
+                                height: 35px;
+                                .generic-tag() {
+                                    border: 1px solid @white;
+                                    color: @black;
+                                    font-size: 13.5px;
+                                    font-weight: 700;
+                                    height: 22px;
+                                    padding-top: 1px;
+                                    text-align: center;
+                                }
+                                .tag-triangle {
+                                    border-bottom: 9px solid @background-gray;
+                                    border-left: 9px solid transparent;
+                                    border-right: 9px solid transparent;
+                                    height: 0;
+                                    left: 2px;
+                                    position: absolute;
+                                    top: 21px;
+                                    transform: rotate(45deg);
+                                    width: 0;
+                                }
+                                .green-tag {
+                                    .generic-tag();
+                                    background-color: @tag-green;
+                                }
+                                .pink-tag {
+                                    .generic-tag();
+                                    background-color: @tag-pink;
+                                }
+                                .yellow-tag {
+                                    .generic-tag();
+                                    background-color: @tag-yellow;
                                 }
                             }
-                            .generic-tag() {
-                                border: 1px solid @white;
-                                color: @black;
-                                font-size: 13.5px;
-                                font-weight: 700;
-                                height: 22px;
-                                margin-bottom: 5px;
-                                padding-top: 2px;
-                                text-align: center;
-                            }
-                            .green-tag {
-                                .generic-tag();
-                                background-color: #00CC00;
-                            }
+
                         }
                     }
                 }
                 .right-column {
                     display: table-cell;
-                    padding-left: 3%;
                     vertical-align: top;
                     @media (max-width: @landscape-tablet-width) {
                         display: inline-block;
-                        padding-left: 5px;
-                        padding-right: 5px;
-                        width: 100%;
+                        margin-left: 2%;
+                        margin-right: 2%;
+                        width: 96%;
                     }
                     .title {
                         font-size: 17px;
@@ -102,21 +126,52 @@
                     .description {
                         margin-top: 20px;
                         @media (max-width: @landscape-tablet-width) {
-                            margin-top: 0px;
+                            margin-top: 10px;
                         }
                     }
                 }
             }
         }
         #right-column_container {
-            /*border: 1px dotted blue;*/
             display: inline-block;
             padding-top: 60px;
             vertical-align: top;
             width: 25%;
             @media (max-width: @landscape-tablet-width) {
+                padding-top: 30px;
                 display: block;
                 width: 100%;
+            }
+            #links-title-box {
+                background-color: @dark-gray;
+                border: 1px solid @white;
+                box-shadow: 0px 2px 2px @black;
+                color: @white;
+                font-size: 10px;
+                font-weight: bold;
+                height: 30px;
+                padding-left: 20px;
+                padding-top: 7px;
+                margin-left: 10%;
+                text-transform: uppercase;
+                width: 90%;
+                @media (max-width: @landscape-tablet-width) {
+                    display: block;
+                    margin: auto;
+                    min-width: 220px;
+                    width: 90%;
+                }
+            }
+            #links-container {
+                padding-left: 40px;
+                padding-top: 20px;
+                .link {
+                    color: @black;
+                    display: block;
+                    margin-bottom: 8px;
+                    font-size: 12px;
+                    text-decoration: underline;
+                }
             }
         }
     }

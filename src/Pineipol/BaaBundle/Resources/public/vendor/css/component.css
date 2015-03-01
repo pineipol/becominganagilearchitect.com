@@ -56,7 +56,7 @@ html, body, .body-container, .body-pusher, .body-content {
     left: 0;
     z-index: 100;
     visibility: hidden;
-    width: 300px;
+    width: 230px;
     height: 100%;
     background: #222222;
     -webkit-transition: all 0.5s;

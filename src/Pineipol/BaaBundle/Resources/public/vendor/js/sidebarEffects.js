@@ -32,7 +32,7 @@ var SidebarMenuEffects = (function () {
     function init() {
 
         var container = document.getElementById('body-container'),
-                buttons = Array.prototype.slice.call(document.querySelectorAll('#mobile_menu_button')),
+                buttons = Array.prototype.slice.call(document.querySelectorAll('#header_mobile_menu_cell')),
                 // event type (if mobile use touch events)
                 eventtype = mobilecheck() ? 'touchstart' : 'click',
                 resetMenu = function () {
