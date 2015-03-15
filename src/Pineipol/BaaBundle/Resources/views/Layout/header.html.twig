@@ -9,27 +9,42 @@
                 </div>
             </div>
             <div id="header_logo_cell">
-                <img id="header_logo_img" src="{{ asset('bundles/pineipolbaa/images/logo.png') }}" />
+                <a href="{{ path('pineipol_baa_homepage') }}">
+                    <img id="header_logo_img" src="{{ asset('bundles/pineipolbaa/images/logo.png') }}" />
+                </a>
             </div>
             <div id="header_menu_cell">
                 <div id="header_menu_container">
+                    {#<div class="header_menu_item">
+                        <div class="header_menu_item_label">
+                            <a class="header_menu_item_label" href="{{ path('pineipol_baa_homepage') }}">sistemas</a>
+                            <div class="header_menu_item_strip"></div>
+                        </div>
+                    </div
+                    ><div class="header_menu_item">
+                        <div class="header_menu_item_label">
+                            <a class="header_menu_item_label" href="{{ path('pineipol_baa_homepage') }}">maquetación</a>
+                            <div class="header_menu_item_strip"></div>
+                        </div>
+                    </div
+                    ><div class="header_menu_item">
+                        <div class="header_menu_item_label">
+                            <a class="header_menu_item_label" href="{{ path('pineipol_baa_homepage') }}">agile coaching</a>
+                            <div class="header_menu_item_strip"></div>
+                        </div>
+                    </div
+                    ><div class="header_menu_item">
+                        <div class="header_menu_item_label">
+                            <a class="header_menu_item_label" href="{{ path('pineipol_baa_homepage') }}">scrum</a>
+                            <div class="header_menu_item_strip"></div>
+                        </div>
+                    </div
+                    >#}
                     <div class="header_menu_item">
-                        <div class="header_menu_item_label">sistemas<div class="header_menu_item_strip"></div></div>
-                    </div
-                    ><div class="header_menu_item">
-                        <div class="header_menu_item_label">maquetación<div class="header_menu_item_strip"></div></div>
-                    </div
-                    ><div class="header_menu_item">
-                        <div class="header_menu_item_label">agile coaching<div class="header_menu_item_strip"></div></div>
-                    </div
-                    ><div class="header_menu_item">
-                        <div class="header_menu_item_label">scrum<div class="header_menu_item_strip"></div></div>
-                    </div
-                    ><div class="header_menu_item">
-                        <div class="header_menu_item_label">continuous delivery<div class="header_menu_item_strip"></div></div>
-                    </div
-                    ><div class="header_menu_item">
-                        <div class="header_menu_item_label">contact<div class="header_menu_item_strip"></div></div>
+                        <div class="header_menu_item_label">
+                            <a class="header_menu_item_label" href="{{ path('pineipol_baa_post_contact') }}">contact</a>
+                            <div class="header_menu_item_strip"></div>
+                        </div>
                     </div>
                 </div>
             </div>

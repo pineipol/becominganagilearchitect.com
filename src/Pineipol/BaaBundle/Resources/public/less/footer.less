@@ -2,13 +2,31 @@
     background-color: @dark-gray;
     width: @outer-container-width;
     #footer_inner_container {
-        background-color: yellow;
-        border: 1px solid red;
         margin: auto;
         min-height: 80px;
-        width: @landscape-tablet-width;
+        width: @laptop-width;
         @media (max-width: @landscape-tablet-width) {
             width: @mobile-inner-container-width;
+        }
+        #footer_menu_container {
+            margin: auto;
+            padding-top: 25px;
+            text-align: center;
+            .footer_menu_item {
+                color: @light-gray;
+                cursor: pointer;
+                display: inline-block;
+                font: 11px Verdana;
+                margin-bottom: 5px;
+                margin-left: 10px;
+                margin-right: 10px;
+                text-transform: uppercase;
+                @media (max-width: @landscape-tablet-width) {
+                    margin-bottom: 10px;
+                    text-align: left;
+                    width: @mobile-inner-container-width;
+                }
+            }
         }
     }
 }

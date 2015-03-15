@@ -1,3 +1,11 @@
 pineipol_baa_homepage:
     path:     /
     defaults: { _controller: PineipolBaaBundle:Default:index }
+
+pineipol_baa_post_contact:
+    path:     /contacto
+    defaults: { _controller: PineipolBaaBundle:Default:contact }
+
+pineipol_baa_post_list:
+    path:     /list
+    defaults: { _controller: PineipolBaaBundle:Default:list }

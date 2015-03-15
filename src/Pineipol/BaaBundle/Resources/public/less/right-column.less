@@ -1,0 +1,31 @@
+#links-title-box {
+    background-color: @dark-gray;
+    border: 1px solid @white;
+    box-shadow: 0px 2px 2px @black;
+    color: @white;
+    font-size: 10px;
+    font-weight: bold;
+    height: 30px;
+    padding-left: 20px;
+    padding-top: 7px;
+    margin-left: 10%;
+    text-transform: uppercase;
+    width: 90%;
+    @media (max-width: @landscape-tablet-width) {
+        display: block;
+        margin: auto;
+        min-width: 220px;
+        width: 90%;
+    }
+}
+#links-container {
+    padding-left: 40px;
+    padding-top: 20px;
+    .link {
+        color: @black;
+        display: block;
+        margin-bottom: 8px;
+        font-size: 12px;
+        text-decoration: underline;
+    }
+}

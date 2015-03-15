@@ -1,0 +1,41 @@
+@import "global.less";
+
+#middle_outer_container {
+    min-height: @wide-screen-min-height;
+    width: @outer-container-width;
+    @media (max-width: @landscape-tablet-width) {
+        min-height: @landscape-tablet-min-height;
+        @media (max-width: @vertical-tablet-width) {
+            min-height: @vertical-tablet-min-height;
+        }
+    }
+    #inner_container {
+        margin: auto;
+        width: @laptop-width;
+        @media (max-width: @laptop-width) {
+            width: @mobile-inner-container-width;
+        }
+        #left-column_container {
+            display: inline-block;
+            padding-top: 60px;
+            vertical-align: top;
+            width: 75%;
+            @media (max-width: @landscape-tablet-width) {
+                display: block;
+                padding-top: 0px;
+                width: 100%;
+            }
+        }
+        #right-column_container {
+            display: inline-block;
+            padding-top: 60px;
+            vertical-align: top;
+            width: 25%;
+            @media (max-width: @landscape-tablet-width) {
+                padding-top: 30px;
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}
