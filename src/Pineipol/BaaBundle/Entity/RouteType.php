@@ -5,42 +5,43 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Locales
+ * RouteType
  *
- * @ORM\Table(name="locales", uniqueConstraints={@ORM\UniqueConstraint(name="locale_id", columns={"locale_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})})
+ * @ORM\Table(name="route_types", uniqueConstraints={@ORM\UniqueConstraint(name="route_type_id", columns={"route_type_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})})
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
-class Locales
-{
+class RouteType extends BaseEntity {
+
     /**
      * @var integer
      *
-     * @ORM\Column(name="locale_id", type="integer")
+     * @ORM\Column(name="route_type_id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $localeId;
+    private $routeTypeId;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255, nullable=true)
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="text", nullable=true)
+     * @ORM\Column(name="title", type="string", length=255, nullable=true)
      */
     private $title;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="code", type="string", length=255, nullable=true)
+     * @ORM\Column(name="description", type="text", length=65535, nullable=true)
      */
-    private $code;
+    private $description;
 
     /**
      * @var \DateTime
@@ -56,26 +57,22 @@ class Locales
      */
     private $modified;
 
-
-
     /**
-     * Get localeId
+     * Get routeTypeId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getLocaleId()
-    {
-        return $this->localeId;
+    public function getRouteTypeId() {
+        return $this->routeTypeId;
     }
 
     /**
      * Set name
      *
      * @param string $name
-     * @return Locales
+     * @return RouteType
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -84,10 +81,9 @@ class Locales
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -95,10 +91,9 @@ class Locales
      * Set title
      *
      * @param string $title
-     * @return Locales
+     * @return RouteType
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
 
         return $this;
@@ -107,44 +102,40 @@ class Locales
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
     /**
-     * Set code
+     * Set description
      *
-     * @param string $code
-     * @return Locales
+     * @param string $description
+     * @return RouteType
      */
-    public function setCode($code)
-    {
-        $this->code = $code;
+    public function setDescription($description) {
+        $this->description = $description;
 
         return $this;
     }
 
     /**
-     * Get code
+     * Get description
      *
-     * @return string 
+     * @return string
      */
-    public function getCode()
-    {
-        return $this->code;
+    public function getDescription() {
+        return $this->description;
     }
 
     /**
      * Set created
      *
      * @param \DateTime $created
-     * @return Locales
+     * @return RouteType
      */
-    public function setCreated($created)
-    {
+    public function setCreated($created) {
         $this->created = $created;
 
         return $this;
@@ -153,10 +144,9 @@ class Locales
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getCreated()
-    {
+    public function getCreated() {
         return $this->created;
     }
 
@@ -164,10 +154,9 @@ class Locales
      * Set modified
      *
      * @param \DateTime $modified
-     * @return Locales
+     * @return RouteType
      */
-    public function setModified($modified)
-    {
+    public function setModified($modified) {
         $this->modified = $modified;
 
         return $this;
@@ -176,10 +165,10 @@ class Locales
     /**
      * Get modified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getModified()
-    {
+    public function getModified() {
         return $this->modified;
     }
+
 }

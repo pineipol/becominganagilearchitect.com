@@ -5,13 +5,14 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Posts
+ * Post
  *
  * @ORM\Table(name="posts", uniqueConstraints={@ORM\UniqueConstraint(name="post_id", columns={"post_id"}), @ORM\UniqueConstraint(name="name", columns={"name"}), @ORM\UniqueConstraint(name="order", columns={"order"})})
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
-class Posts
-{
+class Post extends BaseEntity {
+
     /**
      * @var integer
      *
@@ -66,7 +67,7 @@ class Posts
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Pineipol\BaaBundle\Entity\Categories", inversedBy="post")
+     * @ORM\ManyToMany(targetEntity="Pineipol\BaaBundle\Entity\Category", inversedBy="posts")
      * @ORM\JoinTable(name="posts_categories",
      *   joinColumns={
      *     @ORM\JoinColumn(name="post_id", referencedColumnName="post_id")
@@ -76,24 +77,45 @@ class Posts
      *   }
      * )
      */
-    private $category;
+    private $categories;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="\Pineipol\BaaBundle\Entity\PostContent", mappedBy="post")
+     */
+    private $contents;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="\Pineipol\BaaBundle\Entity\Comment", mappedBy="post")
+     */
+    private $comments;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="\Pineipol\BaaBundle\Entity\Link", mappedBy="post")
+     */
+    private $links;
 
     /**
      * Constructor
      */
-    public function __construct()
-    {
-        $this->category = new \Doctrine\Common\Collections\ArrayCollection();
+    public function __construct() {
+        $this->categories = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->contents = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->links = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
 
     /**
      * Get postId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getPostId()
-    {
+    public function getPostId() {
         return $this->postId;
     }
 
@@ -101,10 +123,9 @@ class Posts
      * Set name
      *
      * @param string $name
-     * @return Posts
+     * @return Post
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -113,10 +134,9 @@ class Posts
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -124,10 +144,9 @@ class Posts
      * Set show
      *
      * @param integer $show
-     * @return Posts
+     * @return Post
      */
-    public function setShow($show)
-    {
+    public function setShow($show) {
         $this->show = $show;
 
         return $this;
@@ -136,10 +155,9 @@ class Posts
     /**
      * Get show
      *
-     * @return integer 
+     * @return integer
      */
-    public function getShow()
-    {
+    public function getShow() {
         return $this->show;
     }
 
@@ -147,10 +165,9 @@ class Posts
      * Set home
      *
      * @param integer $home
-     * @return Posts
+     * @return Post
      */
-    public function setHome($home)
-    {
+    public function setHome($home) {
         $this->home = $home;
 
         return $this;
@@ -159,10 +176,9 @@ class Posts
     /**
      * Get home
      *
-     * @return integer 
+     * @return integer
      */
-    public function getHome()
-    {
+    public function getHome() {
         return $this->home;
     }
 
@@ -170,10 +186,9 @@ class Posts
      * Set order
      *
      * @param integer $order
-     * @return Posts
+     * @return Post
      */
-    public function setOrder($order)
-    {
+    public function setOrder($order) {
         $this->order = $order;
 
         return $this;
@@ -182,10 +197,9 @@ class Posts
     /**
      * Get order
      *
-     * @return integer 
+     * @return integer
      */
-    public function getOrder()
-    {
+    public function getOrder() {
         return $this->order;
     }
 
@@ -193,10 +207,9 @@ class Posts
      * Set created
      *
      * @param \DateTime $created
-     * @return Posts
+     * @return Post
      */
-    public function setCreated($created)
-    {
+    public function setCreated($created) {
         $this->created = $created;
 
         return $this;
@@ -205,10 +218,9 @@ class Posts
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getCreated()
-    {
+    public function getCreated() {
         return $this->created;
     }
 
@@ -216,10 +228,9 @@ class Posts
      * Set modified
      *
      * @param \DateTime $modified
-     * @return Posts
+     * @return Post
      */
-    public function setModified($modified)
-    {
+    public function setModified($modified) {
         $this->modified = $modified;
 
         return $this;
@@ -228,22 +239,20 @@ class Posts
     /**
      * Get modified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getModified()
-    {
+    public function getModified() {
         return $this->modified;
     }
 
     /**
      * Add category
      *
-     * @param \Pineipol\BaaBundle\Entity\Categories $category
-     * @return Posts
+     * @param \Pineipol\BaaBundle\Entity\Category $category
+     * @return Post
      */
-    public function addCategory(\Pineipol\BaaBundle\Entity\Categories $category)
-    {
-        $this->category[] = $category;
+    public function addCategory(\Pineipol\BaaBundle\Entity\Category $category) {
+        $this->categories[] = $category;
 
         return $this;
     }
@@ -251,20 +260,19 @@ class Posts
     /**
      * Remove category
      *
-     * @param \Pineipol\BaaBundle\Entity\Categories $category
+     * @param \Pineipol\BaaBundle\Entity\Category $category
      */
-    public function removeCategory(\Pineipol\BaaBundle\Entity\Categories $category)
-    {
-        $this->category->removeElement($category);
+    public function removeCategory(\Pineipol\BaaBundle\Entity\Category $category) {
+        $this->categories->removeElement($category);
     }
 
     /**
      * Get category
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function getCategory()
-    {
-        return $this->category;
+    public function getCategory() {
+        return $this->categories;
     }
+
 }

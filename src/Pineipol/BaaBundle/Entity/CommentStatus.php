@@ -9,9 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="comment_status", uniqueConstraints={@ORM\UniqueConstraint(name="comment_status_id", columns={"comment_status_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})})
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
-class CommentStatus
-{
+class CommentStatus extends BaseEntity {
+
     /**
      * @var integer
      *
@@ -56,15 +57,12 @@ class CommentStatus
      */
     private $modified;
 
-
-
     /**
      * Get commentStatusId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCommentStatusId()
-    {
+    public function getCommentStatusId() {
         return $this->commentStatusId;
     }
 
@@ -74,8 +72,7 @@ class CommentStatus
      * @param string $name
      * @return CommentStatus
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -84,10 +81,9 @@ class CommentStatus
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -97,8 +93,7 @@ class CommentStatus
      * @param string $title
      * @return CommentStatus
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
 
         return $this;
@@ -107,10 +102,9 @@ class CommentStatus
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -120,8 +114,7 @@ class CommentStatus
      * @param string $description
      * @return CommentStatus
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
 
         return $this;
@@ -130,10 +123,9 @@ class CommentStatus
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -143,8 +135,7 @@ class CommentStatus
      * @param \DateTime $created
      * @return CommentStatus
      */
-    public function setCreated($created)
-    {
+    public function setCreated($created) {
         $this->created = $created;
 
         return $this;
@@ -153,10 +144,9 @@ class CommentStatus
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getCreated()
-    {
+    public function getCreated() {
         return $this->created;
     }
 
@@ -166,8 +156,7 @@ class CommentStatus
      * @param \DateTime $modified
      * @return CommentStatus
      */
-    public function setModified($modified)
-    {
+    public function setModified($modified) {
         $this->modified = $modified;
 
         return $this;
@@ -176,10 +165,10 @@ class CommentStatus
     /**
      * Get modified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getModified()
-    {
+    public function getModified() {
         return $this->modified;
     }
+
 }

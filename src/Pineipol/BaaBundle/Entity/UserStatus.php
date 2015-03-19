@@ -9,9 +9,10 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="user_status", uniqueConstraints={@ORM\UniqueConstraint(name="name", columns={"name"}), @ORM\UniqueConstraint(name="user_status_id", columns={"user_status_id"})})
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
-class UserStatus
-{
+class UserStatus extends BaseEntity {
+
     /**
      * @var integer
      *
@@ -56,15 +57,12 @@ class UserStatus
      */
     private $modified;
 
-
-
     /**
      * Get userStatusId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getUserStatusId()
-    {
+    public function getUserStatusId() {
         return $this->userStatusId;
     }
 
@@ -74,8 +72,7 @@ class UserStatus
      * @param string $name
      * @return UserStatus
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -84,10 +81,9 @@ class UserStatus
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -97,8 +93,7 @@ class UserStatus
      * @param string $title
      * @return UserStatus
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
 
         return $this;
@@ -107,10 +102,9 @@ class UserStatus
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -120,8 +114,7 @@ class UserStatus
      * @param string $description
      * @return UserStatus
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
 
         return $this;
@@ -130,10 +123,9 @@ class UserStatus
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -143,8 +135,7 @@ class UserStatus
      * @param \DateTime $created
      * @return UserStatus
      */
-    public function setCreated($created)
-    {
+    public function setCreated($created) {
         $this->created = $created;
 
         return $this;
@@ -153,10 +144,9 @@ class UserStatus
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getCreated()
-    {
+    public function getCreated() {
         return $this->created;
     }
 
@@ -166,8 +156,7 @@ class UserStatus
      * @param \DateTime $modified
      * @return UserStatus
      */
-    public function setModified($modified)
-    {
+    public function setModified($modified) {
         $this->modified = $modified;
 
         return $this;
@@ -176,10 +165,10 @@ class UserStatus
     /**
      * Get modified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getModified()
-    {
+    public function getModified() {
         return $this->modified;
     }
+
 }

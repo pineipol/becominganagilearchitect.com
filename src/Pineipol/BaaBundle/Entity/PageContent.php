@@ -5,21 +5,22 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * PostContents
+ * PageContent
  *
- * @ORM\Table(name="post_contents", uniqueConstraints={@ORM\UniqueConstraint(name="post_content_id", columns={"post_content_id"}), @ORM\UniqueConstraint(name="post_id_locale_id", columns={"post_id", "locale_id"})}, indexes={@ORM\Index(name="post_id", columns={"post_id"}), @ORM\Index(name="locale_id", columns={"locale_id"}), @ORM\Index(name="route_id", columns={"route_id"})})
+ * @ORM\Table(name="page_contents", uniqueConstraints={@ORM\UniqueConstraint(name="page_content_id", columns={"page_content_id"})}, indexes={@ORM\Index(name="page_id", columns={"page_id"}), @ORM\Index(name="locale_id", columns={"locale_id"}), @ORM\Index(name="route_id", columns={"route_id"})})
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
-class PostContents
-{
+class PageContent extends BaseEntity {
+
     /**
      * @var integer
      *
-     * @ORM\Column(name="post_content_id", type="integer")
+     * @ORM\Column(name="page_content_id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $postContentId;
+    private $pageContentId;
 
     /**
      * @var string
@@ -78,9 +79,9 @@ class PostContents
     private $modified;
 
     /**
-     * @var \Pineipol\BaaBundle\Entity\Routes
+     * @var \Pineipol\BaaBundle\Entity\Route
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Routes")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Route")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="route_id", referencedColumnName="route_id")
      * })
@@ -88,45 +89,41 @@ class PostContents
     private $route;
 
     /**
-     * @var \Pineipol\BaaBundle\Entity\Posts
+     * @var \Pineipol\BaaBundle\Entity\Page
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Posts")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Page")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="post_id", referencedColumnName="post_id")
+     *   @ORM\JoinColumn(name="page_id", referencedColumnName="page_id")
      * })
      */
-    private $post;
+    private $page;
 
     /**
-     * @var \Pineipol\BaaBundle\Entity\Locales
+     * @var \Pineipol\BaaBundle\Entity\Locale
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Locales")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Locale")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="locale_id", referencedColumnName="locale_id")
      * })
      */
     private $locale;
 
-
-
     /**
-     * Get postContentId
+     * Get pageContentId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getPostContentId()
-    {
-        return $this->postContentId;
+    public function getPageContentId() {
+        return $this->pageContentId;
     }
 
     /**
      * Set title
      *
      * @param string $title
-     * @return PostContents
+     * @return PageContent
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
 
         return $this;
@@ -135,10 +132,9 @@ class PostContents
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -146,10 +142,9 @@ class PostContents
      * Set description
      *
      * @param string $description
-     * @return PostContents
+     * @return PageContent
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
 
         return $this;
@@ -158,10 +153,9 @@ class PostContents
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -169,10 +163,9 @@ class PostContents
      * Set content
      *
      * @param string $content
-     * @return PostContents
+     * @return PageContent
      */
-    public function setContent($content)
-    {
+    public function setContent($content) {
         $this->content = $content;
 
         return $this;
@@ -181,10 +174,9 @@ class PostContents
     /**
      * Get content
      *
-     * @return string 
+     * @return string
      */
-    public function getContent()
-    {
+    public function getContent() {
         return $this->content;
     }
 
@@ -192,10 +184,9 @@ class PostContents
      * Set metaTitle
      *
      * @param string $metaTitle
-     * @return PostContents
+     * @return PageContent
      */
-    public function setMetaTitle($metaTitle)
-    {
+    public function setMetaTitle($metaTitle) {
         $this->metaTitle = $metaTitle;
 
         return $this;
@@ -204,10 +195,9 @@ class PostContents
     /**
      * Get metaTitle
      *
-     * @return string 
+     * @return string
      */
-    public function getMetaTitle()
-    {
+    public function getMetaTitle() {
         return $this->metaTitle;
     }
 
@@ -215,10 +205,9 @@ class PostContents
      * Set metaDescription
      *
      * @param string $metaDescription
-     * @return PostContents
+     * @return PageContent
      */
-    public function setMetaDescription($metaDescription)
-    {
+    public function setMetaDescription($metaDescription) {
         $this->metaDescription = $metaDescription;
 
         return $this;
@@ -227,10 +216,9 @@ class PostContents
     /**
      * Get metaDescription
      *
-     * @return string 
+     * @return string
      */
-    public function getMetaDescription()
-    {
+    public function getMetaDescription() {
         return $this->metaDescription;
     }
 
@@ -238,10 +226,9 @@ class PostContents
      * Set metaKeywords
      *
      * @param string $metaKeywords
-     * @return PostContents
+     * @return PageContent
      */
-    public function setMetaKeywords($metaKeywords)
-    {
+    public function setMetaKeywords($metaKeywords) {
         $this->metaKeywords = $metaKeywords;
 
         return $this;
@@ -250,10 +237,9 @@ class PostContents
     /**
      * Get metaKeywords
      *
-     * @return string 
+     * @return string
      */
-    public function getMetaKeywords()
-    {
+    public function getMetaKeywords() {
         return $this->metaKeywords;
     }
 
@@ -261,10 +247,9 @@ class PostContents
      * Set created
      *
      * @param \DateTime $created
-     * @return PostContents
+     * @return PageContent
      */
-    public function setCreated($created)
-    {
+    public function setCreated($created) {
         $this->created = $created;
 
         return $this;
@@ -273,10 +258,9 @@ class PostContents
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getCreated()
-    {
+    public function getCreated() {
         return $this->created;
     }
 
@@ -284,10 +268,9 @@ class PostContents
      * Set modified
      *
      * @param \DateTime $modified
-     * @return PostContents
+     * @return PageContent
      */
-    public function setModified($modified)
-    {
+    public function setModified($modified) {
         $this->modified = $modified;
 
         return $this;
@@ -296,21 +279,19 @@ class PostContents
     /**
      * Get modified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getModified()
-    {
+    public function getModified() {
         return $this->modified;
     }
 
     /**
      * Set route
      *
-     * @param \Pineipol\BaaBundle\Entity\Routes $route
-     * @return PostContents
+     * @param \Pineipol\BaaBundle\Entity\Route $route
+     * @return PageContent
      */
-    public function setRoute(\Pineipol\BaaBundle\Entity\Routes $route = null)
-    {
+    public function setRoute(\Pineipol\BaaBundle\Entity\Route $route = null) {
         $this->route = $route;
 
         return $this;
@@ -319,44 +300,40 @@ class PostContents
     /**
      * Get route
      *
-     * @return \Pineipol\BaaBundle\Entity\Routes 
+     * @return \Pineipol\BaaBundle\Entity\Route
      */
-    public function getRoute()
-    {
+    public function getRoute() {
         return $this->route;
     }
 
     /**
-     * Set post
+     * Set page
      *
-     * @param \Pineipol\BaaBundle\Entity\Posts $post
-     * @return PostContents
+     * @param \Pineipol\BaaBundle\Entity\Page $page
+     * @return PageContent
      */
-    public function setPost(\Pineipol\BaaBundle\Entity\Posts $post = null)
-    {
-        $this->post = $post;
+    public function setPage(\Pineipol\BaaBundle\Entity\Page $page = null) {
+        $this->page = $page;
 
         return $this;
     }
 
     /**
-     * Get post
+     * Get page
      *
-     * @return \Pineipol\BaaBundle\Entity\Posts 
+     * @return \Pineipol\BaaBundle\Entity\Page
      */
-    public function getPost()
-    {
-        return $this->post;
+    public function getPage() {
+        return $this->page;
     }
 
     /**
      * Set locale
      *
-     * @param \Pineipol\BaaBundle\Entity\Locales $locale
-     * @return PostContents
+     * @param \Pineipol\BaaBundle\Entity\Locale $locale
+     * @return PageContent
      */
-    public function setLocale(\Pineipol\BaaBundle\Entity\Locales $locale = null)
-    {
+    public function setLocale(\Pineipol\BaaBundle\Entity\Locale $locale = null) {
         $this->locale = $locale;
 
         return $this;
@@ -365,10 +342,10 @@ class PostContents
     /**
      * Get locale
      *
-     * @return \Pineipol\BaaBundle\Entity\Locales 
+     * @return \Pineipol\BaaBundle\Entity\Locale
      */
-    public function getLocale()
-    {
+    public function getLocale() {
         return $this->locale;
     }
+
 }

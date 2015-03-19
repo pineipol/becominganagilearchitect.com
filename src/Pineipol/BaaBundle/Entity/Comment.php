@@ -5,13 +5,14 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Comments
+ * Comment
  *
  * @ORM\Table(name="comments", uniqueConstraints={@ORM\UniqueConstraint(name="comment_id", columns={"comment_id"})}, indexes={@ORM\Index(name="user_id", columns={"user_id"}), @ORM\Index(name="comment_status_id", columns={"comment_status_id"}), @ORM\Index(name="post_id", columns={"post_id"})})
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
-class Comments
-{
+class Comment extends BaseEntity {
+
     /**
      * @var integer
      *
@@ -50,9 +51,9 @@ class Comments
     private $modified;
 
     /**
-     * @var \Pineipol\BaaBundle\Entity\Users
+     * @var \Pineipol\BaaBundle\Entity\User
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Users")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\User")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="user_id", referencedColumnName="user_id")
      * })
@@ -70,24 +71,21 @@ class Comments
     private $commentStatus;
 
     /**
-     * @var \Pineipol\BaaBundle\Entity\Posts
+     * @var \Pineipol\BaaBundle\Entity\Post
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Posts")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Post")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="post_id", referencedColumnName="post_id")
      * })
      */
     private $post;
 
-
-
     /**
      * Get commentId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCommentId()
-    {
+    public function getCommentId() {
         return $this->commentId;
     }
 
@@ -95,10 +93,9 @@ class Comments
      * Set title
      *
      * @param string $title
-     * @return Comments
+     * @return Comment
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
 
         return $this;
@@ -107,10 +104,9 @@ class Comments
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -118,10 +114,9 @@ class Comments
      * Set content
      *
      * @param string $content
-     * @return Comments
+     * @return Comment
      */
-    public function setContent($content)
-    {
+    public function setContent($content) {
         $this->content = $content;
 
         return $this;
@@ -130,10 +125,9 @@ class Comments
     /**
      * Get content
      *
-     * @return string 
+     * @return string
      */
-    public function getContent()
-    {
+    public function getContent() {
         return $this->content;
     }
 
@@ -141,10 +135,9 @@ class Comments
      * Set created
      *
      * @param \DateTime $created
-     * @return Comments
+     * @return Comment
      */
-    public function setCreated($created)
-    {
+    public function setCreated($created) {
         $this->created = $created;
 
         return $this;
@@ -153,10 +146,9 @@ class Comments
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getCreated()
-    {
+    public function getCreated() {
         return $this->created;
     }
 
@@ -164,10 +156,9 @@ class Comments
      * Set modified
      *
      * @param \DateTime $modified
-     * @return Comments
+     * @return Comment
      */
-    public function setModified($modified)
-    {
+    public function setModified($modified) {
         $this->modified = $modified;
 
         return $this;
@@ -176,21 +167,19 @@ class Comments
     /**
      * Get modified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getModified()
-    {
+    public function getModified() {
         return $this->modified;
     }
 
     /**
      * Set user
      *
-     * @param \Pineipol\BaaBundle\Entity\Users $user
-     * @return Comments
+     * @param \Pineipol\BaaBundle\Entity\User $user
+     * @return Comment
      */
-    public function setUser(\Pineipol\BaaBundle\Entity\Users $user = null)
-    {
+    public function setUser(\Pineipol\BaaBundle\Entity\User $user = null) {
         $this->user = $user;
 
         return $this;
@@ -199,10 +188,9 @@ class Comments
     /**
      * Get user
      *
-     * @return \Pineipol\BaaBundle\Entity\Users 
+     * @return \Pineipol\BaaBundle\Entity\User
      */
-    public function getUser()
-    {
+    public function getUser() {
         return $this->user;
     }
 
@@ -210,10 +198,9 @@ class Comments
      * Set commentStatus
      *
      * @param \Pineipol\BaaBundle\Entity\CommentStatus $commentStatus
-     * @return Comments
+     * @return Comment
      */
-    public function setCommentStatus(\Pineipol\BaaBundle\Entity\CommentStatus $commentStatus = null)
-    {
+    public function setCommentStatus(\Pineipol\BaaBundle\Entity\CommentStatus $commentStatus = null) {
         $this->commentStatus = $commentStatus;
 
         return $this;
@@ -222,21 +209,19 @@ class Comments
     /**
      * Get commentStatus
      *
-     * @return \Pineipol\BaaBundle\Entity\CommentStatus 
+     * @return \Pineipol\BaaBundle\Entity\CommentStatus
      */
-    public function getCommentStatus()
-    {
+    public function getCommentStatus() {
         return $this->commentStatus;
     }
 
     /**
      * Set post
      *
-     * @param \Pineipol\BaaBundle\Entity\Posts $post
-     * @return Comments
+     * @param \Pineipol\BaaBundle\Entity\Post $post
+     * @return Comment
      */
-    public function setPost(\Pineipol\BaaBundle\Entity\Posts $post = null)
-    {
+    public function setPost(\Pineipol\BaaBundle\Entity\Post $post = null) {
         $this->post = $post;
 
         return $this;
@@ -245,10 +230,10 @@ class Comments
     /**
      * Get post
      *
-     * @return \Pineipol\BaaBundle\Entity\Posts 
+     * @return \Pineipol\BaaBundle\Entity\Post
      */
-    public function getPost()
-    {
+    public function getPost() {
         return $this->post;
     }
+
 }

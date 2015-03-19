@@ -5,13 +5,14 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * CategoryContents
+ * CategoryContent
  *
  * @ORM\Table(name="category_contents", uniqueConstraints={@ORM\UniqueConstraint(name="category_locale", columns={"category_id", "locale_id"}), @ORM\UniqueConstraint(name="category_content_id", columns={"category_content_id"})}, indexes={@ORM\Index(name="category_id", columns={"category_id"}), @ORM\Index(name="locale_id", columns={"locale_id"})})
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
-class CategoryContents
-{
+class CategoryContent extends BaseEntity {
+
     /**
      * @var integer
      *
@@ -50,9 +51,9 @@ class CategoryContents
     private $modified;
 
     /**
-     * @var \Pineipol\BaaBundle\Entity\Categories
+     * @var \Pineipol\BaaBundle\Entity\Category
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Categories")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Category")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="category_id", referencedColumnName="category_id")
      * })
@@ -60,24 +61,21 @@ class CategoryContents
     private $category;
 
     /**
-     * @var \Pineipol\BaaBundle\Entity\Locales
+     * @var \Pineipol\BaaBundle\Entity\Locale
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Locales")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Locale")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="locale_id", referencedColumnName="locale_id")
      * })
      */
     private $locale;
 
-
-
     /**
      * Get categoryContentId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCategoryContentId()
-    {
+    public function getCategoryContentId() {
         return $this->categoryContentId;
     }
 
@@ -85,10 +83,9 @@ class CategoryContents
      * Set title
      *
      * @param string $title
-     * @return CategoryContents
+     * @return CategoryContent
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
 
         return $this;
@@ -97,10 +94,9 @@ class CategoryContents
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -108,10 +104,9 @@ class CategoryContents
      * Set description
      *
      * @param string $description
-     * @return CategoryContents
+     * @return CategoryContent
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
 
         return $this;
@@ -120,10 +115,9 @@ class CategoryContents
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -131,10 +125,9 @@ class CategoryContents
      * Set created
      *
      * @param \DateTime $created
-     * @return CategoryContents
+     * @return CategoryContent
      */
-    public function setCreated($created)
-    {
+    public function setCreated($created) {
         $this->created = $created;
 
         return $this;
@@ -143,10 +136,9 @@ class CategoryContents
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getCreated()
-    {
+    public function getCreated() {
         return $this->created;
     }
 
@@ -154,10 +146,9 @@ class CategoryContents
      * Set modified
      *
      * @param \DateTime $modified
-     * @return CategoryContents
+     * @return CategoryContent
      */
-    public function setModified($modified)
-    {
+    public function setModified($modified) {
         $this->modified = $modified;
 
         return $this;
@@ -166,21 +157,19 @@ class CategoryContents
     /**
      * Get modified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getModified()
-    {
+    public function getModified() {
         return $this->modified;
     }
 
     /**
      * Set category
      *
-     * @param \Pineipol\BaaBundle\Entity\Categories $category
-     * @return CategoryContents
+     * @param \Pineipol\BaaBundle\Entity\Category $category
+     * @return CategoryContent
      */
-    public function setCategory(\Pineipol\BaaBundle\Entity\Categories $category = null)
-    {
+    public function setCategory(\Pineipol\BaaBundle\Entity\Category $category = null) {
         $this->category = $category;
 
         return $this;
@@ -189,21 +178,19 @@ class CategoryContents
     /**
      * Get category
      *
-     * @return \Pineipol\BaaBundle\Entity\Categories 
+     * @return \Pineipol\BaaBundle\Entity\Category
      */
-    public function getCategory()
-    {
+    public function getCategory() {
         return $this->category;
     }
 
     /**
      * Set locale
      *
-     * @param \Pineipol\BaaBundle\Entity\Locales $locale
-     * @return CategoryContents
+     * @param \Pineipol\BaaBundle\Entity\Locale $locale
+     * @return CategoryContent
      */
-    public function setLocale(\Pineipol\BaaBundle\Entity\Locales $locale = null)
-    {
+    public function setLocale(\Pineipol\BaaBundle\Entity\Locale $locale = null) {
         $this->locale = $locale;
 
         return $this;
@@ -212,10 +199,10 @@ class CategoryContents
     /**
      * Get locale
      *
-     * @return \Pineipol\BaaBundle\Entity\Locales 
+     * @return \Pineipol\BaaBundle\Entity\Locale
      */
-    public function getLocale()
-    {
+    public function getLocale() {
         return $this->locale;
     }
+
 }

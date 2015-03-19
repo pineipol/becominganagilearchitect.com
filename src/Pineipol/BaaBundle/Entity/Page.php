@@ -5,13 +5,14 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Pages
+ * Page
  *
  * @ORM\Table(name="pages", uniqueConstraints={@ORM\UniqueConstraint(name="page_id", columns={"page_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})}, indexes={@ORM\Index(name="order", columns={"order"})})
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
-class Pages
-{
+class Page extends BaseEntity {
+
     /**
      * @var integer
      *
@@ -63,12 +64,24 @@ class Pages
      */
     private $modified;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="\Pineipol\BaaBundle\Entity\PageContent", mappedBy="page")
+     */
+    private $contents;
 
+    /**
+     * Constructor
+     */
+    public function __construct() {
+        $this->contents = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get pageId
      *
-     * @return integer 
+     * @return integer
      */
     public function getPageId()
     {
@@ -79,7 +92,7 @@ class Pages
      * Set order
      *
      * @param integer $order
-     * @return Pages
+     * @return Page
      */
     public function setOrder($order)
     {
@@ -91,7 +104,7 @@ class Pages
     /**
      * Get order
      *
-     * @return integer 
+     * @return integer
      */
     public function getOrder()
     {
@@ -102,7 +115,7 @@ class Pages
      * Set name
      *
      * @param string $name
-     * @return Pages
+     * @return Page
      */
     public function setName($name)
     {
@@ -114,7 +127,7 @@ class Pages
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -125,7 +138,7 @@ class Pages
      * Set jsCallback
      *
      * @param string $jsCallback
-     * @return Pages
+     * @return Page
      */
     public function setJsCallback($jsCallback)
     {
@@ -137,7 +150,7 @@ class Pages
     /**
      * Get jsCallback
      *
-     * @return string 
+     * @return string
      */
     public function getJsCallback()
     {
@@ -148,7 +161,7 @@ class Pages
      * Set isPrivate
      *
      * @param integer $isPrivate
-     * @return Pages
+     * @return Page
      */
     public function setIsPrivate($isPrivate)
     {
@@ -160,7 +173,7 @@ class Pages
     /**
      * Get isPrivate
      *
-     * @return integer 
+     * @return integer
      */
     public function getIsPrivate()
     {
@@ -171,7 +184,7 @@ class Pages
      * Set created
      *
      * @param \DateTime $created
-     * @return Pages
+     * @return Page
      */
     public function setCreated($created)
     {
@@ -183,7 +196,7 @@ class Pages
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreated()
     {
@@ -194,7 +207,7 @@ class Pages
      * Set modified
      *
      * @param \DateTime $modified
-     * @return Pages
+     * @return Page
      */
     public function setModified($modified)
     {
@@ -206,7 +219,7 @@ class Pages
     /**
      * Get modified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getModified()
     {

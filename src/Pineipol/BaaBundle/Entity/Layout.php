@@ -5,13 +5,14 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Layouts
+ * Layout
  *
  * @ORM\Table(name="layouts", uniqueConstraints={@ORM\UniqueConstraint(name="layout_id", columns={"layout_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})})
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
-class Layouts
-{
+class Layout extends BaseEntity {
+
     /**
      * @var integer
      *
@@ -63,15 +64,12 @@ class Layouts
      */
     private $modified;
 
-
-
     /**
      * Get layoutId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getLayoutId()
-    {
+    public function getLayoutId() {
         return $this->layoutId;
     }
 
@@ -79,10 +77,9 @@ class Layouts
      * Set name
      *
      * @param string $name
-     * @return Layouts
+     * @return Layout
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -91,10 +88,9 @@ class Layouts
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -102,10 +98,9 @@ class Layouts
      * Set title
      *
      * @param string $title
-     * @return Layouts
+     * @return Layout
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
 
         return $this;
@@ -114,10 +109,9 @@ class Layouts
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -125,10 +119,9 @@ class Layouts
      * Set description
      *
      * @param string $description
-     * @return Layouts
+     * @return Layout
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
 
         return $this;
@@ -137,10 +130,9 @@ class Layouts
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -148,10 +140,9 @@ class Layouts
      * Set file
      *
      * @param string $file
-     * @return Layouts
+     * @return Layout
      */
-    public function setFile($file)
-    {
+    public function setFile($file) {
         $this->file = $file;
 
         return $this;
@@ -160,10 +151,9 @@ class Layouts
     /**
      * Get file
      *
-     * @return string 
+     * @return string
      */
-    public function getFile()
-    {
+    public function getFile() {
         return $this->file;
     }
 
@@ -171,10 +161,9 @@ class Layouts
      * Set created
      *
      * @param \DateTime $created
-     * @return Layouts
+     * @return Layout
      */
-    public function setCreated($created)
-    {
+    public function setCreated($created) {
         $this->created = $created;
 
         return $this;
@@ -183,10 +172,9 @@ class Layouts
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getCreated()
-    {
+    public function getCreated() {
         return $this->created;
     }
 
@@ -194,10 +182,9 @@ class Layouts
      * Set modified
      *
      * @param \DateTime $modified
-     * @return Layouts
+     * @return Layout
      */
-    public function setModified($modified)
-    {
+    public function setModified($modified) {
         $this->modified = $modified;
 
         return $this;
@@ -206,10 +193,10 @@ class Layouts
     /**
      * Get modified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getModified()
-    {
+    public function getModified() {
         return $this->modified;
     }
+
 }

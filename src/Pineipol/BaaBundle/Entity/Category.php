@@ -9,9 +9,12 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="categories", uniqueConstraints={@ORM\UniqueConstraint(name="category_id", columns={"category_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})}, indexes={@ORM\Index(name="parent_category_id", columns={"parent_category_id"}), @ORM\Index(name="category_type_id", columns={"category_type_id"})})
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
+ *
+ * Entity(repositoryClass="Gamelearn\TimeSupervisorBundle\Repository\TaskRepository")
  */
-class Categories
-{
+class Category extends BaseEntity {
+
     /**
      * @var integer
      *
@@ -59,26 +62,31 @@ class Categories
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToMany(targetEntity="Pineipol\BaaBundle\Entity\Posts", mappedBy="category")
+     * @ORM\ManyToMany(targetEntity="Pineipol\BaaBundle\Entity\Post", mappedBy="categories")
      */
-    private $post;
+    private $posts;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="\Pineipol\BaaBundle\Entity\CategoryContent", mappedBy="category")
+     */
+    private $contents;
 
     /**
      * Constructor
      */
-    public function __construct()
-    {
-        $this->post = new \Doctrine\Common\Collections\ArrayCollection();
+    public function __construct() {
+        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->contents = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
 
     /**
      * Get categoryId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCategoryId()
-    {
+    public function getCategoryId() {
         return $this->categoryId;
     }
 
@@ -86,10 +94,9 @@ class Categories
      * Set parentCategoryId
      *
      * @param integer $parentCategoryId
-     * @return Categories
+     * @return Category
      */
-    public function setParentCategoryId($parentCategoryId)
-    {
+    public function setParentCategoryId($parentCategoryId) {
         $this->parentCategoryId = $parentCategoryId;
 
         return $this;
@@ -98,10 +105,9 @@ class Categories
     /**
      * Get parentCategoryId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getParentCategoryId()
-    {
+    public function getParentCategoryId() {
         return $this->parentCategoryId;
     }
 
@@ -109,10 +115,9 @@ class Categories
      * Set categoryTypeId
      *
      * @param integer $categoryTypeId
-     * @return Categories
+     * @return Category
      */
-    public function setCategoryTypeId($categoryTypeId)
-    {
+    public function setCategoryTypeId($categoryTypeId) {
         $this->categoryTypeId = $categoryTypeId;
 
         return $this;
@@ -121,10 +126,9 @@ class Categories
     /**
      * Get categoryTypeId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getCategoryTypeId()
-    {
+    public function getCategoryTypeId() {
         return $this->categoryTypeId;
     }
 
@@ -132,10 +136,9 @@ class Categories
      * Set name
      *
      * @param string $name
-     * @return Categories
+     * @return Category
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -144,10 +147,9 @@ class Categories
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -155,10 +157,9 @@ class Categories
      * Set created
      *
      * @param \DateTime $created
-     * @return Categories
+     * @return Category
      */
-    public function setCreated($created)
-    {
+    public function setCreated($created) {
         $this->created = $created;
 
         return $this;
@@ -167,10 +168,9 @@ class Categories
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getCreated()
-    {
+    public function getCreated() {
         return $this->created;
     }
 
@@ -178,10 +178,9 @@ class Categories
      * Set modified
      *
      * @param \DateTime $modified
-     * @return Categories
+     * @return Category
      */
-    public function setModified($modified)
-    {
+    public function setModified($modified) {
         $this->modified = $modified;
 
         return $this;
@@ -190,22 +189,20 @@ class Categories
     /**
      * Get modified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getModified()
-    {
+    public function getModified() {
         return $this->modified;
     }
 
     /**
      * Add post
      *
-     * @param \Pineipol\BaaBundle\Entity\Posts $post
-     * @return Categories
+     * @param \Pineipol\BaaBundle\Entity\Post $post
+     * @return Category
      */
-    public function addPost(\Pineipol\BaaBundle\Entity\Posts $post)
-    {
-        $this->post[] = $post;
+    public function addPost(\Pineipol\BaaBundle\Entity\Post $post) {
+        $this->posts[] = $post;
 
         return $this;
     }
@@ -213,20 +210,19 @@ class Categories
     /**
      * Remove post
      *
-     * @param \Pineipol\BaaBundle\Entity\Posts $post
+     * @param \Pineipol\BaaBundle\Entity\Post $post
      */
-    public function removePost(\Pineipol\BaaBundle\Entity\Posts $post)
-    {
-        $this->post->removeElement($post);
+    public function removePost(\Pineipol\BaaBundle\Entity\Post $post) {
+        $this->posts->removeElement($post);
     }
 
     /**
      * Get post
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function getPost()
-    {
-        return $this->post;
+    public function getPosts() {
+        return $this->posts;
     }
+
 }

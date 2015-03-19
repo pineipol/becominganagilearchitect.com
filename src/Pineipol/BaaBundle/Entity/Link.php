@@ -5,13 +5,14 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Links
+ * Link
  *
  * @ORM\Table(name="links", uniqueConstraints={@ORM\UniqueConstraint(name="link_id", columns={"link_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})}, indexes={@ORM\Index(name="post_id", columns={"post_id"})})
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
-class Links
-{
+class Link extends BaseEntity {
+
     /**
      * @var integer
      *
@@ -71,24 +72,21 @@ class Links
     private $modified;
 
     /**
-     * @var \Pineipol\BaaBundle\Entity\Posts
+     * @var \Pineipol\BaaBundle\Entity\Post
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Posts")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Post")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="post_id", referencedColumnName="post_id")
      * })
      */
     private $post;
 
-
-
     /**
      * Get linkId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getLinkId()
-    {
+    public function getLinkId() {
         return $this->linkId;
     }
 
@@ -96,10 +94,9 @@ class Links
      * Set name
      *
      * @param string $name
-     * @return Links
+     * @return Link
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -108,10 +105,9 @@ class Links
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -119,10 +115,9 @@ class Links
      * Set title
      *
      * @param string $title
-     * @return Links
+     * @return Link
      */
-    public function setTitle($title)
-    {
+    public function setTitle($title) {
         $this->title = $title;
 
         return $this;
@@ -131,10 +126,9 @@ class Links
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
-    public function getTitle()
-    {
+    public function getTitle() {
         return $this->title;
     }
 
@@ -142,10 +136,9 @@ class Links
      * Set description
      *
      * @param string $description
-     * @return Links
+     * @return Link
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
 
         return $this;
@@ -154,10 +147,9 @@ class Links
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -165,10 +157,9 @@ class Links
      * Set targetUrl
      *
      * @param string $targetUrl
-     * @return Links
+     * @return Link
      */
-    public function setTargetUrl($targetUrl)
-    {
+    public function setTargetUrl($targetUrl) {
         $this->targetUrl = $targetUrl;
 
         return $this;
@@ -177,10 +168,9 @@ class Links
     /**
      * Get targetUrl
      *
-     * @return string 
+     * @return string
      */
-    public function getTargetUrl()
-    {
+    public function getTargetUrl() {
         return $this->targetUrl;
     }
 
@@ -188,10 +178,9 @@ class Links
      * Set openBlank
      *
      * @param integer $openBlank
-     * @return Links
+     * @return Link
      */
-    public function setOpenBlank($openBlank)
-    {
+    public function setOpenBlank($openBlank) {
         $this->openBlank = $openBlank;
 
         return $this;
@@ -200,10 +189,9 @@ class Links
     /**
      * Get openBlank
      *
-     * @return integer 
+     * @return integer
      */
-    public function getOpenBlank()
-    {
+    public function getOpenBlank() {
         return $this->openBlank;
     }
 
@@ -211,10 +199,9 @@ class Links
      * Set created
      *
      * @param \DateTime $created
-     * @return Links
+     * @return Link
      */
-    public function setCreated($created)
-    {
+    public function setCreated($created) {
         $this->created = $created;
 
         return $this;
@@ -223,10 +210,9 @@ class Links
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getCreated()
-    {
+    public function getCreated() {
         return $this->created;
     }
 
@@ -234,10 +220,9 @@ class Links
      * Set modified
      *
      * @param \DateTime $modified
-     * @return Links
+     * @return Link
      */
-    public function setModified($modified)
-    {
+    public function setModified($modified) {
         $this->modified = $modified;
 
         return $this;
@@ -246,21 +231,19 @@ class Links
     /**
      * Get modified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getModified()
-    {
+    public function getModified() {
         return $this->modified;
     }
 
     /**
      * Set post
      *
-     * @param \Pineipol\BaaBundle\Entity\Posts $post
-     * @return Links
+     * @param \Pineipol\BaaBundle\Entity\Post $post
+     * @return Link
      */
-    public function setPost(\Pineipol\BaaBundle\Entity\Posts $post = null)
-    {
+    public function setPost(\Pineipol\BaaBundle\Entity\Post $post = null) {
         $this->post = $post;
 
         return $this;
@@ -269,10 +252,10 @@ class Links
     /**
      * Get post
      *
-     * @return \Pineipol\BaaBundle\Entity\Posts 
+     * @return \Pineipol\BaaBundle\Entity\Post
      */
-    public function getPost()
-    {
+    public function getPost() {
         return $this->post;
     }
+
 }

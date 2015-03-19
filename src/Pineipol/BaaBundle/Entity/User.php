@@ -5,13 +5,14 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Users
+ * User
  *
  * @ORM\Table(name="users", uniqueConstraints={@ORM\UniqueConstraint(name="user_id", columns={"user_id"}), @ORM\UniqueConstraint(name="email", columns={"email"}), @ORM\UniqueConstraint(name="username", columns={"username"})}, indexes={@ORM\Index(name="user_status_id", columns={"user_status_id"})})
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks
  */
-class Users
-{
+class User extends BaseEntity {
+
     /**
      * @var integer
      *
@@ -94,15 +95,26 @@ class Users
      */
     private $userStatus;
 
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="\Pineipol\BaaBundle\Entity\Comment", mappedBy="user")
+     */
+    private $comments;
 
+    /**
+     * Constructor
+     */
+    public function __construct() {
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get userId
      *
-     * @return integer 
+     * @return integer
      */
-    public function getUserId()
-    {
+    public function getUserId() {
         return $this->userId;
     }
 
@@ -110,10 +122,9 @@ class Users
      * Set name
      *
      * @param string $name
-     * @return Users
+     * @return User
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -122,10 +133,9 @@ class Users
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -133,10 +143,9 @@ class Users
      * Set surname
      *
      * @param string $surname
-     * @return Users
+     * @return User
      */
-    public function setSurname($surname)
-    {
+    public function setSurname($surname) {
         $this->surname = $surname;
 
         return $this;
@@ -145,10 +154,9 @@ class Users
     /**
      * Get surname
      *
-     * @return string 
+     * @return string
      */
-    public function getSurname()
-    {
+    public function getSurname() {
         return $this->surname;
     }
 
@@ -156,10 +164,9 @@ class Users
      * Set email
      *
      * @param string $email
-     * @return Users
+     * @return User
      */
-    public function setEmail($email)
-    {
+    public function setEmail($email) {
         $this->email = $email;
 
         return $this;
@@ -168,10 +175,9 @@ class Users
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
-    public function getEmail()
-    {
+    public function getEmail() {
         return $this->email;
     }
 
@@ -179,10 +185,9 @@ class Users
      * Set username
      *
      * @param string $username
-     * @return Users
+     * @return User
      */
-    public function setUsername($username)
-    {
+    public function setUsername($username) {
         $this->username = $username;
 
         return $this;
@@ -191,10 +196,9 @@ class Users
     /**
      * Get username
      *
-     * @return string 
+     * @return string
      */
-    public function getUsername()
-    {
+    public function getUsername() {
         return $this->username;
     }
 
@@ -202,10 +206,9 @@ class Users
      * Set passwd
      *
      * @param string $passwd
-     * @return Users
+     * @return User
      */
-    public function setPasswd($passwd)
-    {
+    public function setPasswd($passwd) {
         $this->passwd = $passwd;
 
         return $this;
@@ -214,10 +217,9 @@ class Users
     /**
      * Get passwd
      *
-     * @return string 
+     * @return string
      */
-    public function getPasswd()
-    {
+    public function getPasswd() {
         return $this->passwd;
     }
 
@@ -225,10 +227,9 @@ class Users
      * Set description
      *
      * @param string $description
-     * @return Users
+     * @return User
      */
-    public function setDescription($description)
-    {
+    public function setDescription($description) {
         $this->description = $description;
 
         return $this;
@@ -237,10 +238,9 @@ class Users
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
-    public function getDescription()
-    {
+    public function getDescription() {
         return $this->description;
     }
 
@@ -248,10 +248,9 @@ class Users
      * Set active
      *
      * @param integer $active
-     * @return Users
+     * @return User
      */
-    public function setActive($active)
-    {
+    public function setActive($active) {
         $this->active = $active;
 
         return $this;
@@ -260,10 +259,9 @@ class Users
     /**
      * Get active
      *
-     * @return integer 
+     * @return integer
      */
-    public function getActive()
-    {
+    public function getActive() {
         return $this->active;
     }
 
@@ -271,10 +269,9 @@ class Users
      * Set created
      *
      * @param \DateTime $created
-     * @return Users
+     * @return User
      */
-    public function setCreated($created)
-    {
+    public function setCreated($created) {
         $this->created = $created;
 
         return $this;
@@ -283,10 +280,9 @@ class Users
     /**
      * Get created
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getCreated()
-    {
+    public function getCreated() {
         return $this->created;
     }
 
@@ -294,10 +290,9 @@ class Users
      * Set modified
      *
      * @param \DateTime $modified
-     * @return Users
+     * @return User
      */
-    public function setModified($modified)
-    {
+    public function setModified($modified) {
         $this->modified = $modified;
 
         return $this;
@@ -306,10 +301,9 @@ class Users
     /**
      * Get modified
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
-    public function getModified()
-    {
+    public function getModified() {
         return $this->modified;
     }
 
@@ -317,10 +311,9 @@ class Users
      * Set userStatus
      *
      * @param \Pineipol\BaaBundle\Entity\UserStatus $userStatus
-     * @return Users
+     * @return User
      */
-    public function setUserStatus(\Pineipol\BaaBundle\Entity\UserStatus $userStatus = null)
-    {
+    public function setUserStatus(\Pineipol\BaaBundle\Entity\UserStatus $userStatus = null) {
         $this->userStatus = $userStatus;
 
         return $this;
@@ -329,10 +322,10 @@ class Users
     /**
      * Get userStatus
      *
-     * @return \Pineipol\BaaBundle\Entity\UserStatus 
+     * @return \Pineipol\BaaBundle\Entity\UserStatus
      */
-    public function getUserStatus()
-    {
+    public function getUserStatus() {
         return $this->userStatus;
     }
+
 }
