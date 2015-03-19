@@ -275,4 +275,103 @@ class Post extends BaseEntity {
         return $this->categories;
     }
 
+    /**
+     * Get categories
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCategories() {
+        return $this->categories;
+    }
+
+    /**
+     * Add contents
+     *
+     * @param \Pineipol\BaaBundle\Entity\PostContent $contents
+     * @return Post
+     */
+    public function addContent(\Pineipol\BaaBundle\Entity\PostContent $contents) {
+        $this->contents[] = $contents;
+
+        return $this;
+    }
+
+    /**
+     * Remove contents
+     *
+     * @param \Pineipol\BaaBundle\Entity\PostContent $contents
+     */
+    public function removeContent(\Pineipol\BaaBundle\Entity\PostContent $contents) {
+        $this->contents->removeElement($contents);
+    }
+
+    /**
+     * Get contents
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getContents() {
+        return $this->contents;
+    }
+
+    /**
+     * Add comments
+     *
+     * @param \Pineipol\BaaBundle\Entity\Comment $comments
+     * @return Post
+     */
+    public function addComment(\Pineipol\BaaBundle\Entity\Comment $comments) {
+        $this->comments[] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param \Pineipol\BaaBundle\Entity\Comment $comments
+     */
+    public function removeComment(\Pineipol\BaaBundle\Entity\Comment $comments) {
+        $this->comments->removeElement($comments);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComments() {
+        return $this->comments;
+    }
+
+    /**
+     * Add links
+     *
+     * @param \Pineipol\BaaBundle\Entity\Link $links
+     * @return Post
+     */
+    public function addLink(\Pineipol\BaaBundle\Entity\Link $links) {
+        $this->links[] = $links;
+
+        return $this;
+    }
+
+    /**
+     * Remove links
+     *
+     * @param \Pineipol\BaaBundle\Entity\Link $links
+     */
+    public function removeLink(\Pineipol\BaaBundle\Entity\Link $links) {
+        $this->links->removeElement($links);
+    }
+
+    /**
+     * Get links
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getLinks() {
+        return $this->links;
+    }
+
 }

@@ -83,8 +83,7 @@ class Page extends BaseEntity {
      *
      * @return integer
      */
-    public function getPageId()
-    {
+    public function getPageId() {
         return $this->pageId;
     }
 
@@ -94,8 +93,7 @@ class Page extends BaseEntity {
      * @param integer $order
      * @return Page
      */
-    public function setOrder($order)
-    {
+    public function setOrder($order) {
         $this->order = $order;
 
         return $this;
@@ -106,8 +104,7 @@ class Page extends BaseEntity {
      *
      * @return integer
      */
-    public function getOrder()
-    {
+    public function getOrder() {
         return $this->order;
     }
 
@@ -117,8 +114,7 @@ class Page extends BaseEntity {
      * @param string $name
      * @return Page
      */
-    public function setName($name)
-    {
+    public function setName($name) {
         $this->name = $name;
 
         return $this;
@@ -129,8 +125,7 @@ class Page extends BaseEntity {
      *
      * @return string
      */
-    public function getName()
-    {
+    public function getName() {
         return $this->name;
     }
 
@@ -140,8 +135,7 @@ class Page extends BaseEntity {
      * @param string $jsCallback
      * @return Page
      */
-    public function setJsCallback($jsCallback)
-    {
+    public function setJsCallback($jsCallback) {
         $this->jsCallback = $jsCallback;
 
         return $this;
@@ -152,8 +146,7 @@ class Page extends BaseEntity {
      *
      * @return string
      */
-    public function getJsCallback()
-    {
+    public function getJsCallback() {
         return $this->jsCallback;
     }
 
@@ -163,8 +156,7 @@ class Page extends BaseEntity {
      * @param integer $isPrivate
      * @return Page
      */
-    public function setIsPrivate($isPrivate)
-    {
+    public function setIsPrivate($isPrivate) {
         $this->isPrivate = $isPrivate;
 
         return $this;
@@ -175,8 +167,7 @@ class Page extends BaseEntity {
      *
      * @return integer
      */
-    public function getIsPrivate()
-    {
+    public function getIsPrivate() {
         return $this->isPrivate;
     }
 
@@ -186,8 +177,7 @@ class Page extends BaseEntity {
      * @param \DateTime $created
      * @return Page
      */
-    public function setCreated($created)
-    {
+    public function setCreated($created) {
         $this->created = $created;
 
         return $this;
@@ -198,8 +188,7 @@ class Page extends BaseEntity {
      *
      * @return \DateTime
      */
-    public function getCreated()
-    {
+    public function getCreated() {
         return $this->created;
     }
 
@@ -209,8 +198,7 @@ class Page extends BaseEntity {
      * @param \DateTime $modified
      * @return Page
      */
-    public function setModified($modified)
-    {
+    public function setModified($modified) {
         $this->modified = $modified;
 
         return $this;
@@ -221,8 +209,38 @@ class Page extends BaseEntity {
      *
      * @return \DateTime
      */
-    public function getModified()
-    {
+    public function getModified() {
         return $this->modified;
     }
+
+    /**
+     * Add contents
+     *
+     * @param \Pineipol\BaaBundle\Entity\PageContent $contents
+     * @return Page
+     */
+    public function addContent(\Pineipol\BaaBundle\Entity\PageContent $contents) {
+        $this->contents[] = $contents;
+
+        return $this;
+    }
+
+    /**
+     * Remove contents
+     *
+     * @param \Pineipol\BaaBundle\Entity\PageContent $contents
+     */
+    public function removeContent(\Pineipol\BaaBundle\Entity\PageContent $contents) {
+        $this->contents->removeElement($contents);
+    }
+
+    /**
+     * Get contents
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getContents() {
+        return $this->contents;
+    }
+
 }

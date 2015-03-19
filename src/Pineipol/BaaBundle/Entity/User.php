@@ -328,4 +328,34 @@ class User extends BaseEntity {
         return $this->userStatus;
     }
 
+    /**
+     * Add comments
+     *
+     * @param \Pineipol\BaaBundle\Entity\Comment $comments
+     * @return User
+     */
+    public function addComment(\Pineipol\BaaBundle\Entity\Comment $comments) {
+        $this->comments[] = $comments;
+
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param \Pineipol\BaaBundle\Entity\Comment $comments
+     */
+    public function removeComment(\Pineipol\BaaBundle\Entity\Comment $comments) {
+        $this->comments->removeElement($comments);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComments() {
+        return $this->comments;
+    }
+
 }

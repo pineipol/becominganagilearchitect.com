@@ -225,4 +225,34 @@ class Category extends BaseEntity {
         return $this->posts;
     }
 
+    /**
+     * Add contents
+     *
+     * @param \Pineipol\BaaBundle\Entity\CategoryContent $contents
+     * @return Category
+     */
+    public function addContent(\Pineipol\BaaBundle\Entity\CategoryContent $contents) {
+        $this->contents[] = $contents;
+
+        return $this;
+    }
+
+    /**
+     * Remove contents
+     *
+     * @param \Pineipol\BaaBundle\Entity\CategoryContent $contents
+     */
+    public function removeContent(\Pineipol\BaaBundle\Entity\CategoryContent $contents) {
+        $this->contents->removeElement($contents);
+    }
+
+    /**
+     * Get contents
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getContents() {
+        return $this->contents;
+    }
+
 }
