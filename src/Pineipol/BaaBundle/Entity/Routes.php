@@ -5,13 +5,13 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Route
+ * Routes
  *
  * @ORM\Table(name="routes", uniqueConstraints={@ORM\UniqueConstraint(name="route_id", columns={"route_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})}, indexes={@ORM\Index(name="route_type_id", columns={"route_type_id"}), @ORM\Index(name="IDX_32D5C2B38C22AA1A", columns={"layout_id"})})
  * @ORM\Entity
  */
-class Route {
-
+class Routes
+{
     /**
      * @var integer
      *
@@ -64,9 +64,9 @@ class Route {
     private $modified;
 
     /**
-     * @var \Pineipol\BaaBundle\Entity\Layout
+     * @var \Pineipol\BaaBundle\Entity\Layouts
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Layout")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Layouts")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="layout_id", referencedColumnName="layout_id")
      * })
@@ -74,21 +74,24 @@ class Route {
     private $layout;
 
     /**
-     * @var \Pineipol\BaaBundle\Entity\RouteType
+     * @var \Pineipol\BaaBundle\Entity\RouteTypes
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\RouteType")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\RouteTypes")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="route_type_id", referencedColumnName="route_type_id")
      * })
      */
     private $routeType;
 
+
+
     /**
      * Get routeId
      *
-     * @return integer
+     * @return integer 
      */
-    public function getRouteId() {
+    public function getRouteId()
+    {
         return $this->routeId;
     }
 
@@ -96,9 +99,10 @@ class Route {
      * Set name
      *
      * @param string $name
-     * @return Route
+     * @return Routes
      */
-    public function setName($name) {
+    public function setName($name)
+    {
         $this->name = $name;
 
         return $this;
@@ -107,9 +111,10 @@ class Route {
     /**
      * Get name
      *
-     * @return string
+     * @return string 
      */
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
@@ -117,9 +122,10 @@ class Route {
      * Set path
      *
      * @param string $path
-     * @return Route
+     * @return Routes
      */
-    public function setPath($path) {
+    public function setPath($path)
+    {
         $this->path = $path;
 
         return $this;
@@ -128,9 +134,10 @@ class Route {
     /**
      * Get path
      *
-     * @return string
+     * @return string 
      */
-    public function getPath() {
+    public function getPath()
+    {
         return $this->path;
     }
 
@@ -138,9 +145,10 @@ class Route {
      * Set action
      *
      * @param string $action
-     * @return Route
+     * @return Routes
      */
-    public function setAction($action) {
+    public function setAction($action)
+    {
         $this->action = $action;
 
         return $this;
@@ -149,9 +157,10 @@ class Route {
     /**
      * Get action
      *
-     * @return string
+     * @return string 
      */
-    public function getAction() {
+    public function getAction()
+    {
         return $this->action;
     }
 
@@ -159,9 +168,10 @@ class Route {
      * Set description
      *
      * @param string $description
-     * @return Route
+     * @return Routes
      */
-    public function setDescription($description) {
+    public function setDescription($description)
+    {
         $this->description = $description;
 
         return $this;
@@ -170,9 +180,10 @@ class Route {
     /**
      * Get description
      *
-     * @return string
+     * @return string 
      */
-    public function getDescription() {
+    public function getDescription()
+    {
         return $this->description;
     }
 
@@ -180,9 +191,10 @@ class Route {
      * Set created
      *
      * @param \DateTime $created
-     * @return Route
+     * @return Routes
      */
-    public function setCreated($created) {
+    public function setCreated($created)
+    {
         $this->created = $created;
 
         return $this;
@@ -191,9 +203,10 @@ class Route {
     /**
      * Get created
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
-    public function getCreated() {
+    public function getCreated()
+    {
         return $this->created;
     }
 
@@ -201,9 +214,10 @@ class Route {
      * Set modified
      *
      * @param \DateTime $modified
-     * @return Route
+     * @return Routes
      */
-    public function setModified($modified) {
+    public function setModified($modified)
+    {
         $this->modified = $modified;
 
         return $this;
@@ -212,19 +226,21 @@ class Route {
     /**
      * Get modified
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
-    public function getModified() {
+    public function getModified()
+    {
         return $this->modified;
     }
 
     /**
      * Set layout
      *
-     * @param \Pineipol\BaaBundle\Entity\Layout $layout
-     * @return Route
+     * @param \Pineipol\BaaBundle\Entity\Layouts $layout
+     * @return Routes
      */
-    public function setLayout(\Pineipol\BaaBundle\Entity\Layout $layout = null) {
+    public function setLayout(\Pineipol\BaaBundle\Entity\Layouts $layout = null)
+    {
         $this->layout = $layout;
 
         return $this;
@@ -233,19 +249,21 @@ class Route {
     /**
      * Get layout
      *
-     * @return \Pineipol\BaaBundle\Entity\Layout
+     * @return \Pineipol\BaaBundle\Entity\Layouts 
      */
-    public function getLayout() {
+    public function getLayout()
+    {
         return $this->layout;
     }
 
     /**
      * Set routeType
      *
-     * @param \Pineipol\BaaBundle\Entity\RouteType $routeType
-     * @return Route
+     * @param \Pineipol\BaaBundle\Entity\RouteTypes $routeType
+     * @return Routes
      */
-    public function setRouteType(\Pineipol\BaaBundle\Entity\RouteType $routeType = null) {
+    public function setRouteType(\Pineipol\BaaBundle\Entity\RouteTypes $routeType = null)
+    {
         $this->routeType = $routeType;
 
         return $this;
@@ -254,10 +272,10 @@ class Route {
     /**
      * Get routeType
      *
-     * @return \Pineipol\BaaBundle\Entity\RouteType
+     * @return \Pineipol\BaaBundle\Entity\RouteTypes 
      */
-    public function getRouteType() {
+    public function getRouteType()
+    {
         return $this->routeType;
     }
-
 }

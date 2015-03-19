@@ -5,81 +5,98 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Layouts
+ * Links
  *
- * @ORM\Table(name="layouts", uniqueConstraints={@ORM\UniqueConstraint(name="layout_id", columns={"layout_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})})
+ * @ORM\Table(name="links", uniqueConstraints={@ORM\UniqueConstraint(name="link_id", columns={"link_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})}, indexes={@ORM\Index(name="post_id", columns={"post_id"})})
  * @ORM\Entity
  */
-class Layouts
+class Links
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="layout_id", type="integer")
+     * @ORM\Column(name="link_id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $layoutId;
+    private $linkId;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255, nullable=true)
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="text", nullable=true)
+     * @ORM\Column(name="title", type="string", length=255, nullable=false)
      */
     private $title;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text", nullable=true)
+     * @ORM\Column(name="description", type="text", length=65535, nullable=true)
      */
     private $description;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="file", type="text", nullable=true)
+     * @ORM\Column(name="target_url", type="text", length=65535, nullable=true)
      */
-    private $file;
+    private $targetUrl;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="open_blank", type="integer", nullable=true)
+     */
+    private $openBlank;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created", type="datetime", nullable=true)
+     * @ORM\Column(name="created", type="datetime", nullable=false)
      */
     private $created;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="modified", type="datetime", nullable=true)
+     * @ORM\Column(name="modified", type="datetime", nullable=false)
      */
     private $modified;
+
+    /**
+     * @var \Pineipol\BaaBundle\Entity\Posts
+     *
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Posts")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="post_id", referencedColumnName="post_id")
+     * })
+     */
+    private $post;
 
 
 
     /**
-     * Get layoutId
+     * Get linkId
      *
      * @return integer 
      */
-    public function getLayoutId()
+    public function getLinkId()
     {
-        return $this->layoutId;
+        return $this->linkId;
     }
 
     /**
      * Set name
      *
      * @param string $name
-     * @return Layouts
+     * @return Links
      */
     public function setName($name)
     {
@@ -102,7 +119,7 @@ class Layouts
      * Set title
      *
      * @param string $title
-     * @return Layouts
+     * @return Links
      */
     public function setTitle($title)
     {
@@ -125,7 +142,7 @@ class Layouts
      * Set description
      *
      * @param string $description
-     * @return Layouts
+     * @return Links
      */
     public function setDescription($description)
     {
@@ -145,33 +162,56 @@ class Layouts
     }
 
     /**
-     * Set file
+     * Set targetUrl
      *
-     * @param string $file
-     * @return Layouts
+     * @param string $targetUrl
+     * @return Links
      */
-    public function setFile($file)
+    public function setTargetUrl($targetUrl)
     {
-        $this->file = $file;
+        $this->targetUrl = $targetUrl;
 
         return $this;
     }
 
     /**
-     * Get file
+     * Get targetUrl
      *
      * @return string 
      */
-    public function getFile()
+    public function getTargetUrl()
     {
-        return $this->file;
+        return $this->targetUrl;
+    }
+
+    /**
+     * Set openBlank
+     *
+     * @param integer $openBlank
+     * @return Links
+     */
+    public function setOpenBlank($openBlank)
+    {
+        $this->openBlank = $openBlank;
+
+        return $this;
+    }
+
+    /**
+     * Get openBlank
+     *
+     * @return integer 
+     */
+    public function getOpenBlank()
+    {
+        return $this->openBlank;
     }
 
     /**
      * Set created
      *
      * @param \DateTime $created
-     * @return Layouts
+     * @return Links
      */
     public function setCreated($created)
     {
@@ -194,7 +234,7 @@ class Layouts
      * Set modified
      *
      * @param \DateTime $modified
-     * @return Layouts
+     * @return Links
      */
     public function setModified($modified)
     {
@@ -211,5 +251,28 @@ class Layouts
     public function getModified()
     {
         return $this->modified;
+    }
+
+    /**
+     * Set post
+     *
+     * @param \Pineipol\BaaBundle\Entity\Posts $post
+     * @return Links
+     */
+    public function setPost(\Pineipol\BaaBundle\Entity\Posts $post = null)
+    {
+        $this->post = $post;
+
+        return $this;
+    }
+
+    /**
+     * Get post
+     *
+     * @return \Pineipol\BaaBundle\Entity\Posts 
+     */
+    public function getPost()
+    {
+        return $this->post;
     }
 }

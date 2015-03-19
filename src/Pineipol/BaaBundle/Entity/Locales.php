@@ -5,13 +5,13 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Locale
+ * Locales
  *
  * @ORM\Table(name="locales", uniqueConstraints={@ORM\UniqueConstraint(name="locale_id", columns={"locale_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})})
  * @ORM\Entity
  */
-class Locale {
-
+class Locales
+{
     /**
      * @var integer
      *
@@ -56,12 +56,15 @@ class Locale {
      */
     private $modified;
 
+
+
     /**
      * Get localeId
      *
-     * @return integer
+     * @return integer 
      */
-    public function getLocaleId() {
+    public function getLocaleId()
+    {
         return $this->localeId;
     }
 
@@ -69,9 +72,10 @@ class Locale {
      * Set name
      *
      * @param string $name
-     * @return Locale
+     * @return Locales
      */
-    public function setName($name) {
+    public function setName($name)
+    {
         $this->name = $name;
 
         return $this;
@@ -80,9 +84,10 @@ class Locale {
     /**
      * Get name
      *
-     * @return string
+     * @return string 
      */
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
@@ -90,9 +95,10 @@ class Locale {
      * Set title
      *
      * @param string $title
-     * @return Locale
+     * @return Locales
      */
-    public function setTitle($title) {
+    public function setTitle($title)
+    {
         $this->title = $title;
 
         return $this;
@@ -101,9 +107,10 @@ class Locale {
     /**
      * Get title
      *
-     * @return string
+     * @return string 
      */
-    public function getTitle() {
+    public function getTitle()
+    {
         return $this->title;
     }
 
@@ -111,9 +118,10 @@ class Locale {
      * Set code
      *
      * @param string $code
-     * @return Locale
+     * @return Locales
      */
-    public function setCode($code) {
+    public function setCode($code)
+    {
         $this->code = $code;
 
         return $this;
@@ -122,9 +130,10 @@ class Locale {
     /**
      * Get code
      *
-     * @return string
+     * @return string 
      */
-    public function getCode() {
+    public function getCode()
+    {
         return $this->code;
     }
 
@@ -132,9 +141,10 @@ class Locale {
      * Set created
      *
      * @param \DateTime $created
-     * @return Locale
+     * @return Locales
      */
-    public function setCreated($created) {
+    public function setCreated($created)
+    {
         $this->created = $created;
 
         return $this;
@@ -143,9 +153,10 @@ class Locale {
     /**
      * Get created
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
-    public function getCreated() {
+    public function getCreated()
+    {
         return $this->created;
     }
 
@@ -153,9 +164,10 @@ class Locale {
      * Set modified
      *
      * @param \DateTime $modified
-     * @return Locale
+     * @return Locales
      */
-    public function setModified($modified) {
+    public function setModified($modified)
+    {
         $this->modified = $modified;
 
         return $this;
@@ -164,10 +176,10 @@ class Locale {
     /**
      * Get modified
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
-    public function getModified() {
+    public function getModified()
+    {
         return $this->modified;
     }
-
 }

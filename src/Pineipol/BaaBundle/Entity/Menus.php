@@ -5,13 +5,13 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Menu
+ * Menus
  *
  * @ORM\Table(name="menus", uniqueConstraints={@ORM\UniqueConstraint(name="menu_id", columns={"menu_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})}, indexes={@ORM\Index(name="IDX_727508CF34ECB4E6", columns={"route_id"})})
  * @ORM\Entity
  */
-class Menu {
-
+class Menus
+{
     /**
      * @var integer
      *
@@ -71,21 +71,24 @@ class Menu {
     private $modified;
 
     /**
-     * @var \Pineipol\BaaBundle\Entity\Route
+     * @var \Pineipol\BaaBundle\Entity\Routes
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Route")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Routes")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="route_id", referencedColumnName="route_id")
      * })
      */
     private $route;
 
+
+
     /**
      * Get menuId
      *
-     * @return integer
+     * @return integer 
      */
-    public function getMenuId() {
+    public function getMenuId()
+    {
         return $this->menuId;
     }
 
@@ -93,9 +96,10 @@ class Menu {
      * Set name
      *
      * @param string $name
-     * @return Menu
+     * @return Menus
      */
-    public function setName($name) {
+    public function setName($name)
+    {
         $this->name = $name;
 
         return $this;
@@ -104,9 +108,10 @@ class Menu {
     /**
      * Get name
      *
-     * @return string
+     * @return string 
      */
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
@@ -114,9 +119,10 @@ class Menu {
      * Set title
      *
      * @param string $title
-     * @return Menu
+     * @return Menus
      */
-    public function setTitle($title) {
+    public function setTitle($title)
+    {
         $this->title = $title;
 
         return $this;
@@ -125,9 +131,10 @@ class Menu {
     /**
      * Get title
      *
-     * @return string
+     * @return string 
      */
-    public function getTitle() {
+    public function getTitle()
+    {
         return $this->title;
     }
 
@@ -135,9 +142,10 @@ class Menu {
      * Set description
      *
      * @param string $description
-     * @return Menu
+     * @return Menus
      */
-    public function setDescription($description) {
+    public function setDescription($description)
+    {
         $this->description = $description;
 
         return $this;
@@ -146,9 +154,10 @@ class Menu {
     /**
      * Get description
      *
-     * @return string
+     * @return string 
      */
-    public function getDescription() {
+    public function getDescription()
+    {
         return $this->description;
     }
 
@@ -156,9 +165,10 @@ class Menu {
      * Set style
      *
      * @param string $style
-     * @return Menu
+     * @return Menus
      */
-    public function setStyle($style) {
+    public function setStyle($style)
+    {
         $this->style = $style;
 
         return $this;
@@ -167,9 +177,10 @@ class Menu {
     /**
      * Get style
      *
-     * @return string
+     * @return string 
      */
-    public function getStyle() {
+    public function getStyle()
+    {
         return $this->style;
     }
 
@@ -177,9 +188,10 @@ class Menu {
      * Set show
      *
      * @param integer $show
-     * @return Menu
+     * @return Menus
      */
-    public function setShow($show) {
+    public function setShow($show)
+    {
         $this->show = $show;
 
         return $this;
@@ -188,9 +200,10 @@ class Menu {
     /**
      * Get show
      *
-     * @return integer
+     * @return integer 
      */
-    public function getShow() {
+    public function getShow()
+    {
         return $this->show;
     }
 
@@ -198,9 +211,10 @@ class Menu {
      * Set created
      *
      * @param \DateTime $created
-     * @return Menu
+     * @return Menus
      */
-    public function setCreated($created) {
+    public function setCreated($created)
+    {
         $this->created = $created;
 
         return $this;
@@ -209,9 +223,10 @@ class Menu {
     /**
      * Get created
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
-    public function getCreated() {
+    public function getCreated()
+    {
         return $this->created;
     }
 
@@ -219,9 +234,10 @@ class Menu {
      * Set modified
      *
      * @param \DateTime $modified
-     * @return Menu
+     * @return Menus
      */
-    public function setModified($modified) {
+    public function setModified($modified)
+    {
         $this->modified = $modified;
 
         return $this;
@@ -230,19 +246,21 @@ class Menu {
     /**
      * Get modified
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
-    public function getModified() {
+    public function getModified()
+    {
         return $this->modified;
     }
 
     /**
      * Set route
      *
-     * @param \Pineipol\BaaBundle\Entity\Route $route
-     * @return Menu
+     * @param \Pineipol\BaaBundle\Entity\Routes $route
+     * @return Menus
      */
-    public function setRoute(\Pineipol\BaaBundle\Entity\Route $route = null) {
+    public function setRoute(\Pineipol\BaaBundle\Entity\Routes $route = null)
+    {
         $this->route = $route;
 
         return $this;
@@ -251,10 +269,10 @@ class Menu {
     /**
      * Get route
      *
-     * @return \Pineipol\BaaBundle\Entity\Route
+     * @return \Pineipol\BaaBundle\Entity\Routes 
      */
-    public function getRoute() {
+    public function getRoute()
+    {
         return $this->route;
     }
-
 }

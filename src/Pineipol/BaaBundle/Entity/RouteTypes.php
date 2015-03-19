@@ -5,13 +5,13 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * RouteType
+ * RouteTypes
  *
  * @ORM\Table(name="route_types", uniqueConstraints={@ORM\UniqueConstraint(name="route_type_id", columns={"route_type_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})})
  * @ORM\Entity
  */
-class RouteType {
-
+class RouteTypes
+{
     /**
      * @var integer
      *
@@ -56,12 +56,15 @@ class RouteType {
      */
     private $modified;
 
+
+
     /**
      * Get routeTypeId
      *
-     * @return integer
+     * @return integer 
      */
-    public function getRouteTypeId() {
+    public function getRouteTypeId()
+    {
         return $this->routeTypeId;
     }
 
@@ -69,9 +72,10 @@ class RouteType {
      * Set name
      *
      * @param string $name
-     * @return RouteType
+     * @return RouteTypes
      */
-    public function setName($name) {
+    public function setName($name)
+    {
         $this->name = $name;
 
         return $this;
@@ -80,9 +84,10 @@ class RouteType {
     /**
      * Get name
      *
-     * @return string
+     * @return string 
      */
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
@@ -90,9 +95,10 @@ class RouteType {
      * Set title
      *
      * @param string $title
-     * @return RouteType
+     * @return RouteTypes
      */
-    public function setTitle($title) {
+    public function setTitle($title)
+    {
         $this->title = $title;
 
         return $this;
@@ -101,9 +107,10 @@ class RouteType {
     /**
      * Get title
      *
-     * @return string
+     * @return string 
      */
-    public function getTitle() {
+    public function getTitle()
+    {
         return $this->title;
     }
 
@@ -111,9 +118,10 @@ class RouteType {
      * Set description
      *
      * @param string $description
-     * @return RouteType
+     * @return RouteTypes
      */
-    public function setDescription($description) {
+    public function setDescription($description)
+    {
         $this->description = $description;
 
         return $this;
@@ -122,9 +130,10 @@ class RouteType {
     /**
      * Get description
      *
-     * @return string
+     * @return string 
      */
-    public function getDescription() {
+    public function getDescription()
+    {
         return $this->description;
     }
 
@@ -132,9 +141,10 @@ class RouteType {
      * Set created
      *
      * @param \DateTime $created
-     * @return RouteType
+     * @return RouteTypes
      */
-    public function setCreated($created) {
+    public function setCreated($created)
+    {
         $this->created = $created;
 
         return $this;
@@ -143,9 +153,10 @@ class RouteType {
     /**
      * Get created
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
-    public function getCreated() {
+    public function getCreated()
+    {
         return $this->created;
     }
 
@@ -153,9 +164,10 @@ class RouteType {
      * Set modified
      *
      * @param \DateTime $modified
-     * @return RouteType
+     * @return RouteTypes
      */
-    public function setModified($modified) {
+    public function setModified($modified)
+    {
         $this->modified = $modified;
 
         return $this;
@@ -164,10 +176,10 @@ class RouteType {
     /**
      * Get modified
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
-    public function getModified() {
+    public function getModified()
+    {
         return $this->modified;
     }
-
 }

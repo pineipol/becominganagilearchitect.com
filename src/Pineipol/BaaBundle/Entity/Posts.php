@@ -5,13 +5,13 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Post
+ * Posts
  *
  * @ORM\Table(name="posts", uniqueConstraints={@ORM\UniqueConstraint(name="post_id", columns={"post_id"}), @ORM\UniqueConstraint(name="name", columns={"name"}), @ORM\UniqueConstraint(name="order", columns={"order"})})
  * @ORM\Entity
  */
-class Post {
-
+class Posts
+{
     /**
      * @var integer
      *
@@ -64,11 +64,36 @@ class Post {
     private $modified;
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Pineipol\BaaBundle\Entity\Categories", inversedBy="post")
+     * @ORM\JoinTable(name="posts_categories",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="post_id", referencedColumnName="post_id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="category_id", referencedColumnName="category_id")
+     *   }
+     * )
+     */
+    private $category;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->category = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+
+    /**
      * Get postId
      *
-     * @return integer
+     * @return integer 
      */
-    public function getPostId() {
+    public function getPostId()
+    {
         return $this->postId;
     }
 
@@ -76,9 +101,10 @@ class Post {
      * Set name
      *
      * @param string $name
-     * @return Post
+     * @return Posts
      */
-    public function setName($name) {
+    public function setName($name)
+    {
         $this->name = $name;
 
         return $this;
@@ -87,9 +113,10 @@ class Post {
     /**
      * Get name
      *
-     * @return string
+     * @return string 
      */
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
@@ -97,9 +124,10 @@ class Post {
      * Set show
      *
      * @param integer $show
-     * @return Post
+     * @return Posts
      */
-    public function setShow($show) {
+    public function setShow($show)
+    {
         $this->show = $show;
 
         return $this;
@@ -108,9 +136,10 @@ class Post {
     /**
      * Get show
      *
-     * @return integer
+     * @return integer 
      */
-    public function getShow() {
+    public function getShow()
+    {
         return $this->show;
     }
 
@@ -118,9 +147,10 @@ class Post {
      * Set home
      *
      * @param integer $home
-     * @return Post
+     * @return Posts
      */
-    public function setHome($home) {
+    public function setHome($home)
+    {
         $this->home = $home;
 
         return $this;
@@ -129,9 +159,10 @@ class Post {
     /**
      * Get home
      *
-     * @return integer
+     * @return integer 
      */
-    public function getHome() {
+    public function getHome()
+    {
         return $this->home;
     }
 
@@ -139,9 +170,10 @@ class Post {
      * Set order
      *
      * @param integer $order
-     * @return Post
+     * @return Posts
      */
-    public function setOrder($order) {
+    public function setOrder($order)
+    {
         $this->order = $order;
 
         return $this;
@@ -150,9 +182,10 @@ class Post {
     /**
      * Get order
      *
-     * @return integer
+     * @return integer 
      */
-    public function getOrder() {
+    public function getOrder()
+    {
         return $this->order;
     }
 
@@ -160,9 +193,10 @@ class Post {
      * Set created
      *
      * @param \DateTime $created
-     * @return Post
+     * @return Posts
      */
-    public function setCreated($created) {
+    public function setCreated($created)
+    {
         $this->created = $created;
 
         return $this;
@@ -171,9 +205,10 @@ class Post {
     /**
      * Get created
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
-    public function getCreated() {
+    public function getCreated()
+    {
         return $this->created;
     }
 
@@ -181,9 +216,10 @@ class Post {
      * Set modified
      *
      * @param \DateTime $modified
-     * @return Post
+     * @return Posts
      */
-    public function setModified($modified) {
+    public function setModified($modified)
+    {
         $this->modified = $modified;
 
         return $this;
@@ -192,10 +228,43 @@ class Post {
     /**
      * Get modified
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
-    public function getModified() {
+    public function getModified()
+    {
         return $this->modified;
     }
 
+    /**
+     * Add category
+     *
+     * @param \Pineipol\BaaBundle\Entity\Categories $category
+     * @return Posts
+     */
+    public function addCategory(\Pineipol\BaaBundle\Entity\Categories $category)
+    {
+        $this->category[] = $category;
+
+        return $this;
+    }
+
+    /**
+     * Remove category
+     *
+     * @param \Pineipol\BaaBundle\Entity\Categories $category
+     */
+    public function removeCategory(\Pineipol\BaaBundle\Entity\Categories $category)
+    {
+        $this->category->removeElement($category);
+    }
+
+    /**
+     * Get category
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
 }

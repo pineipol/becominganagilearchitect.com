@@ -5,81 +5,74 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Layouts
+ * CommentStatus
  *
- * @ORM\Table(name="layouts", uniqueConstraints={@ORM\UniqueConstraint(name="layout_id", columns={"layout_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})})
+ * @ORM\Table(name="comment_status", uniqueConstraints={@ORM\UniqueConstraint(name="comment_status_id", columns={"comment_status_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})})
  * @ORM\Entity
  */
-class Layouts
+class CommentStatus
 {
     /**
      * @var integer
      *
-     * @ORM\Column(name="layout_id", type="integer")
+     * @ORM\Column(name="comment_status_id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    private $layoutId;
+    private $commentStatusId;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255, nullable=true)
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="title", type="text", nullable=true)
+     * @ORM\Column(name="title", type="string", length=255, nullable=false)
      */
     private $title;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="text", nullable=true)
+     * @ORM\Column(name="description", type="text", length=65535, nullable=true)
      */
     private $description;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="file", type="text", nullable=true)
-     */
-    private $file;
-
-    /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created", type="datetime", nullable=true)
+     * @ORM\Column(name="created", type="datetime", nullable=false)
      */
     private $created;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="modified", type="datetime", nullable=true)
+     * @ORM\Column(name="modified", type="datetime", nullable=false)
      */
     private $modified;
 
 
 
     /**
-     * Get layoutId
+     * Get commentStatusId
      *
      * @return integer 
      */
-    public function getLayoutId()
+    public function getCommentStatusId()
     {
-        return $this->layoutId;
+        return $this->commentStatusId;
     }
 
     /**
      * Set name
      *
      * @param string $name
-     * @return Layouts
+     * @return CommentStatus
      */
     public function setName($name)
     {
@@ -102,7 +95,7 @@ class Layouts
      * Set title
      *
      * @param string $title
-     * @return Layouts
+     * @return CommentStatus
      */
     public function setTitle($title)
     {
@@ -125,7 +118,7 @@ class Layouts
      * Set description
      *
      * @param string $description
-     * @return Layouts
+     * @return CommentStatus
      */
     public function setDescription($description)
     {
@@ -145,33 +138,10 @@ class Layouts
     }
 
     /**
-     * Set file
-     *
-     * @param string $file
-     * @return Layouts
-     */
-    public function setFile($file)
-    {
-        $this->file = $file;
-
-        return $this;
-    }
-
-    /**
-     * Get file
-     *
-     * @return string 
-     */
-    public function getFile()
-    {
-        return $this->file;
-    }
-
-    /**
      * Set created
      *
      * @param \DateTime $created
-     * @return Layouts
+     * @return CommentStatus
      */
     public function setCreated($created)
     {
@@ -194,7 +164,7 @@ class Layouts
      * Set modified
      *
      * @param \DateTime $modified
-     * @return Layouts
+     * @return CommentStatus
      */
     public function setModified($modified)
     {

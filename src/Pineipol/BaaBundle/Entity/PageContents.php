@@ -5,13 +5,13 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * PageContent
+ * PageContents
  *
  * @ORM\Table(name="page_contents", uniqueConstraints={@ORM\UniqueConstraint(name="page_content_id", columns={"page_content_id"})}, indexes={@ORM\Index(name="page_id", columns={"page_id"}), @ORM\Index(name="locale_id", columns={"locale_id"}), @ORM\Index(name="route_id", columns={"route_id"})})
  * @ORM\Entity
  */
-class PageContent {
-
+class PageContents
+{
     /**
      * @var integer
      *
@@ -78,9 +78,9 @@ class PageContent {
     private $modified;
 
     /**
-     * @var \Pineipol\BaaBundle\Entity\Route
+     * @var \Pineipol\BaaBundle\Entity\Routes
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Route")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Routes")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="route_id", referencedColumnName="route_id")
      * })
@@ -88,9 +88,9 @@ class PageContent {
     private $route;
 
     /**
-     * @var \Pineipol\BaaBundle\Entity\Page
+     * @var \Pineipol\BaaBundle\Entity\Pages
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Page")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Pages")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="page_id", referencedColumnName="page_id")
      * })
@@ -98,21 +98,24 @@ class PageContent {
     private $page;
 
     /**
-     * @var \Pineipol\BaaBundle\Entity\Locale
+     * @var \Pineipol\BaaBundle\Entity\Locales
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Locale")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Locales")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="locale_id", referencedColumnName="locale_id")
      * })
      */
     private $locale;
 
+
+
     /**
      * Get pageContentId
      *
-     * @return integer
+     * @return integer 
      */
-    public function getPageContentId() {
+    public function getPageContentId()
+    {
         return $this->pageContentId;
     }
 
@@ -120,9 +123,10 @@ class PageContent {
      * Set title
      *
      * @param string $title
-     * @return PageContent
+     * @return PageContents
      */
-    public function setTitle($title) {
+    public function setTitle($title)
+    {
         $this->title = $title;
 
         return $this;
@@ -131,9 +135,10 @@ class PageContent {
     /**
      * Get title
      *
-     * @return string
+     * @return string 
      */
-    public function getTitle() {
+    public function getTitle()
+    {
         return $this->title;
     }
 
@@ -141,9 +146,10 @@ class PageContent {
      * Set description
      *
      * @param string $description
-     * @return PageContent
+     * @return PageContents
      */
-    public function setDescription($description) {
+    public function setDescription($description)
+    {
         $this->description = $description;
 
         return $this;
@@ -152,9 +158,10 @@ class PageContent {
     /**
      * Get description
      *
-     * @return string
+     * @return string 
      */
-    public function getDescription() {
+    public function getDescription()
+    {
         return $this->description;
     }
 
@@ -162,9 +169,10 @@ class PageContent {
      * Set content
      *
      * @param string $content
-     * @return PageContent
+     * @return PageContents
      */
-    public function setContent($content) {
+    public function setContent($content)
+    {
         $this->content = $content;
 
         return $this;
@@ -173,9 +181,10 @@ class PageContent {
     /**
      * Get content
      *
-     * @return string
+     * @return string 
      */
-    public function getContent() {
+    public function getContent()
+    {
         return $this->content;
     }
 
@@ -183,9 +192,10 @@ class PageContent {
      * Set metaTitle
      *
      * @param string $metaTitle
-     * @return PageContent
+     * @return PageContents
      */
-    public function setMetaTitle($metaTitle) {
+    public function setMetaTitle($metaTitle)
+    {
         $this->metaTitle = $metaTitle;
 
         return $this;
@@ -194,9 +204,10 @@ class PageContent {
     /**
      * Get metaTitle
      *
-     * @return string
+     * @return string 
      */
-    public function getMetaTitle() {
+    public function getMetaTitle()
+    {
         return $this->metaTitle;
     }
 
@@ -204,9 +215,10 @@ class PageContent {
      * Set metaDescription
      *
      * @param string $metaDescription
-     * @return PageContent
+     * @return PageContents
      */
-    public function setMetaDescription($metaDescription) {
+    public function setMetaDescription($metaDescription)
+    {
         $this->metaDescription = $metaDescription;
 
         return $this;
@@ -215,9 +227,10 @@ class PageContent {
     /**
      * Get metaDescription
      *
-     * @return string
+     * @return string 
      */
-    public function getMetaDescription() {
+    public function getMetaDescription()
+    {
         return $this->metaDescription;
     }
 
@@ -225,9 +238,10 @@ class PageContent {
      * Set metaKeywords
      *
      * @param string $metaKeywords
-     * @return PageContent
+     * @return PageContents
      */
-    public function setMetaKeywords($metaKeywords) {
+    public function setMetaKeywords($metaKeywords)
+    {
         $this->metaKeywords = $metaKeywords;
 
         return $this;
@@ -236,9 +250,10 @@ class PageContent {
     /**
      * Get metaKeywords
      *
-     * @return string
+     * @return string 
      */
-    public function getMetaKeywords() {
+    public function getMetaKeywords()
+    {
         return $this->metaKeywords;
     }
 
@@ -246,9 +261,10 @@ class PageContent {
      * Set created
      *
      * @param \DateTime $created
-     * @return PageContent
+     * @return PageContents
      */
-    public function setCreated($created) {
+    public function setCreated($created)
+    {
         $this->created = $created;
 
         return $this;
@@ -257,9 +273,10 @@ class PageContent {
     /**
      * Get created
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
-    public function getCreated() {
+    public function getCreated()
+    {
         return $this->created;
     }
 
@@ -267,9 +284,10 @@ class PageContent {
      * Set modified
      *
      * @param \DateTime $modified
-     * @return PageContent
+     * @return PageContents
      */
-    public function setModified($modified) {
+    public function setModified($modified)
+    {
         $this->modified = $modified;
 
         return $this;
@@ -278,19 +296,21 @@ class PageContent {
     /**
      * Get modified
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
-    public function getModified() {
+    public function getModified()
+    {
         return $this->modified;
     }
 
     /**
      * Set route
      *
-     * @param \Pineipol\BaaBundle\Entity\Route $route
-     * @return PageContent
+     * @param \Pineipol\BaaBundle\Entity\Routes $route
+     * @return PageContents
      */
-    public function setRoute(\Pineipol\BaaBundle\Entity\Route $route = null) {
+    public function setRoute(\Pineipol\BaaBundle\Entity\Routes $route = null)
+    {
         $this->route = $route;
 
         return $this;
@@ -299,19 +319,21 @@ class PageContent {
     /**
      * Get route
      *
-     * @return \Pineipol\BaaBundle\Entity\Route
+     * @return \Pineipol\BaaBundle\Entity\Routes 
      */
-    public function getRoute() {
+    public function getRoute()
+    {
         return $this->route;
     }
 
     /**
      * Set page
      *
-     * @param \Pineipol\BaaBundle\Entity\Page $page
-     * @return PageContent
+     * @param \Pineipol\BaaBundle\Entity\Pages $page
+     * @return PageContents
      */
-    public function setPage(\Pineipol\BaaBundle\Entity\Page $page = null) {
+    public function setPage(\Pineipol\BaaBundle\Entity\Pages $page = null)
+    {
         $this->page = $page;
 
         return $this;
@@ -320,19 +342,21 @@ class PageContent {
     /**
      * Get page
      *
-     * @return \Pineipol\BaaBundle\Entity\Page
+     * @return \Pineipol\BaaBundle\Entity\Pages 
      */
-    public function getPage() {
+    public function getPage()
+    {
         return $this->page;
     }
 
     /**
      * Set locale
      *
-     * @param \Pineipol\BaaBundle\Entity\Locale $locale
-     * @return PageContent
+     * @param \Pineipol\BaaBundle\Entity\Locales $locale
+     * @return PageContents
      */
-    public function setLocale(\Pineipol\BaaBundle\Entity\Locale $locale = null) {
+    public function setLocale(\Pineipol\BaaBundle\Entity\Locales $locale = null)
+    {
         $this->locale = $locale;
 
         return $this;
@@ -341,10 +365,10 @@ class PageContent {
     /**
      * Get locale
      *
-     * @return \Pineipol\BaaBundle\Entity\Locale
+     * @return \Pineipol\BaaBundle\Entity\Locales 
      */
-    public function getLocale() {
+    public function getLocale()
+    {
         return $this->locale;
     }
-
 }

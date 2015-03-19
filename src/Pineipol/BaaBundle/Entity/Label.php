@@ -5,13 +5,13 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Label
+ * Labels
  *
  * @ORM\Table(name="labels", uniqueConstraints={@ORM\UniqueConstraint(name="label_id", columns={"label_id"}), @ORM\UniqueConstraint(name="locale_key", columns={"locale_id", "label_key"})}, indexes={@ORM\Index(name="locale_id", columns={"locale_id"}), @ORM\Index(name="label_key", columns={"label_key"})})
  * @ORM\Entity
  */
-class Label {
-
+class Labels
+{
     /**
      * @var integer
      *
@@ -50,21 +50,24 @@ class Label {
     private $modified;
 
     /**
-     * @var \Pineipol\BaaBundle\Entity\Locale
+     * @var \Pineipol\BaaBundle\Entity\Locales
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Locale")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Locales")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="locale_id", referencedColumnName="locale_id")
      * })
      */
     private $locale;
 
+
+
     /**
      * Get labelId
      *
-     * @return integer
+     * @return integer 
      */
-    public function getLabelId() {
+    public function getLabelId()
+    {
         return $this->labelId;
     }
 
@@ -72,9 +75,10 @@ class Label {
      * Set labelKey
      *
      * @param string $labelKey
-     * @return Label
+     * @return Labels
      */
-    public function setLabelKey($labelKey) {
+    public function setLabelKey($labelKey)
+    {
         $this->labelKey = $labelKey;
 
         return $this;
@@ -83,9 +87,10 @@ class Label {
     /**
      * Get labelKey
      *
-     * @return string
+     * @return string 
      */
-    public function getLabelKey() {
+    public function getLabelKey()
+    {
         return $this->labelKey;
     }
 
@@ -93,9 +98,10 @@ class Label {
      * Set translation
      *
      * @param string $translation
-     * @return Label
+     * @return Labels
      */
-    public function setTranslation($translation) {
+    public function setTranslation($translation)
+    {
         $this->translation = $translation;
 
         return $this;
@@ -104,9 +110,10 @@ class Label {
     /**
      * Get translation
      *
-     * @return string
+     * @return string 
      */
-    public function getTranslation() {
+    public function getTranslation()
+    {
         return $this->translation;
     }
 
@@ -114,9 +121,10 @@ class Label {
      * Set created
      *
      * @param \DateTime $created
-     * @return Label
+     * @return Labels
      */
-    public function setCreated($created) {
+    public function setCreated($created)
+    {
         $this->created = $created;
 
         return $this;
@@ -125,9 +133,10 @@ class Label {
     /**
      * Get created
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
-    public function getCreated() {
+    public function getCreated()
+    {
         return $this->created;
     }
 
@@ -135,9 +144,10 @@ class Label {
      * Set modified
      *
      * @param \DateTime $modified
-     * @return Label
+     * @return Labels
      */
-    public function setModified($modified) {
+    public function setModified($modified)
+    {
         $this->modified = $modified;
 
         return $this;
@@ -146,19 +156,21 @@ class Label {
     /**
      * Get modified
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
-    public function getModified() {
+    public function getModified()
+    {
         return $this->modified;
     }
 
     /**
      * Set locale
      *
-     * @param \Pineipol\BaaBundle\Entity\Locale $locale
-     * @return Label
+     * @param \Pineipol\BaaBundle\Entity\Locales $locale
+     * @return Labels
      */
-    public function setLocale(\Pineipol\BaaBundle\Entity\Locale $locale = null) {
+    public function setLocale(\Pineipol\BaaBundle\Entity\Locales $locale = null)
+    {
         $this->locale = $locale;
 
         return $this;
@@ -167,10 +179,10 @@ class Label {
     /**
      * Get locale
      *
-     * @return \Pineipol\BaaBundle\Entity\Locale
+     * @return \Pineipol\BaaBundle\Entity\Locales 
      */
-    public function getLocale() {
+    public function getLocale()
+    {
         return $this->locale;
     }
-
 }

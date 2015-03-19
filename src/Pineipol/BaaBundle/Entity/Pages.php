@@ -5,13 +5,13 @@ namespace Pineipol\BaaBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Page
+ * Pages
  *
  * @ORM\Table(name="pages", uniqueConstraints={@ORM\UniqueConstraint(name="page_id", columns={"page_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})}, indexes={@ORM\Index(name="order", columns={"order"})})
  * @ORM\Entity
  */
-class Page {
-
+class Pages
+{
     /**
      * @var integer
      *
@@ -63,12 +63,15 @@ class Page {
      */
     private $modified;
 
+
+
     /**
      * Get pageId
      *
-     * @return integer
+     * @return integer 
      */
-    public function getPageId() {
+    public function getPageId()
+    {
         return $this->pageId;
     }
 
@@ -76,9 +79,10 @@ class Page {
      * Set order
      *
      * @param integer $order
-     * @return Page
+     * @return Pages
      */
-    public function setOrder($order) {
+    public function setOrder($order)
+    {
         $this->order = $order;
 
         return $this;
@@ -87,9 +91,10 @@ class Page {
     /**
      * Get order
      *
-     * @return integer
+     * @return integer 
      */
-    public function getOrder() {
+    public function getOrder()
+    {
         return $this->order;
     }
 
@@ -97,9 +102,10 @@ class Page {
      * Set name
      *
      * @param string $name
-     * @return Page
+     * @return Pages
      */
-    public function setName($name) {
+    public function setName($name)
+    {
         $this->name = $name;
 
         return $this;
@@ -108,9 +114,10 @@ class Page {
     /**
      * Get name
      *
-     * @return string
+     * @return string 
      */
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
@@ -118,9 +125,10 @@ class Page {
      * Set jsCallback
      *
      * @param string $jsCallback
-     * @return Page
+     * @return Pages
      */
-    public function setJsCallback($jsCallback) {
+    public function setJsCallback($jsCallback)
+    {
         $this->jsCallback = $jsCallback;
 
         return $this;
@@ -129,9 +137,10 @@ class Page {
     /**
      * Get jsCallback
      *
-     * @return string
+     * @return string 
      */
-    public function getJsCallback() {
+    public function getJsCallback()
+    {
         return $this->jsCallback;
     }
 
@@ -139,9 +148,10 @@ class Page {
      * Set isPrivate
      *
      * @param integer $isPrivate
-     * @return Page
+     * @return Pages
      */
-    public function setIsPrivate($isPrivate) {
+    public function setIsPrivate($isPrivate)
+    {
         $this->isPrivate = $isPrivate;
 
         return $this;
@@ -150,9 +160,10 @@ class Page {
     /**
      * Get isPrivate
      *
-     * @return integer
+     * @return integer 
      */
-    public function getIsPrivate() {
+    public function getIsPrivate()
+    {
         return $this->isPrivate;
     }
 
@@ -160,9 +171,10 @@ class Page {
      * Set created
      *
      * @param \DateTime $created
-     * @return Page
+     * @return Pages
      */
-    public function setCreated($created) {
+    public function setCreated($created)
+    {
         $this->created = $created;
 
         return $this;
@@ -171,9 +183,10 @@ class Page {
     /**
      * Get created
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
-    public function getCreated() {
+    public function getCreated()
+    {
         return $this->created;
     }
 
@@ -181,9 +194,10 @@ class Page {
      * Set modified
      *
      * @param \DateTime $modified
-     * @return Page
+     * @return Pages
      */
-    public function setModified($modified) {
+    public function setModified($modified)
+    {
         $this->modified = $modified;
 
         return $this;
@@ -192,10 +206,10 @@ class Page {
     /**
      * Get modified
      *
-     * @return \DateTime
+     * @return \DateTime 
      */
-    public function getModified() {
+    public function getModified()
+    {
         return $this->modified;
     }
-
 }
