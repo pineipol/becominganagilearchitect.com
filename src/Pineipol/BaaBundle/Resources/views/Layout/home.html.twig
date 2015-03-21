@@ -1,0 +1,39 @@
+{% extends 'PineipolBaaBundle:Layout:base-layout.html.twig' %}
+
+{% block outerbody %}
+    <div id="body-container" class="body-container">
+
+        <!-- mobile menu container -->
+        <div class="mobile-menu mobile-menu-animation" id="mobile-menu">
+            {# Mobile menu #}
+            {{ render(controller('PineipolBaaBundle:Layout:mobileMenu')) }}
+        </div>
+
+        <!-- content push wrapper -->
+        <div class="body-pusher">
+            <div class="body-content"><!-- this is the wrapper for the content -->
+                <div class="body-content-inner"><!-- extra div for emulating position:fixed of the menu -->
+
+                    {# Header #}
+                    {{ render(controller('PineipolBaaBundle:Layout:header')) }}
+
+                    {# Middle content #}
+                    <div id="middle_outer_container">
+                        <div id="inner_container">
+                            <div id="left-column_container">
+                                {% block body %}{% endblock %}
+                            </div
+                            ><div id="right-column_container">
+                                {{ render(controller('PineipolBaaBundle:Default:rightColumn')) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    {# Footer #}
+                    {{ include('PineipolBaaBundle:Partials:footer.html.twig') }}
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

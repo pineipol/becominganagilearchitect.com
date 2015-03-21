@@ -1,4 +1,19 @@
 services:
-#    pineipol_baa.example:
-#        class: Pineipol\BaaBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
+
+    translation.loader.db:
+        class: Pineipol\BaaBundle\Services\DbTranslationLoader
+        arguments: [@doctrine.orm.entity_manager]
+        tags:
+            - { name: translation.loader, alias: db}
+
+    pineipol_baa.routing_loader:
+        class: Pineipol\BaaBundle\Services\TranslatedRoutesLoader
+        arguments: [@session, @kernel]
+        tags:
+            - { name: routing.loader }
+
+    pineipol_baa.locale_listener:
+        class: Pineipol\BaaBundle\EventListener\LocaleListener
+        arguments: ["%kernel.default_locale%"]
+        tags:
+            - { name: kernel.event_subscriber }

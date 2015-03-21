@@ -8,12 +8,12 @@ class LayoutController extends Controller {
 
     public function headerAction() {
 
-        return $this->render('PineipolBaaBundle:Layout:header.html.twig');
+        return $this->render('PineipolBaaBundle:Partials:header.html.twig');
     }
 
     public function mobileMenuAction() {
 
-        return $this->render('PineipolBaaBundle:Layout:mobile-menu.html.twig');
+        return $this->render('PineipolBaaBundle:Partials:mobile-menu.html.twig');
     }
 
 }
