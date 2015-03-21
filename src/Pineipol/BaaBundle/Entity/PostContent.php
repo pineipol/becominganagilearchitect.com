@@ -91,7 +91,7 @@ class PostContent extends BaseEntity {
     /**
      * @var \Pineipol\BaaBundle\Entity\Post
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Post")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Post", inversedBy="contents")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="post_id", referencedColumnName="post_id")
      * })

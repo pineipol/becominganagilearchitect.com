@@ -91,7 +91,7 @@ class PageContent extends BaseEntity {
     /**
      * @var \Pineipol\BaaBundle\Entity\Page
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Page")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Page", inversedBy="contents")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="page_id", referencedColumnName="page_id")
      * })

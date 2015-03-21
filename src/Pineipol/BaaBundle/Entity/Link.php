@@ -74,7 +74,7 @@ class Link extends BaseEntity {
     /**
      * @var \Pineipol\BaaBundle\Entity\Post
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Post")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Post", inversedBy="links")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="post_id", referencedColumnName="post_id")
      * })

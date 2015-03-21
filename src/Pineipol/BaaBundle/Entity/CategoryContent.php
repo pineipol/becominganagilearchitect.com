@@ -53,7 +53,7 @@ class CategoryContent extends BaseEntity {
     /**
      * @var \Pineipol\BaaBundle\Entity\Category
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Category")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Category", inversedBy="contents")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="category_id", referencedColumnName="category_id")
      * })

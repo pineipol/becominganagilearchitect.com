@@ -53,7 +53,7 @@ class Comment extends BaseEntity {
     /**
      * @var \Pineipol\BaaBundle\Entity\User
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\User")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\User", inversedBy="comments")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="user_id", referencedColumnName="user_id")
      * })
@@ -73,7 +73,7 @@ class Comment extends BaseEntity {
     /**
      * @var \Pineipol\BaaBundle\Entity\Post
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Post")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Post", inversedBy="comments")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="post_id", referencedColumnName="post_id")
      * })
