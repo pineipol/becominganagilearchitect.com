@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Label
  *
  * @ORM\Table(name="labels", uniqueConstraints={@ORM\UniqueConstraint(name="label_id", columns={"label_id"}), @ORM\UniqueConstraint(name="locale_key", columns={"locale_id", "label_key"})}, indexes={@ORM\Index(name="locale_id", columns={"locale_id"}), @ORM\Index(name="label_key", columns={"label_key"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Pineipol\BaaBundle\Repository\LabelRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class Label extends BaseEntity {
@@ -46,7 +46,7 @@ class Label extends BaseEntity {
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="modified", type="datetime", nullable=true)
+     * @ORM\Column(name="modified", type="datetime", nullable=false, columnDefinition="TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
      */
     private $modified;
 

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Categories
  *
  * @ORM\Table(name="categories", uniqueConstraints={@ORM\UniqueConstraint(name="category_id", columns={"category_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})}, indexes={@ORM\Index(name="parent_category_id", columns={"parent_category_id"}), @ORM\Index(name="category_type_id", columns={"category_type_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Pineipol\BaaBundle\Repository\CategoryRepository")
  * @ORM\HasLifecycleCallbacks
  *
  * Entity(repositoryClass="Gamelearn\TimeSupervisorBundle\Repository\TaskRepository")
@@ -55,7 +55,7 @@ class Category extends BaseEntity {
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="modified", type="datetime", nullable=false)
+     * @ORM\Column(name="modified", type="datetime", nullable=false, columnDefinition="TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
      */
     private $modified;
 

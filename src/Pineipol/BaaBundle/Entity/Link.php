@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Link
  *
  * @ORM\Table(name="links", uniqueConstraints={@ORM\UniqueConstraint(name="link_id", columns={"link_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})}, indexes={@ORM\Index(name="post_id", columns={"post_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Pineipol\BaaBundle\Repository\LinkRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class Link extends BaseEntity {
@@ -67,7 +67,7 @@ class Link extends BaseEntity {
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="modified", type="datetime", nullable=false)
+     * @ORM\Column(name="modified", type="datetime", nullable=false, columnDefinition="TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
      */
     private $modified;
 

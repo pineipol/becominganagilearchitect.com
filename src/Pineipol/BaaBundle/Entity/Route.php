@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Route
  *
  * @ORM\Table(name="routes", uniqueConstraints={@ORM\UniqueConstraint(name="route_id", columns={"route_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})}, indexes={@ORM\Index(name="route_type_id", columns={"route_type_id"}), @ORM\Index(name="IDX_32D5C2B38C22AA1A", columns={"layout_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Pineipol\BaaBundle\Repository\RouteRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class Route extends BaseEntity {
@@ -60,7 +60,7 @@ class Route extends BaseEntity {
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="modified", type="datetime", nullable=true)
+     * @ORM\Column(name="modified", type="datetime", nullable=false, columnDefinition="TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
      */
     private $modified;
 

@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Page
  *
  * @ORM\Table(name="pages", uniqueConstraints={@ORM\UniqueConstraint(name="page_id", columns={"page_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})}, indexes={@ORM\Index(name="order", columns={"order"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Pineipol\BaaBundle\Repository\PageRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class Page extends BaseEntity {
@@ -60,7 +60,7 @@ class Page extends BaseEntity {
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="modified", type="datetime", nullable=true)
+     * @ORM\Column(name="modified", type="datetime", nullable=false, columnDefinition="TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
      */
     private $modified;
 

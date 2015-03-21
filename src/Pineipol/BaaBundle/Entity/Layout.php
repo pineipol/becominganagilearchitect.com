@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Layout
  *
  * @ORM\Table(name="layouts", uniqueConstraints={@ORM\UniqueConstraint(name="layout_id", columns={"layout_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Pineipol\BaaBundle\Repository\LayoutRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class Layout extends BaseEntity {
@@ -60,7 +60,7 @@ class Layout extends BaseEntity {
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="modified", type="datetime", nullable=true)
+     * @ORM\Column(name="modified", type="datetime", nullable=false, columnDefinition="TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
      */
     private $modified;
 

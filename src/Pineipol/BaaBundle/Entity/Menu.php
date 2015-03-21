@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Menu
  *
  * @ORM\Table(name="menus", uniqueConstraints={@ORM\UniqueConstraint(name="menu_id", columns={"menu_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})}, indexes={@ORM\Index(name="IDX_727508CF34ECB4E6", columns={"route_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Pineipol\BaaBundle\Repository\MenuRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class Menu extends BaseEntity {
@@ -67,7 +67,7 @@ class Menu extends BaseEntity {
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="modified", type="datetime", nullable=true)
+     * @ORM\Column(name="modified", type="datetime", nullable=false, columnDefinition="TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
      */
     private $modified;
 

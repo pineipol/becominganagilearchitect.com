@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Locale
  *
  * @ORM\Table(name="locales", uniqueConstraints={@ORM\UniqueConstraint(name="locale_id", columns={"locale_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Pineipol\BaaBundle\Repository\LocaleRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class Locale extends BaseEntity {
@@ -53,7 +53,7 @@ class Locale extends BaseEntity {
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="modified", type="datetime", nullable=true)
+     * @ORM\Column(name="modified", type="datetime", nullable=false, columnDefinition="TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
      */
     private $modified;
 

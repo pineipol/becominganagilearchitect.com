@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * PageContent
  *
  * @ORM\Table(name="page_contents", uniqueConstraints={@ORM\UniqueConstraint(name="page_content_id", columns={"page_content_id"})}, indexes={@ORM\Index(name="page_id", columns={"page_id"}), @ORM\Index(name="locale_id", columns={"locale_id"}), @ORM\Index(name="route_id", columns={"route_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Pineipol\BaaBundle\Repository\PageContentRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class PageContent extends BaseEntity {
@@ -74,7 +74,7 @@ class PageContent extends BaseEntity {
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="modified", type="datetime", nullable=true)
+     * @ORM\Column(name="modified", type="datetime", nullable=false, columnDefinition="TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
      */
     private $modified;
 

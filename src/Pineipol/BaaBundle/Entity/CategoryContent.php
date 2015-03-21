@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * CategoryContent
  *
  * @ORM\Table(name="category_contents", uniqueConstraints={@ORM\UniqueConstraint(name="category_locale", columns={"category_id", "locale_id"}), @ORM\UniqueConstraint(name="category_content_id", columns={"category_content_id"})}, indexes={@ORM\Index(name="category_id", columns={"category_id"}), @ORM\Index(name="locale_id", columns={"locale_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Pineipol\BaaBundle\Repository\CategoryContentRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class CategoryContent extends BaseEntity {
@@ -46,7 +46,7 @@ class CategoryContent extends BaseEntity {
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="modified", type="datetime", nullable=false)
+     * @ORM\Column(name="modified", type="datetime", nullable=false, columnDefinition="TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
      */
     private $modified;
 

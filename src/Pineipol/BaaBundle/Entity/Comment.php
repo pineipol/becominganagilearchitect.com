@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Comment
  *
  * @ORM\Table(name="comments", uniqueConstraints={@ORM\UniqueConstraint(name="comment_id", columns={"comment_id"})}, indexes={@ORM\Index(name="user_id", columns={"user_id"}), @ORM\Index(name="comment_status_id", columns={"comment_status_id"}), @ORM\Index(name="post_id", columns={"post_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Pineipol\BaaBundle\Repository\CommentRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class Comment extends BaseEntity {
@@ -46,7 +46,7 @@ class Comment extends BaseEntity {
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="modified", type="datetime", nullable=false)
+     * @ORM\Column(name="modified", type="datetime", nullable=false, columnDefinition="TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
      */
     private $modified;
 

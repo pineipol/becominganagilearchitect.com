@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Post
  *
  * @ORM\Table(name="posts", uniqueConstraints={@ORM\UniqueConstraint(name="post_id", columns={"post_id"}), @ORM\UniqueConstraint(name="name", columns={"name"}), @ORM\UniqueConstraint(name="order", columns={"order"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Pineipol\BaaBundle\Repository\PostRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class Post extends BaseEntity {
@@ -60,7 +60,7 @@ class Post extends BaseEntity {
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="modified", type="datetime", nullable=true)
+     * @ORM\Column(name="modified", type="datetime", nullable=false, columnDefinition="TIMESTAMP ON UPDATE CURRENT_TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
      */
     private $modified;
 
