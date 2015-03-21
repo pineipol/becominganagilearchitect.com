@@ -41,20 +41,24 @@ class TranslatedRoutesLoader extends Loader {
      *
      * @param \Symfony\Component\Routing\RouteCollection $routes
      */
-    private static function addSpecialRoutes(RouteCollection $routes) {
+    private static function addCategoryRoutes(RouteCollection $routes) {
 
-        $entityCollection = self::getDoctrineEm()->getRepository('PineipolBaaBundle:Route')->findAllSpecialRoutes();
-        foreach ($entityCollection as $entity) {
+        $entityCollection = self::getDoctrineEm()->getRepository('PineipolBaaBundle:Category')->findAllCategoryRoutes();
+        foreach ($entityCollection as $content) {
             // prepare a new route
-            $pattern = $entity->getPath();
+            $pattern = $content->getRoute()->getPath();
             $defaults = array(
-                '_controller' => $entity->getAction(),
+                '_controller' => $content->getRoute()->getAction(),
+                'id' => $content->getCategory()->getCategoryId(),
+                '_locale' => $content->getLocale()->getCode(),
             );
-            $requirements = array();
+            $requirements = array(
+                'id' => '\d+',
+            );
             $route = new Route($pattern, $defaults, $requirements);
 
             // add the new route to the route collection:
-            $routes->add($entity->getName(), $route);
+            $routes->add($content->getRoute()->getName(), $route);
         }
     }
 
@@ -116,9 +120,10 @@ class TranslatedRoutesLoader extends Loader {
      * @param \Symfony\Component\Routing\RouteCollection $routes
      */
     private static function addRoutes(RouteCollection $routes) {
-        self::addSpecialRoutes($routes);
-        self::addPageRoutes($routes);
-        self::addPostRoutes($routes);
+
+        self::addCategoryRoutes($routes);
+//        self::addPageRoutes($routes);
+//        self::addPostRoutes($routes);
     }
 
     /**

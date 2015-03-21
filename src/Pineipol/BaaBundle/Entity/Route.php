@@ -85,6 +85,13 @@ class Route extends BaseEntity {
     private $routeType;
 
     /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\OneToMany(targetEntity="\Pineipol\BaaBundle\Entity\Menu", mappedBy="route")
+     */
+    private $menu;
+
+    /**
      * Get routeId
      *
      * @return integer
@@ -259,6 +266,27 @@ class Route extends BaseEntity {
      */
     public function getRouteType() {
         return $this->routeType;
+    }
+
+    /**
+     * Set menu
+     *
+     * @param \Pineipol\BaaBundle\Entity\Layout $menu
+     * @return Route
+     */
+    public function setMenu(\Pineipol\BaaBundle\Entity\Menu $menu = null) {
+        $this->menu = $menu;
+
+        return $this;
+    }
+
+    /**
+     * Get menu
+     *
+     * @return \Pineipol\BaaBundle\Entity\Menu
+     */
+    public function getMenu() {
+        return $this->menu;
     }
 
 }

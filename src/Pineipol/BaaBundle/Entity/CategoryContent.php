@@ -51,6 +51,16 @@ class CategoryContent extends BaseEntity {
     private $modified;
 
     /**
+     * @var \Pineipol\BaaBundle\Entity\Route
+     *
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Route")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="route_id", referencedColumnName="route_id")
+     * })
+     */
+    private $route;
+
+    /**
      * @var \Pineipol\BaaBundle\Entity\Category
      *
      * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Category", inversedBy="contents")
@@ -161,6 +171,27 @@ class CategoryContent extends BaseEntity {
      */
     public function getModified() {
         return $this->modified;
+    }
+
+    /**
+     * Set route
+     *
+     * @param \Pineipol\BaaBundle\Entity\Route $route
+     * @return PageContent
+     */
+    public function setRoute(\Pineipol\BaaBundle\Entity\Route $route = null) {
+        $this->route = $route;
+
+        return $this;
+    }
+
+    /**
+     * Get route
+     *
+     * @return \Pineipol\BaaBundle\Entity\Route
+     */
+    public function getRoute() {
+        return $this->route;
     }
 
     /**

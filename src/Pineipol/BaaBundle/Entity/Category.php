@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Categories
  *
- * @ORM\Table(name="categories", uniqueConstraints={@ORM\UniqueConstraint(name="category_id", columns={"category_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})}, indexes={@ORM\Index(name="parent_category_id", columns={"parent_category_id"}), @ORM\Index(name="category_type_id", columns={"category_type_id"})})
+ * @ORM\Table(name="categories", uniqueConstraints={@ORM\UniqueConstraint(name="category_id", columns={"category_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})}, indexes={@ORM\Index(name="parent_category_id", columns={"parent_category_id"})})
  * @ORM\Entity(repositoryClass="Pineipol\BaaBundle\Repository\CategoryRepository")
  * @ORM\HasLifecycleCallbacks
  *
@@ -30,13 +30,6 @@ class Category extends BaseEntity {
      * @ORM\Column(name="parent_category_id", type="integer", nullable=true)
      */
     private $parentCategoryId;
-
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="category_type_id", type="integer", nullable=false)
-     */
-    private $categoryTypeId;
 
     /**
      * @var string
@@ -109,27 +102,6 @@ class Category extends BaseEntity {
      */
     public function getParentCategoryId() {
         return $this->parentCategoryId;
-    }
-
-    /**
-     * Set categoryTypeId
-     *
-     * @param integer $categoryTypeId
-     * @return Category
-     */
-    public function setCategoryTypeId($categoryTypeId) {
-        $this->categoryTypeId = $categoryTypeId;
-
-        return $this;
-    }
-
-    /**
-     * Get categoryTypeId
-     *
-     * @return integer
-     */
-    public function getCategoryTypeId() {
-        return $this->categoryTypeId;
     }
 
     /**

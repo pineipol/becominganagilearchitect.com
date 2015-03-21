@@ -15,7 +15,7 @@ class PageRepository extends CustomBaseRepository {
         $query = $this->getEntityManager()
                 ->createQuery('
                             SELECT pc, p, r, l
-                            FROM GamelearnWebBundle:PageContent pc
+                            FROM PineipolBaaBundle:PageContent pc
                             JOIN pc.page p
                             JOIN pc.locale l
                             JOIN pc.route r
@@ -42,7 +42,7 @@ class PageRepository extends CustomBaseRepository {
         $query = $this->getEntityManager()
                 ->createQuery('
                             SELECT p, pc, l, r, ly
-                            FROM GamelearnWebBundle:PageContent pc
+                            FROM PineipolBaaBundle:PageContent pc
                                 JOIN pc.page p
                                 JOIN pc.locale l
                                 JOIN pc.route r

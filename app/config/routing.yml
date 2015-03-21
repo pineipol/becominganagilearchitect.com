@@ -1,3 +1,6 @@
-pineipol_baa:
+PineipolBaa_Routes:
     resource: "@PineipolBaaBundle/Resources/config/routing.yml"
-    prefix:   /
+
+PineipolBaaBundle_Trans:
+    resource: .
+    type: trans

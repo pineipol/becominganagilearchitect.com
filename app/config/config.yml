@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: "@PineipolBaaBundle/Resources/config/settings.yml" }
 
 framework:
     #esi:             ~

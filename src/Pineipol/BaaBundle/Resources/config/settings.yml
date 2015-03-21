@@ -1,0 +1,5 @@
+parameters:
+    route-types:
+        category:   category-route
+        page:       page-route
+        post:       post-route
