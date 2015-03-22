@@ -46,6 +46,13 @@ class PostContent extends BaseEntity {
     /**
      * @var string
      *
+     * @ORM\Column(name="image", type="text", nullable=true)
+     */
+    private $image;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="meta_title", type="text", nullable=true)
      */
     private $metaTitle;
@@ -178,6 +185,27 @@ class PostContent extends BaseEntity {
      */
     public function getContent() {
         return $this->content;
+    }
+
+    /**
+     * Set image
+     *
+     * @param string $image
+     * @return PostContent
+     */
+    public function setImage($image) {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return string
+     */
+    public function getImage() {
+        return $this->image;
     }
 
     /**

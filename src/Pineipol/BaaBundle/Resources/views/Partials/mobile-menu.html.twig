@@ -1,34 +1,16 @@
 <div>
     <div>
-        {#<a class="icon icon-data" href="{{ path('pineipol_baa_homepage') }}">
-            <div id="menu_item">
-                <div id="menu_item_label">sistemas</div>
-            </div>
-        </a>
         <a class="icon icon-data" href="{{ path('pineipol_baa_homepage') }}">
             <div id="menu_item">
-                <div id="menu_item_label">maquetación</div>
+                <div id="menu_item_label">home</div>
             </div>
         </a>
-        <a class="icon icon-data" href="{{ path('pineipol_baa_homepage') }}">
-            <div id="menu_item">
-                <div id="menu_item_label">agile coaching</div>
-            </div>
-        </a>
-        <a class="icon icon-data" href="{{ path('pineipol_baa_homepage') }}">
-            <div id="menu_item">
-                <div id="menu_item_label">scrum</div>
-            </div>
-        </a>
-        <a class="icon icon-data" href="{{ path('pineipol_baa_homepage') }}">
-            <div id="menu_item">
-                <div id="menu_item_label">continuous delivery</div>
-            </div>
-        </a>#}
-        <a class="icon icon-data" href="{{ path('pineipol_baa_post_contact') }}">
-            <div id="menu_item">
-                <div id="menu_item_label">contact</div>
-            </div>
-        </a>
+        {% for menu in menus %}
+            <a class="icon icon-data" href="{{ path(menu.route) }}">
+                <div id="menu_item">
+                    <div id="menu_item_label">{{ menu.title }}</div>
+                </div>
+            </a>
+        {% endfor %}
     </div>
 </div>

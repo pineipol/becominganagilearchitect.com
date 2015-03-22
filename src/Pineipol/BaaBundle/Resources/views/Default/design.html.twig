@@ -1,0 +1,22 @@
+{% extends 'PineipolBaaBundle:Layout:home.html.twig' %}
+
+{% block body %}
+    <div id="post-container">
+        <div class="title"></div>
+        <div class="published-on"></div>
+        <div class="image-container">
+            <img class="post-image" src="{{ asset('bundles/pineipolbaa/') }}">
+            <div class="tags-container">
+                <a href="">
+                    <div class="one-tag-container">
+                        <div class="green-tag">design</div>
+                        <div class="tag-triangle"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="content">
+            Contenido del post
+        </div>
+    </div>
+{% endblock %}

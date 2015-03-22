@@ -76,6 +76,7 @@ class Post extends BaseEntity {
      *     @ORM\JoinColumn(name="category_id", referencedColumnName="category_id")
      *   }
      * )
+     * @ORM\OrderBy({"name" = "ASC"})
      */
     private $categories;
 

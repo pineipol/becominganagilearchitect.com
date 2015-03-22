@@ -84,21 +84,23 @@
                         margin-bottom: 5px;
                         margin-left: 10px;
                         margin-right: 10px;
+                        text-align: center;
+                        &:hover .header_menu_item_label {
+                            color: @white;
+                        }
+                        &:hover .header_menu_item_strip {
+                            background-image: url('@{image-path}menu/over_line.png');
+                        }
                         .header_menu_item_label {
                             color: @light-gray;
                             font: 11px Verdana;
+                            margin: auto;
                             text-transform: uppercase;
-                            &:hover {
-                                color: @white;
-                            }
-                            &:hover div {
-                                background-image: url('@{image-path}menu/over_line.png');
-                            }
-                            .header_menu_item_strip {
-                                height: 9px;
-                                margin: auto;
-                                width: 37px;
-                            }
+                        }
+                        .header_menu_item_strip {
+                            height: 9px;
+                            margin: auto;
+                            width: 37px;
                         }
                     }
                 }

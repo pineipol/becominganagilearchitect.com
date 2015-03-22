@@ -1,5 +1,6 @@
 <div id="links-title-box">Enlaces relevantes</div>
 <div id="links-container">
-    <a class="link" href="https://www.scrum.org/">Scrum.org</a>
-    <a class="link" href="http://www.symfony.com/">Symfony.com</a>
+    {% for link in links %}
+        <a class="link" href="{{ link.targetUrl }}" title="{{ link.description }}">{{ link.title }}</a>
+    {% endfor %}
 </div>

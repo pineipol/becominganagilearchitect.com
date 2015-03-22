@@ -1,0 +1,42 @@
+{% extends 'PineipolBaaBundle:Layout:home.html.twig' %}
+
+{% block body %}
+    <div id="home-container">
+        <div class="title">Blog Bootstrap</div>
+        <div class="published-on">15 de Marzo de 2015</div>
+        <div class="image-container">
+            <img class="post-image" src="{{ asset('bundles/pineipolbaa/uploads/posts/150222_test-post/home.jpg') }}">
+            <div class="tags-container">
+                <div class="one-tag-container">
+                    <div class="yellow-tag">becoming</div>
+                    <div class="tag-triangle"></div>
+                </div>
+                <div class="one-tag-container">
+                    <div class="pink-tag">agile</div>
+                    <div class="tag-triangle"></div>
+                </div>
+                <div class="one-tag-container">
+                    <div class="green-tag">architect</div>
+                    <div class="tag-triangle"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <p>Soy Alejandro Barba, Ingeniero en Informática por la Universidad de León, y desde hace diez años he ejercido mi profesión como programador, analista, consultor, arquitecto, gestor o lo que hiciera falta según las necesidades precisas del proyecto en cada fase de su ciclo de vida o de sus necesidades de negocio.</p>
+            <p>Hace ya bastantes meses se me ocurrió la idea de organizar y estructurar mis ideas y plasmar el resultado en un blog. El resultado debía ser un blog que fuera capaz de arrojar cierta luz en las dudas más sencillas y en las grandes preguntas, es decir, que contuviera tanto recetas DevOps para configurar paso a paso un sencillo servidor Web como ideas y buenas prácticas que pudieran ayudar a diseñar un proyecto complejo y escalable.</p>
+            <p>Además de contar con recetas para hacer tareas específicas a modo de tutorial, plantear problemas y ofrecer soluciones a grandes cuestiones de diseño y arquitectura para sistemas complejos, el blog debería hacer todo esto desde un punto de vista ágil, es decir, enseñarnos desde el minuto cero cómo ser ágiles y tener en cuenta cómo sacar el mayor provecho al agilismo. Aunque veremos las principales diferencias entre diversas metodologías ágiles nos centraremos en aquella que, por mi experiencia profesional y preparacion, conozco en mayor grado, Scrum.</p>
+            <p>El objetivo del blog no es proporcionar todas las respuestas sobre lo que debe ser, qué debe saber o cómo debe actuar un arquitecto Agile, sino sembrar una buena cantidad de preguntas y problemas y ofrecer posibles soluciones a los mismos. Será vuestra responsabilidad aplicar o adaptar dichas soluciones a vuestros problemas o lógica de negocio y sus circunstancias concretas. También espero que sirva como aliciente o punto de partida para abrir nuevas vías de investigación o experimentación que den lugar a nuevos, emocionantes y excitantes niveles de excelencia, productividad y retorno de inversión.</p>
+            <p>El hilo conductor del blog lo conformarán varios proyectos, en principio tengo dos en la cabeza, con los que pretendo plantear diversos problemas o necesidades, analizar las posibles soluciones e ir llevando a cabo, a lo largo de una serie más o menos larga de posts, el desarrollo de cada uno de ellos mediante la implementación de tecnologías que den solución a dichos problemas, tratando siempre de buscar algún tipo de valor añadido.<br>
+                El primero de los proyectos sería el propio blog, el segundo, una herramienta de gestión de equipos de desarrollo ágil Scrum.</p>
+            <p>Durante el desarrollo de los proyectos detallaré mi experiencia y punto de vista sobre cada una de las etapas del ciclo de vida de los mismos y explicaré cómo convertir esta frase tan de “proyecto desarrollado en cascada” en algo más Agile.</p>
+            <p>Hablaremos de cómo formar un equipo, cómo elegir los roles necesarios dentro del mismo y cómo seleccionar al candidato más adecuado para cada uno de los puestos. Compartiré con vosotros mis preferencias sobre dónde buscar y cómo conseguir que, además de poder elegir a la persona que quieras, que dicha persona quiera también formar parte de nuestro proyecto.</p>
+            <p>Compartiré con vosotros las mejores técnicas de desarrollo que he ido aprendiendo, o madurando por mi cuenta, a lo largo de mi trayectoria profesional o que me hayan resultado útiles en determinadas circunstancias. Explicaré mi visión sobre cómo organizar el código y escogeremos las herramientas más adecuadas para que nuestro equipo lleve a cabo su trabajo de forma óptima.</p>
+            <p>Os hablaré, con todo lujo de detalle, de las principales técnicas de testing, desde simples pruebas unitarias al Diseño Orientado a Pruebas de Aceptación (Acceptance Test Driven Development) o al Diseño Orientado a Comportamiento (Behaviour Driven Development).</p>
+            <p>Aprenderemos a configurar un servidor de Integración Continua (Continuos Integration) y cómo sacarle el mayor partido mediante el uso de los plugins adecuados y la instalación de un servidor de integración con el que beneficiarse de la Entrega Continua (Continuous Delivering). Además entenderemos la importancia clave que un departamento de control de calidad (Quality Assurance) puede jugar en nuestros proyectos.</p>
+            <p>Llegado el momento de desplegar nuestro trabajo en producción aprenderemos a configurar los servidores, a elegir la cantidad y configuración de máquinas adecuadas, balancearlas, montar grupos de auto escalado, a automatizar los despliegues, etc. y todo ello sin descuidar la seguridad de nuestros sistemas y nuestros datos.</p>
+            <p>Por último, aunque no necesariamente lo abordaremos en este orden, explicaré cómo convertirnos en Agile. Aprenderemos a enfocar, no solo nuestro proyecto sino cada una de sus tareas de forma ágil mediante el framework Scrum. Entenderemos los pormenores de dicho framework, analizaremos sus ventajas, tanto las evidentes como las no tan evidentes. Compararemos Scrum con otras metodologías ágiles y aprenderemos a gestionar nuestro equipo para convertirnos en respetados líderes en lugar de temidos jefes.</p>
+            <p>Y recuerda, esto no ha hecho más que empezar. En pocos días el blog irá creciendo, tanto en posts como en funcionalidad y se podrá, entre otras cosas, añadir comentarios. No os lo perdáis.</p>
+            <br><br>
+        </div>
+    </div>
+{% endblock %}

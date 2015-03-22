@@ -10,9 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="categories", uniqueConstraints={@ORM\UniqueConstraint(name="category_id", columns={"category_id"}), @ORM\UniqueConstraint(name="name", columns={"name"})}, indexes={@ORM\Index(name="parent_category_id", columns={"parent_category_id"})})
  * @ORM\Entity(repositoryClass="Pineipol\BaaBundle\Repository\CategoryRepository")
  * @ORM\HasLifecycleCallbacks
- *
- * Entity(repositoryClass="Gamelearn\TimeSupervisorBundle\Repository\TaskRepository")
- */
+  */
 class Category extends BaseEntity {
 
     /**
@@ -37,6 +35,13 @@ class Category extends BaseEntity {
      * @ORM\Column(name="name", type="string", length=255, nullable=false)
      */
     private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="color", type="string", length=255, nullable=false)
+     */
+    private $color;
 
     /**
      * @var \DateTime
@@ -123,6 +128,27 @@ class Category extends BaseEntity {
      */
     public function getName() {
         return $this->name;
+    }
+
+    /**
+     * Set color
+     *
+     * @param string $color
+     * @return Category
+     */
+    public function setColor($color) {
+        $this->color = $color;
+
+        return $this;
+    }
+
+    /**
+     * Get color
+     *
+     * @return string
+     */
+    public function getColor() {
+        return $this->color;
     }
 
     /**

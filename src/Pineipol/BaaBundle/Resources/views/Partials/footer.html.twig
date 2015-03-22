@@ -1,22 +1,11 @@
 <div id="footer_outer_container">
     <div id="footer_inner_container">
         <div id="footer_menu_container">
-            {#<div class="footer_menu_item">
-                <a class="footer_menu_item" href="{{ path('pineipol_baa_homepage') }}">sistemas</a>
-            </div
-            ><div class="footer_menu_item">
-                <a class="footer_menu_item" href="{{ path('pineipol_baa_homepage') }}">maquetación</a>
-            </div
-            ><div class="footer_menu_item">
-                <a class="footer_menu_item" href="{{ path('pineipol_baa_homepage') }}">agile coaching</a>
-            </div
-            ><div class="footer_menu_item">
-                <a class="footer_menu_item" href="{{ path('pineipol_baa_homepage') }}">scrum</a>
-            </div
-            >#}
-            <div class="footer_menu_item">
-                <a class="footer_menu_item" href="{{ path('pineipol_baa_post_contact') }}">contact</a>
-            </div>
+            {% for menu in menus %}
+                <div class="footer_menu_item">
+                    <a class="footer_menu_item" href="{{ path(menu.route) }}">{{ menu.title }}</a>
+                </div>
+            {% endfor %}
         </div>
     </div>
 </div>

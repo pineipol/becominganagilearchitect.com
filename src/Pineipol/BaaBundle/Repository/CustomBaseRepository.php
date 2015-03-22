@@ -16,19 +16,6 @@ class CustomBaseRepository extends EntityRepository {
     private static $_kernel = null;
 
     /**
-     * Find locale entity instance by code
-     *
-     * @param string $localeCode
-     * @return Gamelearn\WebBundle\Entity\Locale
-     */
-    public function findLocaleByCode($localeCode) {
-
-        return $this->getEntityManager()
-                        ->getRepository('GamelearnWebBundle:Locale')
-                        ->findOneByCode($localeCode);
-    }
-
-    /**
      * Set environment and gets symfony container
      *
      * @return EntityManager
@@ -58,6 +45,19 @@ class CustomBaseRepository extends EntityRepository {
         return self::getContainer()
                         ->get('doctrine')
                         ->getManager();
+    }
+
+    /**
+     * Find locale entity instance by code
+     *
+     * @param string $localeCode
+     * @return Pineipol\BaaBundle\Entity\Locale
+     */
+    public function findLocaleByCode($localeCode) {
+
+        return $this->getEntityManager()
+                        ->getRepository('PineipolBaaBundle:Locale')
+                        ->findOneByCode($localeCode);
     }
 
 }

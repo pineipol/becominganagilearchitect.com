@@ -24,13 +24,13 @@
                                 {% block body %}{% endblock %}
                             </div
                             ><div id="right-column_container">
-                                {{ render(controller('PineipolBaaBundle:Default:rightColumn')) }}
+                                {{ render(controller('PineipolBaaBundle:Layout:rightColumn')) }}
                             </div>
                         </div>
                     </div>
 
                     {# Footer #}
-                    {{ include('PineipolBaaBundle:Partials:footer.html.twig') }}
+                    {{ render(controller('PineipolBaaBundle:Layout:footer')) }}
 
                 </div>
             </div>

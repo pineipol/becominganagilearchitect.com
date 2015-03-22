@@ -74,7 +74,7 @@ class Menu extends BaseEntity {
     /**
      * @var \Pineipol\BaaBundle\Entity\Route
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Route")
+     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Route", inversedBy="menu")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="route_id", referencedColumnName="route_id")
      * })

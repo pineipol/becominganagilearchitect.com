@@ -69,7 +69,7 @@ class TranslatedRoutesLoader extends Loader {
      */
     private static function addPageRoutes(RouteCollection $routes) {
 
-        $entityCollection = self::getDoctrineEm()->getRepository('PineipolBaaBundle:Page')->findAllContentRoutes();
+        $entityCollection = self::getDoctrineEm()->getRepository('PineipolBaaBundle:Page')->findAllPageContentRoutes();
         foreach ($entityCollection as $content) {
             // prepare a new route
             $pattern = $content->getRoute()->getPath();
@@ -95,7 +95,7 @@ class TranslatedRoutesLoader extends Loader {
      */
     private static function addPostRoutes(RouteCollection $routes) {
 
-        $entityCollection = self::getDoctrineEm()->getRepository('PineipolBaaBundle:Post')->findAllContentRoutes();
+        $entityCollection = self::getDoctrineEm()->getRepository('PineipolBaaBundle:Post')->findAllPostContentRoutes();
         foreach ($entityCollection as $content) {
             // prepare a new route
             $pattern = $content->getRoute()->getPath();
@@ -122,8 +122,8 @@ class TranslatedRoutesLoader extends Loader {
     private static function addRoutes(RouteCollection $routes) {
 
         self::addCategoryRoutes($routes);
-//        self::addPageRoutes($routes);
-//        self::addPostRoutes($routes);
+        self::addPageRoutes($routes);
+        self::addPostRoutes($routes);
     }
 
     /**

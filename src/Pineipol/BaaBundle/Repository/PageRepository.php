@@ -11,16 +11,21 @@ class PageRepository extends CustomBaseRepository {
      *
      * @return array
      */
-    public function findAllContentRoutes() {
+    public function findAllPageContentRoutes() {
+
         $query = $this->getEntityManager()
                 ->createQuery('
-                            SELECT pc, p, r, l
+                            SELECT pc, p, r, l, m
                             FROM PineipolBaaBundle:PageContent pc
-                            JOIN pc.page p
-                            JOIN pc.locale l
-                            JOIN pc.route r
-                        ');
-
+                                JOIN pc.page p
+                                JOIN pc.route r
+                                JOIN pc.locale l
+                                JOIN r.routeType rt
+                                LEFT JOIN r.menu m
+                            WHERE
+                                rt.name = :route_type_name
+                ')
+                ->setParameter('route_type_name', $this->getContainer()->getParameter('route-types')['page']);
         try {
             return $query->getResult();
         } catch (NoResultException $e) {
@@ -29,30 +34,29 @@ class PageRepository extends CustomBaseRepository {
     }
 
     /**
-     * Generate all page-based menu links and menu titles
+     * Get page all data by page id and locale string code
      *
-     * @param type $id
-     * @param type $localeCode
+     * @param integer $id
+     * @param string $localeCode
      */
-    public function findFullDataByLocale($id, $localeCode) {
+    public function findFullDataByIdAndLocale($id, $localeCode) {
 
         // Find locale entity instance by code
         $localeEntity = $this->findLocaleByCode($localeCode);
 
         $query = $this->getEntityManager()
                 ->createQuery('
-                            SELECT p, pc, l, r, ly
+                            SELECT pc, p, l, r
                             FROM PineipolBaaBundle:PageContent pc
                                 JOIN pc.page p
                                 JOIN pc.locale l
                                 JOIN pc.route r
-                                JOIN r.layout ly
                             WHERE
-                                l.localeId = :localeId
-                                AND p.pageId = :pageId'
-                )
-                ->setParameter('localeId', $localeEntity->getLocaleId())
-                ->setParameter('pageId', $id);
+                                p.pageId = :pageId
+                                AND l.localeId = :localeId
+                ')
+                ->setParameter('pageId', $id)
+                ->setParameter('localeId', $localeEntity->getLocaleId());
 
         try {
             return $query->getSingleResult();
@@ -60,5 +64,4 @@ class PageRepository extends CustomBaseRepository {
             return null;
         }
     }
-
 }

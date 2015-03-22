@@ -15,37 +15,20 @@
             </div>
             <div id="header_menu_cell">
                 <div id="header_menu_container">
-                    {#<div class="header_menu_item">
-                        <div class="header_menu_item_label">
-                            <a class="header_menu_item_label" href="{{ path('pineipol_baa_homepage') }}">sistemas</a>
+                    <a href="{{ path('pineipol_baa_homepage') }}">
+                        <div class="header_menu_item">
+                            <div class="header_menu_item_label">home</div>
                             <div class="header_menu_item_strip"></div>
                         </div>
-                    </div
-                    ><div class="header_menu_item">
-                        <div class="header_menu_item_label">
-                            <a class="header_menu_item_label" href="{{ path('pineipol_baa_homepage') }}">maquetación</a>
-                            <div class="header_menu_item_strip"></div>
-                        </div>
-                    </div
-                    ><div class="header_menu_item">
-                        <div class="header_menu_item_label">
-                            <a class="header_menu_item_label" href="{{ path('pineipol_baa_homepage') }}">agile coaching</a>
-                            <div class="header_menu_item_strip"></div>
-                        </div>
-                    </div
-                    ><div class="header_menu_item">
-                        <div class="header_menu_item_label">
-                            <a class="header_menu_item_label" href="{{ path('pineipol_baa_homepage') }}">scrum</a>
-                            <div class="header_menu_item_strip"></div>
-                        </div>
-                    </div
-                    >#}
-                    <div class="header_menu_item">
-                        <div class="header_menu_item_label">
-                            <a class="header_menu_item_label" href="{{ path('pineipol_baa_post_contact') }}">contact</a>
-                            <div class="header_menu_item_strip"></div>
-                        </div>
-                    </div>
+                    </a>
+                    {% for menu in menus %}
+                        <a href="{{ path(menu.route) }}">
+                            <div class="header_menu_item">
+                                <div class="header_menu_item_label">{{ menu.title }}</div>
+                                <div class="header_menu_item_strip"></div>
+                            </div>
+                        </a>
+                    {% endfor %}
                 </div>
             </div>
         </div>

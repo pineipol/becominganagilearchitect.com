@@ -3,91 +3,32 @@
 namespace Pineipol\BaaBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class DefaultController extends Controller {
 
+    /**
+     * Home page action
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function indexAction() {
 
-        $aa = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:Category')
-                ->findAll();
+        // set home request on flash messages
+        $session = new Session();
+        $session->getFlashBag()->add('request', array(
+            'type' => 'home',
+            'id' => null,
+        ));
 
-        $aa = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:CategoryContent')
-                ->findAll();
-
-        $aa = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:CommentStatus')
-                ->findAll();
-
-        $aa = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:Comment')
-                ->findAll();
-
-        $aa = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:Label')
-                ->findAll();
-
-        $aa = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:Layout')
-                ->findAll();
-
-        $aa = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:Link')
-                ->findAll();
-
-        $aa = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:Locale')
-                ->findAll();
-
-        $aa = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:Menu')
-                ->findAll();
-
-        $aa = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:PageContent')
-                ->findAll();
-
-        $aa = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:Page')
-                ->findAll();
-
-        $aa = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:PostContent')
-                ->findAll();
-
-        $aa = $this->getDoctrine()
+        $postCollection = $this->getDoctrine()
                 ->getRepository('PineipolBaaBundle:Post')
-                ->findAll();
+                ->findAllByLocale($this->getRequest()->getLocale());
 
-        $aa = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:RouteType')
-                ->findAll();
-
-        $aa = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:Route')
-                ->findAll();
-
-        $aa = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:UserStatus')
-                ->findAll();
-
-        $aa = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:User')
-                ->findAll();
-
-        return $this->render('PineipolBaaBundle:Default:index.html.twig');
+        //return $this->render('PineipolBaaBundle:Default:design.html.twig');
+        return $this->render('PineipolBaaBundle:Default:index.html.twig', array(
+            'posts' => $postCollection,
+        ));
     }
 
-    public function rightColumnAction() {
-        return $this->render('PineipolBaaBundle:Partials:right-column.html.twig');
-    }
-
-    public function contactAction() {
-        return $this->render('PineipolBaaBundle:Default:contact.html.twig');
-    }
-
-    public function listAction() {
-        return $this->render('PineipolBaaBundle:Default:list.html.twig');
-    }
 }
