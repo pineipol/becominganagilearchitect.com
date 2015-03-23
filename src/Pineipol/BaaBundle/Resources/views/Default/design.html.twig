@@ -2,21 +2,38 @@
 
 {% block body %}
     <div id="post-container">
-        <div class="title"></div>
-        <div class="published-on"></div>
+        <div class="title">Blog Bootstrap</div>
+        <div class="published-on">15 de marzo de 2015</div>
         <div class="image-container">
-            <img class="post-image" src="{{ asset('bundles/pineipolbaa/') }}">
+            <img class="post-image" src="{{ asset('uploads/posts/150315_blog-bootstrap/blog-bootstrap.jpg') }}">
             <div class="tags-container">
                 <a href="">
                     <div class="one-tag-container">
-                        <div class="green-tag">design</div>
+                        <div class="yellow-tag">Agile</div>
+                        <div class="tag-triangle"></div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="one-tag-container">
+                        <div class="pink-tag">Architecture</div>
                         <div class="tag-triangle"></div>
                     </div>
                 </a>
             </div>
         </div>
         <div class="content">
-            Contenido del post
+            {#<img align="left" style="margin: 15px" src="uploads/posts/150315_blog-bootstrap/Pentium_MMX_Logo.jpg">#}
+            <p>El hilo conductor del blog estará formado por varios proyectos, en principio tengo dos en la cabeza, con los que pretendo plantear diversos problemas o necesidades, analizar las posibles soluciones e ir llevando a cabo, a lo largo de una serie de posts, el desarrollo de cada uno mediante la implementación de tecnologías que den solución a dichos problemas, tratando siempre de buscar algún tipo de valor añadido.<br>
+            El primero de los proyectos sería el propio blog, el segundo, una herramienta Agile de gestión de equipos de desarrollo mediante Scrum.</p>
+            <p>Durante el desarrollo de los proyectos detallaré mi experiencia y punto de vista sobre cada una de las etapas del ciclo de vida de los mismos y explicaré cómo convertir esta frase tan de “desarrollo en cascada” en algo más Agile.</p>
+            <ul>
+            <li><p>Hablaremos de cómo formar un equipo, cómo elegir los roles necesarios dentro del mismo y cómo seleccionar al candidato más adecuado para cada uno de los puestos. Compartiré con vosotros mis preferencias sobre dónde buscar y cómo conseguir que, además de poder elegir a la persona que quieras, que dicha persona quiera también formar parte de nuestro proyecto.</p></li>
+            <li><p>Compartiré con vosotros las mejores técnicas de desarrollo que he ido aprendiendo y madurando por mi cuenta a lo largo de mi trayectoria profesional o que me han resultado útiles en determinadas circunstancias. Explicaré mi visión sobre cómo organizar el código y escogeremos las herramientas más adecuadas para que nuestro equipo lleve a cabo su trabajo de forma óptima.</p></li>
+            <li><p>Os hablaré de las principales técnicas de testing, desde simples pruebas ejecutadas por un operador al Diseño Orientado a Pruebas de Aceptación (Acceptance Test Driven Development) o al Diseño Orientado a Comportamiento (Behaviour Driven Development).</p></li>
+            <li><p>Aprenderemos a configurar un servidor de Integración Continua (Continuous Integration) y cómo sacarle el mayor partido mediante el uso de los plugins adecuados y la instalación de un servidor de integración con el que beneficiarse de la Entrega Continua (Continuous Delivery). Además entenderemos la importancia clave que un departamento de control de calidad (Quality Assurance) puede jugar en nuestros proyectos.</p></li>
+            <li><p>Llegado el momento de desplegar nuestro trabajo en producción aprenderemos a configurar los servidores, a elegir la cantidad y configuración de máquinas adecuadas, balancearlas, montar grupos de auto escalado, a automatizar los despliegues, etc. y todo ello sin descuidar la seguridad de nuestros sistemas y nuestros datos.</p></li>
+            <li><p>Por último, aunque no necesariamente lo abordaremos en este orden, explicaré cómo convertirnos en Agile. Aprenderemos a enfocar, no sólo nuestro proyecto sino cada una de sus tareas, de forma ágil mediante el framework Scrum. Entenderemos los pormenores de dicho framework y analizaremos sus ventajas, tanto las evidentes como las no tan evidentes. Compararemos Scrum con otras metodologías ágiles y aprenderemos a gestionar nuestro equipo para convertirnos en respetados líderes en lugar de temidos jefes.</p></li>
+            </ul><br>
         </div>
     </div>
 {% endblock %}
