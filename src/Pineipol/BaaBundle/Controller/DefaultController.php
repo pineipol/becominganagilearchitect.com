@@ -25,7 +25,7 @@ class DefaultController extends Controller {
                 ->getRepository('PineipolBaaBundle:Post')
                 ->findAllByLocale($this->getRequest()->getLocale());
 
-        //return $this->render('PineipolBaaBundle:Default:design.html.twig');
+//        return $this->render('PineipolBaaBundle:Default:design.html.twig');
         return $this->render('PineipolBaaBundle:Default:index.html.twig', array(
             'posts' => $postCollection,
         ));
