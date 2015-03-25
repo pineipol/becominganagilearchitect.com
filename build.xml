@@ -24,7 +24,7 @@
     </target>
 
     <target name="vendors" depends="composer">
-        <exec executable="${basedir}/composer.phar" failonerror="true">
+        <exec executable="${basedir}/composer" failonerror="true">
             <arg value="update" />
         </exec>
         <chmod file="${basedir}/app/bootstrap.php.cache" perm="644" />
