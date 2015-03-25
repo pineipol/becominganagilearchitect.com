@@ -2,7 +2,7 @@
 parameters:
     database_driver: pdo_mysql
     database_host: 127.0.0.1
-    database_port: null
+    database_port: 6306
     database_name: baa
     database_user: baa_db_usr
     database_password: o13O0#59Il1.pQ67xZy09a
