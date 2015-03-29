@@ -53,6 +53,20 @@ class PostContent extends BaseEntity {
     /**
      * @var string
      *
+     * @ORM\Column(name="image_alt", type="text", nullable=true)
+     */
+    private $image_alt;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image_origin", type="text", nullable=true)
+     */
+    private $image_origin;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="meta_title", type="text", nullable=true)
      */
     private $metaTitle;
@@ -195,6 +209,48 @@ class PostContent extends BaseEntity {
      */
     public function setImage($image) {
         $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image_alt
+     *
+     * @return string
+     */
+    public function getImageAlt() {
+        return $this->image_alt;
+    }
+
+    /**
+     * Set image_alt
+     *
+     * @param string $image_alt
+     * @return PostContent
+     */
+    public function setImageAlt($image_alt) {
+        $this->image_alt = $image_alt;
+
+        return $this;
+    }
+
+    /**
+     * Get image_origin
+     *
+     * @return string
+     */
+    public function getImageOrigin() {
+        return $this->image_origin;
+    }
+
+    /**
+     * Set image_origin
+     *
+     * @param string $image_origin
+     * @return PostContent
+     */
+    public function setImageOrigin($image_origin) {
+        $this->image_origin = $image_origin;
 
         return $this;
     }

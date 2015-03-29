@@ -97,7 +97,16 @@ class Post extends BaseEntity {
     /**
      * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\OneToMany(targetEntity="\Pineipol\BaaBundle\Entity\Link", mappedBy="post")
+     * @ORM\ManyToMany(targetEntity="Pineipol\BaaBundle\Entity\Link", inversedBy="posts")
+     * @ORM\JoinTable(name="posts_links",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="post_id", referencedColumnName="post_id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="link_id", referencedColumnName="link_id")
+     *   }
+     * )
+     * @ORM\OrderBy({"name" = "ASC"})
      */
     private $links;
 
@@ -265,15 +274,6 @@ class Post extends BaseEntity {
      */
     public function removeCategory(\Pineipol\BaaBundle\Entity\Category $category) {
         $this->categories->removeElement($category);
-    }
-
-    /**
-     * Get category
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getCategory() {
-        return $this->categories;
     }
 
     /**

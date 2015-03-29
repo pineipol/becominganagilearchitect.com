@@ -72,14 +72,18 @@ class Link extends BaseEntity {
     private $modified;
 
     /**
-     * @var \Pineipol\BaaBundle\Entity\Post
+     * @var \Doctrine\Common\Collections\Collection
      *
-     * @ORM\ManyToOne(targetEntity="Pineipol\BaaBundle\Entity\Post", inversedBy="links")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="post_id", referencedColumnName="post_id")
-     * })
+     * @ORM\ManyToMany(targetEntity="Pineipol\BaaBundle\Entity\Post", mappedBy="links")
      */
-    private $post;
+    private $posts;
+
+    /**
+     * Constructor
+     */
+    public function __construct() {
+        $this->posts = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get linkId
@@ -238,24 +242,33 @@ class Link extends BaseEntity {
     }
 
     /**
-     * Set post
+     * Add post
      *
      * @param \Pineipol\BaaBundle\Entity\Post $post
-     * @return Link
+     * @return Category
      */
-    public function setPost(\Pineipol\BaaBundle\Entity\Post $post = null) {
-        $this->post = $post;
+    public function addPost(\Pineipol\BaaBundle\Entity\Post $post) {
+        $this->posts[] = $post;
 
         return $this;
     }
 
     /**
+     * Remove post
+     *
+     * @param \Pineipol\BaaBundle\Entity\Post $post
+     */
+    public function removePost(\Pineipol\BaaBundle\Entity\Post $post) {
+        $this->posts->removeElement($post);
+    }
+
+    /**
      * Get post
      *
-     * @return \Pineipol\BaaBundle\Entity\Post
+     * @return \Doctrine\Common\Collections\Collection
      */
-    public function getPost() {
-        return $this->post;
+    public function getPosts() {
+        return $this->posts;
     }
 
 }

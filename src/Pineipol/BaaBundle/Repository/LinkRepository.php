@@ -17,7 +17,7 @@ class LinkRepository extends CustomBaseRepository {
                 ->createQuery('
                             SELECT l, p
                             FROM PineipolBaaBundle:Link l
-                                LEFT JOIN l.post p
+                                LEFT JOIN l.posts p
                             WHERE p IS NULL
                 ');
         try {
@@ -39,7 +39,7 @@ class LinkRepository extends CustomBaseRepository {
                 ->createQuery('
                             SELECT l, p
                             FROM PineipolBaaBundle:Link l
-                                JOIN l.post p
+                                JOIN l.posts p
                             WHERE
                                 p.postId = :postId
                 ')
