@@ -430,6 +430,11 @@ a:visited {
     width: 100%;
   }
 }
+#post-container .image-container .post-image-origin {
+  color: #aaaaaa;
+  font-size: 8px;
+  text-align: left;
+}
 #post-container .image-container .tags-container {
   left: 6px;
   position: absolute;
