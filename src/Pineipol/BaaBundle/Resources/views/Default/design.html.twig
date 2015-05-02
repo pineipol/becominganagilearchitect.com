@@ -2,10 +2,10 @@
 
 {% block body %}
     <div id="post-container">
-        <div class="title">Blog Bootstrap</div>
-        <div class="published-on">15 de marzo de 2015</div>
+        <div class="title">Agile, Lean, Scrum, Kanban… ¿cuál es la diferencia?</div>
+        <div class="published-on">2 de mayo de 2015</div>
         <div class="image-container">
-            <img class="post-image" src="{{ asset('uploads/posts/150315_blog-bootstrap/blog-bootstrap.jpg') }}">
+            <img class="post-image" src="{{ asset('uploads/posts/150502_lean_agile_scrum_kanban/lean_agile_scrum_kanban.jpg') }}">
             <div class="tags-container">
                 <a href="">
                     <div class="one-tag-container">
@@ -23,25 +23,62 @@
         </div>
         <div class="content">
             {#<img align="left" style="margin: 15px" src="uploads/posts/150315_blog-bootstrap/Pentium_MMX_Logo.jpg">#}
-            <p><span style="font-size: 60px">A</span> veces el camino desde la puerta de la universidad a un puesto de Arquitecto Agile puede ser una larga peregrinación, otras veces, simplemente, un paso demasiado corto. En general la segunda vía es más fácil pero no suele ser cierta.</p>
-            <p>Arquitecto puede ser tanto aquel que, de facto, hace las labores del puesto, aquel al que le ha tocado o le ha sido impuesto o aquel que, con su experiencia, se ha ganado el respeto de sus compañeros y la admiración de sus superiores. Nosotros vamos a tratar de imitar al último tipo, no porque sea más digno o se lo merezca más, sino porque es aquel al que queremos parecernos y del que esperamos aprender cuanto podamos.</p>
-            <p>Un Arquitecto Agile debe ser una persona capaz de, dadas unas especificaciones y un presupuesto, tener claro desde el primer instante qué es lo que hay que hacer y cómo llevarlo a cabo.<br>
-            Un arquitecto no sabe lo que va a pasar en el futuro pero tiene los conocimientos, la experiencia y la audacia necesarias para anticiparse a lo que ha de suceder y lograr conducir el proyecto por un camino suficientemente equilibrado como para terminar en plazo y en precio.</p>
+            <p><span style="font-size: 60px">L</span>os términos Agile, Scrum, Kanban, etc. están de moda, es un hecho, pero si empezamos a investigar en qué consiste cada uno enseguida nos encontramos con otros términos con los que se entrecruzan e, inmediatamente, nos damos cuenta de que no somos capaces de distinguir dónde termina cada uno y empieza el siguiente.</p>
+            <p>Por un lado, unos parecen ser filosofías y otros metodologías. Unos parecen más amplios y da la impresión de que engloban a otros pero, cuando parece que los conceptos empiezan a aclararse, se llega a la conclusión de que Scrum es una forma de Agile, Kanban viene de Lean pero también es Agile aunque Scrum es anterior a Agile… En medio de esta confusión… ¿quién es quién?</p>
+            <p>En cierto modo todo este solapamiento no sólo es normal sino inevitable dado que todos son sistemas diseñados para incrementar la productividad por lo que es de esperar que distintas mentes brillantes en distintos momentos de la historia y, ante problemas de naturaleza similar, lleguen a las mismas o parecidas conclusiones. Cada uno de estos sistemas persigue los mismos objetivos, aumentar la productividad, mejorar la calidad y reducir el coste y el tiempo empleado en el desarrollo de sus productos.</p>
+            <p>Si nos remontamos hacia atrás en el tiempo se podría decir que el germen común a todos ellos reside en Henry Ford y Frederick Taylor y sus avances en productividad durante la revolución industrial. Fueron estos avances los que inspiraron al japonés Taiichi Ohno, director y consultor de Toyota, para desarrollar el método Lean de producción industrial.</p>
             <ul>
-                <li><p>Lo primero que hará un arquitecto es, no sólo asegurarse de haber comprendido la funcionalidad y el alcance completo del proyecto, sino el objetivo final del mismo y las motivaciones que han llevado a desear su desarrollo.</p></li>
-                <li><p>Acto seguido buscará y seleccionará al equipo necesario para llevarlo a cabo y se encargará de mantener a dicho equipo altamente motivado y organizado, contando con las herramientas adecuadas para maximizar su potencial y productividad a la vez que transmite al mismo los objetivos y motivaciones del proyecto como si fuera suyo.</p></li>
-                <li><p>Planificará cada aspecto del proyecto buscando eliminar la mayor cantidad posible de incertidumbre en las etapas iniciales del mismo, es decir, tratará de probar o experimentar con las partes más complejas o delicadas del mismo cuanto antes para evitar sorpresas de última hora o replantearlas en caso de que su desarrollo fuera inviable dadas las circunstancias del proyecto.</p></li>
-                <li><p>Desde el inicio del desarrollo garantizará la calidad de los productos llevados a cabo y se asegurará de que cuenten con un diseño que favorezca su escalabilidad y mantenibilidad. Además velará para que dichos productos se mantengan libres de errores.</p></li>
-                <li><p>Por último, el factor diferencial que convertirá en Agile al arquitecto será la búsqueda del mayor índice posible de Retorno de Inversión tan pronto como sea posible o tenga sentido dentro del proyecto, generando entregables operativos de funcionalidad acotada a intervalos regulares de tiempo y analizando y reconduciendo el rumbo del proyecto para adaptarse a los cambios de definición y alcance que el cliente pueda necesitar, consiguiendo con ello minimizar el coste de los mismos.</p></li>
+                <li>
+                    <p><span style="font-weight:bold">Lean</span> significa magro, esbelto y la base de su filosofía consiste en eliminar los “desperdicios”, es decir, eliminar todo aquello que no aporte valor o, incluso, que no lo hará en el futuro. Uno de los ejemplos más sorprendentes pero simples de este principio consiste en la eliminación de las puertas en los armarios de muchas empresas japonesas, si no se esconde nada… ¿qué aporta la puerta?</p>
+                    <p>El término fue llevado al campo del desarrollo de software por Mary y Tom Poppendieck en su libro Lean Software Development. En él realizan una adaptación de los principios industriales.</p>
+                    <p>Los valores de Lean son:</p>
+                    <p>
+                        <ul>
+                            <li><p>Eliminar los desperdicios (código innecesario, burocracia, comunicación lenta, reuniones innecesarias, etc.)</p></li>
+                            <li><p>Ampliar el aprendizaje</p></li>
+                            <li><p>Eliminar incertidumbre antes de tomar decisiones o decidir lo más tarde posible</p></li>
+                            <li><p>Reaccionar lo antes posible ante el cambio</p></li>
+                            <li><p>Potenciar el equipo</p></li>
+                        </ul>
+                    </p>
+                </li>
+                <li>
+                    <p><span style="font-weight:bold">Agile</span> es un movimiento de reacción ante las estrictas reglas de las metodologías tradicionales de desarrollo de software. Se formaliza en Febrero de 2001, en el Snowbird Resort, Utah, donde 17 conocidos desarrolladores y defensores de metodologías que promovían técnicas ágiles firman el Agile Manifesto, un listado de principios que recoge la esencia filosófica del agilismo.</p>
+                    <p>De todos los sistemas de los que estamos hablando se podría decir que Agile representa el más filosófico, pues no es una metodología ni un framework que diga cómo hacer las cosas, sino un conjunto de principios y valores a tener en cuenta para evitar los problemas de los sistemas tradicionales de desarrollo de software.</p>
+                    <p>Pese a ser anteriores, tanto Lean cómo Scrum podrían ser considerados ágiles pues su forma de plantear el desarrollo y sus valores encajan dentro del Agile Manifesto y ambos ejercieron una gran influencia en la redacción del mismo.</p>
+                </li>
+                <li>
+                    <p><span style="font-weight:bold">Scrum</span> es un framework. No es una filosofía ni una metodología de trabajo. Sus creadores lo definen como un framework dado que está formado por una serie de roles, eventos, artefactos y normas precisos cada uno de los cuales tiene un fin específico por lo que si no se hace uso de todos y cada uno de ellos, según sus creadores, se estará haciendo algo similar a Scrum, pero no Scrum.</p>
+                    <p>Scrum proviene del trabajo de Ikujiro Nonaka e Hirotaka Takeuchi a principios de los 80 aunque su forma final se debe al trabajo “Scrum Development Process” que Ken Schwaber presentó en OOPSLA 95. Tanto Ken Schwaber como Jeff Sutherland son considerados sus creadores oficiales.</p>
+                    <p>Los principios de Scrum encajan a la perfección dentro de la filosofía Agile y sus creadores forman parte de los firmantes del Agile Manifesto.</p>
+                </li>
+                <li>
+                    <p>El método <span style="font-weight:bold">Kanban</span> basa su funcionamiento en la entrega just-in-time (justo a tiempo), otro modelo de producción industrial proveniente de las factorías de Toyota. </p>
+                    <p>Uno de los fuertes de Kanban es la gestión visual del proceso mediante tableros e indicadores (kanban, en japonés, significa tarjeta). Pese a lo que muchos puedan creer, los tableros de Scrum para el manejo de Sprints y Releases no son propios del framework sino importados de Kanban.</p>
+                    <p>Las prácticas fundamentales del método Kanban son:</p>
+                    <p>
+                        <ul>
+                            <li><p>Visualizar el flujo de trabajo y su avance</p></li>
+                            <li><p>Limitar el trabajo en curso para evitar cuellos de botella</p></li>
+                            <li><p>Dirigir y gestionar el flujo de trabajo</p></li>
+                            <li><p>Indicar y comprender claramente las reglas del proceso</p></li>
+                            <li><p>Reconocer y aprovechar las oportunidades de mejora</p></li>
+                        </ul>
+                    </p>
+                </li>
             </ul>
-            <p>Llegar a convertirse en arquitecto no suele ser una tarea ni rápida ni sencilla. Para ello se necesitará una buena dosis de los siguientes ingredientes:</p>
+            <p>Se podría decir, por tanto, que cada uno de estos métodos, frameworks o filosofías comparten una serie de valores u objetivos comunes, los cuales son reconocidos y defendidos por el Agile Manifesto:</p>
             <ul>
-                <li><p>Observación e imitación de todo aquel que pueda enseñarnos algo.</p></li>
-                <li><p>Esfuerzo, perseverancia y responsabilidad para llevar siempre el compromiso entre productividad y eficiencia al nivel de máximo equilibrio.</p></li>
-                <li><p>Estudio, pues un buen arquitecto es como un médico, debe ser capaz de reciclarse más rápido de lo que lo hace su propia ciencia, en este caso, la tecnología.</p></li>
-                <li><p>Audacia y atrevimiento para innovar y experimentar, pues llevar las cosas a la práctica es la única manera real de afianzar los conocimientos adquiridos y deshechar aquellos que, por su eficacia o complejidad, no sean adecuados en términos prácticos.</p></li>
+                <li><p>Entrega iterativa e incremental de producto terminado y usable</p></li>
+                <li><p>Reacción temprana al cambio</p></li>
+                <li><p>Inspección del trabajo completado y del proceso llevado a cabo</p></li>
+                <li><p>Adaptación del proceso para mejorarlo</p></li>
+                <li><p>Potenciación y motivación del equipo</p></li>
+                <li><p>Comunicación</p></li>
+                <li><p>Desarrollo sostenible en cada etapa del ciclo de vida del proyecto</p></li>
+                <li><p>Simplicidad y diseño emergente</p></li>
             </ul>
-            <p>Una de las labores fundamentales del arquitecto, si además se diera el caso probable de que éste ejerza el rol de Scrum Master dentro del equipo, será la de eliminar cualquier tipo de impedimento o distracción que dificulte o impida el trabajo óptimo de cada uno de los miembros del mismo.</p><br>
+            <p>Hablaremos más de cada uno de ellos, pero sobre todo de Scrum, en posts posteriores.</p><br><br>
         </div>
     </div>
 {% endblock %}
