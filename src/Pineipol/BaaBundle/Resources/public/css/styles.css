@@ -493,6 +493,22 @@ a:visited {
   padding-left: 5px;
   padding-right: 5px;
 }
+#post-container .content .post-content-link:active {
+  color: #00661A;
+  text-decoration: underline;
+}
+#post-container .content .post-content-link:hover {
+  color: #00661A;
+  text-decoration: underline;
+}
+#post-container .content .post-content-link:link {
+  color: #00661A;
+  text-decoration: underline;
+}
+#post-container .content .post-content-link:visited {
+  color: #00661A;
+  text-decoration: underline;
+}
 #links-title-box {
   background-color: #222222;
   border: 1px solid #ffffff;

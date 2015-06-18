@@ -36,6 +36,7 @@ class DefaultController extends Controller {
                 ->findAll();
 
 //        return $this->render('PineipolBaaBundle:Default:design.html.twig');
+        return $this->render('PineipolBaaBundle:Default:scrum1.html.twig');
         return $this->render('PineipolBaaBundle:Default:index.html.twig', array(
             'posts' => $postCollection,
         ));
