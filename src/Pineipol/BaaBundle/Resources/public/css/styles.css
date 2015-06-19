@@ -24,6 +24,30 @@ a:visited {
   color: #000000;
   text-decoration: none;
 }
+/* Components */
+.blue_text_box {
+  display: table;
+  margin: 15px 0 15px 0;
+  background-color: #c6e1ff;
+}
+.blue_text_box .generic_icon {
+  background-position: center 20px;
+  background-repeat: no-repeat;
+  display: table-cell;
+  height: 46px;
+  vertical-align: top;
+  width: 75px;
+}
+.blue_text_box .generic_text_container {
+  display: table-cell;
+  font: 1em Verdana;
+  line-height: 2em;
+  padding: 10px 20px 10px 0px;
+  vertical-align: top;
+}
+.blue_text_box .generic_icon {
+  background-image: url('../images/icons/important.png');
+}
 #middle_outer_container {
   min-height: 910px;
   width: 100%;
@@ -492,6 +516,7 @@ a:visited {
   margin-top: 20px;
   padding-left: 5px;
   padding-right: 5px;
+  text-align: justify;
 }
 #post-container .content .post-content-link:active {
   color: #00661A;

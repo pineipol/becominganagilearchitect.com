@@ -1,0 +1,100 @@
+/* Paths */
+/* Color variables */
+/* Sizing constants */
+body {
+  margin: 0;
+  font: 14px Verdana;
+}
+div {
+  box-sizing: border-box;
+}
+a:active {
+  color: #000000;
+  text-decoration: none;
+}
+a:hover {
+  color: #000000;
+  text-decoration: none;
+}
+a:link {
+  color: #000000;
+  text-decoration: none;
+}
+a:visited {
+  color: #000000;
+  text-decoration: none;
+}
+/* Components */
+.blue_text_box {
+  display: table;
+  margin: 15px 0 15px 0;
+  background-color: #c6e1ff;
+}
+.blue_text_box .generic_icon {
+  background-position: center 20px;
+  background-repeat: no-repeat;
+  display: table-cell;
+  height: 46px;
+  vertical-align: top;
+  width: 75px;
+}
+.blue_text_box .generic_text_container {
+  display: table-cell;
+  font: 1em Verdana;
+  line-height: 2em;
+  padding: 10px 20px 10px 0px;
+  vertical-align: top;
+}
+.blue_text_box .generic_icon {
+  background-image: url('../images/icons/important.png');
+}
+#middle_outer_container {
+  min-height: 910px;
+  width: 100%;
+}
+@media (max-width: 800px) {
+  #middle_outer_container {
+    min-height: 700px;
+  }
+}
+@media (max-width: 800px) and (max-width: 600px) {
+  #middle_outer_container {
+    min-height: 500px;
+  }
+}
+#middle_outer_container #inner_container {
+  margin: auto;
+  width: 1000px;
+}
+@media (max-width: 1000px) {
+  #middle_outer_container #inner_container {
+    width: 100%;
+  }
+}
+#middle_outer_container #inner_container #left-column_container {
+  display: inline-block;
+  padding-top: 60px;
+  vertical-align: top;
+  width: 75%;
+}
+@media (max-width: 800px) {
+  #middle_outer_container #inner_container #left-column_container {
+    display: block;
+    padding-top: 0px;
+    width: 100%;
+  }
+}
+#middle_outer_container #inner_container #right-column_container {
+  display: inline-block;
+  padding-top: 60px;
+  vertical-align: top;
+  width: 25%;
+}
+@media (max-width: 800px) {
+  #middle_outer_container #inner_container #right-column_container {
+    padding-top: 30px;
+    display: block;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=layout.css.map */
