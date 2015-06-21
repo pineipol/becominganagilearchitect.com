@@ -55,10 +55,12 @@ class PostRepository extends CustomBaseRepository {
                                 JOIN p.categories c
                             WHERE
                                 l.localeId = :localeId
+                                AND p.show = :show
                             ORDER BY
                                 p.order DESC, c.name ASC
                 ')
-                ->setParameter('localeId', $localeEntity->getLocaleId());
+                ->setParameter('localeId', $localeEntity->getLocaleId())
+                ->setParameter('show', 1);
         try {
             return $query->getResult();
         } catch (NoResultException $e) {

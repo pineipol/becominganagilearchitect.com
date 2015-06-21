@@ -27,6 +27,15 @@ class PageController extends Controller {
                 ->getRepository('PineipolBaaBundle:Page')
                 ->findFullDataByIdAndLocale($id, $this->getRequest()->getLocale());
 
+        // Replace link placeholders with current locale based routes
+        $linkPlaceholders = array();
+        preg_match_all("/(?<=\[\[ROUTE:).*?(?=]])/s", $pageInstance->getContent(), $linkPlaceholders);
+        foreach ($linkPlaceholders[0] as $link) {
+            $searchString = '[[ROUTE:' . $link . ']]';
+            $replaceString = $this->get('router')->generate($link . $this->getRequest()->getLocale());
+            $pageInstance->setContent(str_replace($searchString, $replaceString, $pageInstance->getContent()));
+        }
+
         return $this->render('PineipolBaaBundle:Pages:page.html.twig', array(
                     'pageContent' => $pageInstance,
         ));

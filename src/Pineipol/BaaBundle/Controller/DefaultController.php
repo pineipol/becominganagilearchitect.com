@@ -25,18 +25,18 @@ class DefaultController extends Controller {
                 ->getRepository('PineipolBaaBundle:Post')
                 ->findAllByLocale($this->getRequest()->getLocale());
 
-        $a1Collection = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:Post')
-                ->findAll();
-        $a2Collection = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:Link')
-                ->findAll();
-        $a3Collection = $this->getDoctrine()
-                ->getRepository('PineipolBaaBundle:Category')
-                ->findAll();
+//        $a1Collection = $this->getDoctrine()
+//                ->getRepository('PineipolBaaBundle:Post')
+//                ->findAll();
+//        $a2Collection = $this->getDoctrine()
+//                ->getRepository('PineipolBaaBundle:Link')
+//                ->findAll();
+//        $a3Collection = $this->getDoctrine()
+//                ->getRepository('PineipolBaaBundle:Category')
+//                ->findAll();
 
 //        return $this->render('PineipolBaaBundle:Default:design.html.twig');
-        return $this->render('PineipolBaaBundle:Default:scrum1.html.twig');
+//        return $this->render('PineipolBaaBundle:Default:scrum1.html.twig');
         return $this->render('PineipolBaaBundle:Default:index.html.twig', array(
             'posts' => $postCollection,
         ));

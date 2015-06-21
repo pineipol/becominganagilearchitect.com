@@ -27,6 +27,15 @@ class PostController extends Controller {
                 ->getRepository('PineipolBaaBundle:Post')
                 ->findFullDataByIdAndLocale($id, $this->getRequest()->getLocale());
 
+        // Replace link placeholders with current locale based routes
+        $linkPlaceholders = array();
+        preg_match_all("/(?<=\[\[ROUTE:).*?(?=]])/s", $postInstance->getContent(), $linkPlaceholders);
+        foreach ($linkPlaceholders[0] as $link) {
+            $searchString = '[[ROUTE:' . $link . ']]';
+            $replaceString = $this->get('router')->generate($link . $this->getRequest()->getLocale());
+            $postInstance->setContent(str_replace($searchString, $replaceString, $postInstance->getContent()));
+        }
+
         return $this->render('PineipolBaaBundle:Default:post.html.twig', array(
                     'postContent' => $postInstance,
         ));
