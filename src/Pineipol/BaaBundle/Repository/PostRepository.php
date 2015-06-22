@@ -93,11 +93,13 @@ class PostRepository extends CustomBaseRepository {
                             WHERE
                                 c.categoryId = :categoryId
                                 AND l.localeId = :localeId
+                                AND p.show = :show
                             ORDER BY
                                 p.order DESC
                 ')
                 ->setParameter('categoryId', $categoryId)
-                ->setParameter('localeId', $localeEntity->getLocaleId());
+                ->setParameter('localeId', $localeEntity->getLocaleId())
+                ->setParameter('show', 1);
         try {
             return $query->getResult();
         } catch (NoResultException $e) {
