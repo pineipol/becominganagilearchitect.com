@@ -24,8 +24,10 @@ class PostRepository extends CustomBaseRepository {
                                 LEFT JOIN r.menu m
                             WHERE
                                 rt.name = :route_type_name
+                                AND p.show = :show
                 ')
-                ->setParameter('route_type_name', $this->getContainer()->getParameter('route-types')['post']);
+                ->setParameter('route_type_name', $this->getContainer()->getParameter('route-types')['post'])
+                ->setParameter('show', 1);
         try {
             return $query->getResult();
         } catch (NoResultException $e) {
