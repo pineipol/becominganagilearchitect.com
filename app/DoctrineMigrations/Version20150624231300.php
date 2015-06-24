@@ -50,7 +50,7 @@ class Version20150624231300 extends AbstractMigration {
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() != "mysql", "Migration can only be executed safely on \"mysql\".");
 
-        $this->addSql("ALTER TABLE `links` DROP COLUMN `home`;');
+        $this->addSql('ALTER TABLE `links` DROP COLUMN `home`;');
     }
 
 }
