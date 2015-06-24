@@ -58,6 +58,13 @@ class Link extends BaseEntity {
     private $openBlank;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="home", type="integer", nullable=true)
+     */
+    private $home;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="created", type="datetime", nullable=false)
@@ -197,6 +204,27 @@ class Link extends BaseEntity {
      */
     public function getOpenBlank() {
         return $this->openBlank;
+    }
+
+    /**
+     * Set home
+     *
+     * @param integer $home
+     * @return Link
+     */
+    public function setHome($home) {
+        $this->home = $home;
+
+        return $this;
+    }
+
+    /**
+     * Get home
+     *
+     * @return integer
+     */
+    public function getHome() {
+        return $this->home;
     }
 
     /**

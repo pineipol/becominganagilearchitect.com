@@ -1,6 +1,9 @@
 <div id="links-title-box">Enlaces relevantes</div>
 <div id="links-container">
     {% for link in links %}
-        <a class="link" href="{{ link.targetUrl }}" title="{{ link.description }}">{{ link.title }}</a>
+        <a class="link"
+           href="{{ link.targetUrl }}"
+           title="{{ link.description }}"
+           {% if link.openBlank %}target="_blank"{% endif %}>{{ link.title }}</a>
     {% endfor %}
 </div>

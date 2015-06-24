@@ -7,18 +7,17 @@ use Doctrine\ORM\NoResultException;
 class LinkRepository extends CustomBaseRepository {
 
     /**
-     * Find not post related links
+     * Find home related links
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function findUnrelated() {
+    public function findHomeLinks() {
 
         $query = $this->getEntityManager()
                 ->createQuery('
-                            SELECT l, p
+                            SELECT l
                             FROM PineipolBaaBundle:Link l
-                                LEFT JOIN l.posts p
-                            WHERE p IS NULL
+                            WHERE l.home=1
                 ');
         try {
             return $query->getResult();

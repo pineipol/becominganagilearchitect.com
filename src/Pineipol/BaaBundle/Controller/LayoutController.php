@@ -50,8 +50,7 @@ class LayoutController extends Controller {
     }
 
     /**
-     * Returns an html partial with post related links or unrelated links
-     * for home a category filtered urls
+     * Returns an html partial with home or post related links
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
@@ -61,11 +60,11 @@ class LayoutController extends Controller {
         $session = new Session();
         $requestType = $session->getFlashBag()->get('request')[0];
 
-        // get unrelated links or post related ones
+        // get home related links or post related ones
         if ('home' == $requestType['type']) {
             $linkCollection = $this->getDoctrine()
                     ->getRepository('PineipolBaaBundle:Link')
-                    ->findUnrelated();
+                    ->findHomeLinks();
         } elseif ('post' == $requestType['type'] && !empty($requestType['id'])) {
             $linkCollection = $this->getDoctrine()
                     ->getRepository('PineipolBaaBundle:Link')
