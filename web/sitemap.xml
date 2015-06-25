@@ -6,35 +6,68 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
         <loc>http://www.becominganagilearchitect.com/</loc>
+        <lastmod>2015-06-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>http://www.becominganagilearchitect.com/agile</loc>
+        <lastmod>2015-06-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>http://www.becominganagilearchitect.com/arquitectura</loc>
+        <lastmod>2015-06-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>http://www.becominganagilearchitect.com/lean</loc>
+        <lastmod>2015-06-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>http://www.becominganagilearchitect.com/scrum</loc>
+        <lastmod>2015-06-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>http://www.becominganagilearchitect.com/contacto</loc>
+        <lastmod>2015-06-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>http://www.becominganagilearchitect.com/scrum-valores-roles-eventos-artefactos</loc>
+        <lastmod>2015-06-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>http://www.becominganagilearchitect.com/lean-agile-scrum-kanban-diferencia</loc>
+        <lastmod>2015-06-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>http://www.becominganagilearchitect.com/arquitecto-agile</loc>
+        <lastmod>2015-06-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>http://www.becominganagilearchitect.com/loading</loc>
+        <lastmod>2015-06-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
     <url>
         <loc>http://www.becominganagilearchitect.com/blog-bootstrap</loc>
+        <lastmod>2015-06-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>
