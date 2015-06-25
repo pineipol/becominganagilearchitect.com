@@ -567,6 +567,20 @@ a:visited {
   padding-right: 5px;
   text-align: justify;
 }
+#post-container .content .links-container {
+  display: table;
+  width: 100%;
+}
+#post-container .content .links-container .left-side-link-container {
+  display: table-cell;
+  text-align: left;
+  width: 50%;
+}
+#post-container .content .links-container .right-side-link-container {
+  display: table-cell;
+  text-align: right;
+  width: 50%;
+}
 #post-container .content .post-content-link:active {
   color: #00661A;
   text-decoration: underline;
