@@ -1,5 +1,11 @@
 {% extends 'PineipolBaaBundle:Layout:home.html.twig' %}
 
+{% block metatags %}
+    <meta name="title" content="{{ pageContent.metaTitle }}">
+    <meta name="description" content="{{ pageContent.metaDescription }}">
+    <meta name="keywords" content="{{ pageContent.metaKeywords }}">
+{% endblock %}
+
 {% block body %}
     <div id="page-container">
         <div class="title">{{ pageContent.title|raw }}</div>

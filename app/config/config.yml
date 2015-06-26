@@ -3,6 +3,7 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@PineipolBaaBundle/Resources/config/settings.yml" }
+    - { resource: "@PineipolBaaBundle/Resources/config/custom_parameters.yml" }
 
 framework:
     #esi:             ~
@@ -30,6 +31,10 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        meta_home_title: %meta.home.title%
+        meta_home_description: %meta.home.description%
+        meta_home_keywords: %meta.home.keywords%
 
 # Assetic Configuration
 assetic:

@@ -1,5 +1,11 @@
 {% extends 'PineipolBaaBundle:Layout:base-layout.html.twig' %}
 
+{% block metatags %}
+    <meta name="title" content="{{ meta_home_title }}">
+    <meta name="description" content="{{ meta_home_description }}">
+    <meta name="keywords" content="{{ meta_home_keywords }}">
+{% endblock %}
+
 {% block outerbody %}
     <div id="body-container" class="body-container">
 
