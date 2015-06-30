@@ -302,23 +302,20 @@ a:visited {
   text-align: center;
 }
 #footer_outer_container #footer_inner_container #footer_menu_container .footer_menu_item {
+  color: #aaaaaa;
+  cursor: pointer;
   display: inline-block;
+  font: 11px Verdana;
   margin-bottom: 5px;
+  padding-left: 20px;
+  text-transform: uppercase;
 }
 @media (max-width: 800px) {
   #footer_outer_container #footer_inner_container #footer_menu_container .footer_menu_item {
-    margin-bottom: 20px;
+    padding-bottom: 15px;
     text-align: left;
     width: 100%;
   }
-}
-#footer_outer_container #footer_inner_container #footer_menu_container .footer_menu_item .footer_menu_item_link {
-  color: #aaaaaa;
-  cursor: pointer;
-  font: 11px Verdana;
-  margin-left: 20px;
-  margin-right: 10px;
-  text-transform: uppercase;
 }
 .post-container {
   display: table;

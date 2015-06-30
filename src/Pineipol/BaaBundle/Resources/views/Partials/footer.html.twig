@@ -1,13 +1,13 @@
 <div id="footer_outer_container">
     <div id="footer_inner_container">
         <div id="footer_menu_container">
-            <div class="footer_menu_item">
-                <a class="footer_menu_item_link" href="{{ path('pineipol_baa_homepage') }}">home</a>
-            </div>
+            <a href="{{ path('pineipol_baa_homepage') }}">
+                <div class="footer_menu_item">home</div>
+            </a>
             {% for menu in menus %}
-                <div class="footer_menu_item">
-                    <a class="footer_menu_item_link" href="{{ path(menu.route) }}">{{ menu.title }}</a>
-                </div>
+                <a href="{{ path(menu.route) }}">
+                    <div class="footer_menu_item">{{ menu.title }}</div>
+                </a>
             {% endfor %}
         </div>
     </div>
