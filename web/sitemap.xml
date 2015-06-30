@@ -41,8 +41,14 @@
         <priority>0.5</priority>
     </url>
     <url>
+        <loc>http://www.becominganagilearchitect.com/scrum-roles-scrum-master-product-owner-desarrolladores</loc>
+        <lastmod>2015-06-29</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
         <loc>http://www.becominganagilearchitect.com/scrum-valores-roles-eventos-artefactos</loc>
-        <lastmod>2015-06-25</lastmod>
+        <lastmod>2015-06-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.5</priority>
     </url>
