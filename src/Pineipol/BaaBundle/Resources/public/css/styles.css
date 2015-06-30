@@ -470,7 +470,7 @@ a:visited {
     margin-top: 10px;
   }
 }
-#post-container .title {
+#post-container h1 {
   font-size: 17px;
   font-weight: 700;
   margin-bottom: 10px;
@@ -566,6 +566,11 @@ a:visited {
   padding-left: 5px;
   padding-right: 5px;
   text-align: justify;
+}
+#post-container .content h2 {
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 2em;
 }
 #post-container .content .links-container {
   display: table;

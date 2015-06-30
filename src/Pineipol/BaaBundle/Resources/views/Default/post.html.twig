@@ -6,9 +6,11 @@
     <meta name="keywords" content="{{ postContent.metaKeywords }}">
 {% endblock %}
 
+{% block title %}{{ postContent.title|raw }} - Becoming An Agile Architect{% endblock %}
+
 {% block body %}
     <div id="post-container">
-        <div class="title">{{ postContent.title|raw }}</div>
+        <h1>{{ postContent.title|raw }}</h1>
         <div class="published-on">{{ postContent.post.created|localizeddate('long', 'none', app.request.locale) }}</div>
         <div class="image-container">
             <img class="post-image" src="{{ asset(postContent.image) }}" title="{{ postContent.imageAlt }}">

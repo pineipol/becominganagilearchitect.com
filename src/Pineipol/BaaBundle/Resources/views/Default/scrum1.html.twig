@@ -2,7 +2,7 @@
 
 {% block body %}
     <div id="post-container">
-        <div class="title">Scrum. El framework de los roles, eventos y artefactos</div>
+        <h1>Scrum. El framework de los roles, eventos y artefactos</h1>
         <div class="published-on">18 de junio de 2015</div>
         <div class="image-container">
             <img class="post-image" src="{{ asset('uploads/posts/150621_scrum_framework/scrum_framework.jpg') }}">
@@ -22,53 +22,136 @@
             </div>
         </div>
         <div class="content">
-            <p><span style="font-size: 60px">A</span>ntes de empezar a pensar en el código del primer proyecto comentado en el post <a href="[[ROUTE:loading-]]" class="post-content-link">Loading...</a> resulta imprescindible una introducción a <a href="https://www.scrum.org/" target="_blank" class="post-content-link">Scrum</a>, dado que basaremos nuestra forma de trabajo en dicha metodología Agile.</p>
-            <p>Scrum es, sin duda, la más popular de entre las ramas del mundo Agile orientadas al desarrollo de software. El motivo es sencillo, Scrum es, como sus propios creadores apuntan, un framework, ni una filosofía, ni una disciplina, ni una metodología ni nada por el estilo, simplemente, un framework.</p>
-            <div class="green_text_box">
-                <div class="generic_icon"></div
-                ><div class="generic_text_container">Scrum es un <span style="font-weight:bold">framework</span> formado por un conjunto de <span style="font-weight:bold">roles, eventos y artefactos</span> concebidos y diseñados para facilitar la implantación de los valores Agile en un entorno de trabajo o en el seno de una entera organización, es por eso que es también uno de los colores Agile más sencillo de implementar, pues sólo hay que seguir una serie de normas precisa y minuciosamente descritas.</div>
-            </div>
-            <p>Como ya señalado en el post <a href="[[ROUTE:lean-agile-scrum-]]" class="post-content-link">Agile, Lean, Scrum, Kanban… ¿cuál es la diferencia?</a> es fácil pensar que Scrum sea una especialización dentro del mundo Agile, pero no es así, pues Scrum es unos diez años anterior al <a href="http://www.agilemanifesto.org/" target="_blank" class="post-content-link">Agile Manifesto</a>, aunque influyó en buena manera en la redacción de éste último, pues sus dos creadores formaban parte de los 17 firmantes.</p>
-            <div class="green_text_box">
-                <div class="generic_icon"></div
-                ><div class="generic_text_container">Scrum es un framework pensado para gestionar de forma eficiente tanto el desarrollo como el mantenimiento de <span style="font-weight:bold">productos complejos en entornos complejos</span>, y entre sus mayores virtudes se encuentran la <span style="font-weight:bold">gestión del cambio</span> y el <span style="font-weight:bold">control del riesgo</span>.</div>
-            </div>
-            <p>La gestión del cambio y el control del riesgo se consigue planificando el desarrollo de los proyectos en iteraciones de corta duración llamadas <span style="font-weight:bold">Sprints</span>, tras cada una de las cuales se inspecciona el trabajo completado directamente con el cliente y se decide si dicho incremento avanza en la dirección correcta o no, pues como reza un antiguo proverbio chino, <span style="font-style:italic">si continuas avanzando en la misma dirección llegarás exactamente al lugar al que te diriges</span>.</p>
-            <br>
-            <p><span style="font-weight:bold">Principios de Scrum</span></p>
-            <p>Scrum está basado en el <a href="https://es.wikipedia.org/wiki/Empirismo" target="_blank" class="post-content-link">empirismo</a>, es decir, observación y medida de experiencias pasadas en vez de predicciones sin una base tangible. Esta condición hace que, <span style="font-weight:bold">para que sea posible hacer Scrum, se requiere un tiempo haciendo Scrum</span>, es decir, se necesita un cierto rodaje para poder calcular la capacidad de producción, o velocidad de desarrollo en términos de Scrum, de los equipos de desarrollo implicados en base a resultados anteriores. Esto no significa que un equipo sin experiencia no pueda empezar a hacer Scrum, simplemente quiere decir que las predicciones que realicen para sus iteraciones o Sprints serán significativamente más acertadas a medida que los Sprints se vayan sucediendo y se vaya ganando experiencia.</p>
-            <p>Los valores fundamentales de Scrum son:</p>
+            <p><span style="font-size: 60px">E</span>l <span style="font-weight:bold">Equipo en Scrum</span> está formado por un único <span style="font-weight:bold">Product Owner</span>, un único <span style="font-weight:bold">Scrum Master</span> y un único <span style="font-weight:bold">Equipo de Desarrollo</span>. Es importante la palabra único pues un equipo de Scrum no puede tener, en ningún caso, dos Product Owner o dos Scrum Master aunque, tanto estos como los miembros del equipo de desarrollo sí que podrían formar parte de más de un equipo Scrum.</p>
+            <p>Más que frecuente es recomendable que, si para un mismo proyecto en el que se desarrolla un único gran producto existen varios equipos de Scrum, estos compartan un único Product Owner, pues se trata del consultor de negocio o la persona con mayor conocimiento y capacidad de decisión sobre el producto a desarrollar (nos referimos a conocimientos a nivel de lógica de negocio del producto, no a nivel técnico o de desarrollo). Si el número de equipos fuera tan elevado que un único Product Owner no fuera capaz de gestionar tantos equipos cada equipo o subconjunto de equipos tendría un Product Owner, los cuales reportarían a un Line Product Owner, aunque esto ya es entrar en Scaled Scrum.</p>
+            <p>Los equipos en Scrum son:</p>
             <ul>
                 <li>
-                    <p>
-                        <span style="font-weight:bold">Transparencia.</span> Todos los aspectos de un proceso deben ser transparentes a todos sus responsables, es decir, no podemos excluir a los desarrolladores de la parte de diseño ni al consultor de producto de los problemas del desarrollo.<br>
-                        Los primeros pueden tener mucho que decir en cuanto a cómo un diseño demasiado complejo puede encarecer el proyecto, quizás a cambio de un retorno artístico ínfimo y el segundo podría tratar de proponer al cliente alternativas a una funcionalidad si ésta resultara tan costosa en tiempo y problemática respecto a su desarrollo que pudiera hacer peligrar la calidad del producto innecesariamente.
-                    </p>
-                    <div class="green_text_box">
-                        <div class="generic_icon"></div
-                        ><div class="generic_text_container">Una de las consecuencias inmediatas de la transparencia consiste en el sentimiento de propiedad colectiva del proyecto y cooperación interdepartamental, queriendo decir esto que todos los implicados cooperan activamente pues el resultado afecta e interesa a todos por igual.</div>
-                    </div>
+                    <p><span style="font-weight:bold">Auto-organizados.</span> El equipo, en su totalidad, es el único responsable de decidir cómo hacer su trabajo sin que nadie ajeno al mismo pueda imponer condiciones y;</p>
                 </li>
                 <li>
-                    <p><span style="font-weight:bold">Inspección.</span> En un proyecto Scrum la inspección debe ser una constante, es decir, se debe cuestionar cada paso una vez completado y en equipo y discutir y decidir si resulta efectivo o no. En Scrum cualquier momento es bueno para la inspección aunque cuenta con eventos específicos dedicados a tal fin.</p>
-                </li>
-                <li>
-                    <p><span style="font-weight:bold">Adaptación.</span> Si tras la inspección se decide que alguno de los procedimientos o tareas que se ha llevado a cabo nos alejan de la consecución del objetivo del proyecto dicha práctica debe ser modificada o sustituida por otra cuyo efecto sea el deseado.<br>
-                        En general, la adaptación se decide al final de cada Sprint aunque debe tener lugar lo antes posible una vez que el inconveniente o problema ha sido detectado es por ello que los Daily Scrum, reunión diaria de planificación e inspección en Scrum, son también momentos de inspección y adaptación.</p>
+                    <p><span style="font-weight:bold">Multi-disciplinares.</span> Dentro del equipo hay profesionales con experiencia suficiente en cada uno de los campos necesarios (programación, diseño, marketing, etc) para completar una versión 100% funcional y potencialmente entregable de las funcionalidades comprometidas para el Sprint.</p>
                 </li>
             </ul>
-            <p>Aunque no sea oficial, me gustaría añadir otro elemento que, en mi opinión, resulta ser inherente a Scrum y fundamental para su buena marcha, el equipo. Scrum es cosa de equipos y la primera gran ventaja que Scrum nos aportará de forma sorprendente, y casi inmediata, es que Scrum genera equipo.</p>
-            <p>Es difícil gestionar un proyecto Scrum con un equipo de una única persona. Para un freelance podría ser una gran ventaja, de cara al cliente, abordar el proyecto de forma iterativa pues se aumenta la frecuencia de feedback, se mantiene el riesgo bajo control volviendo a priorizar y planificar las tareas pero se pierde el elemento de control de los compañeros de equipo, es decir, si empezamos haciendo algo técnico de una determinada manera porque creemos que es lo correcto, difícilmente alguien nos hará ver si estamos equivocados o si existe otra forma mejor de hacerlo y, por tanto, carecen de sentido los eventos de inspección y adaptación que definiremos enseguida por lo cual, y por definición de sus creadores, si no usas todos los elementos de Scrum estarás haciendo algo parecido, pero no será Scrum. De hecho ellos recomiendan no configurar equipos de Scrum de menos de tres miembros dentro del Equipo de Desarrollo.</p>
             <br>
-            <p><span style="font-weight:bold">Componentes de Scrum</span></p>
-            <p>Scrum está formado por tres tipos de elementos que analizaremos en detalle en las secciones siguientes, roles, eventos y artefactos. Además Scrum define una serie de normas que los coordinan entre sí.</p>
-            <p>Como ya mencionado, según sus creadores, cada uno de estos elementos es parte fundamental del framework y si se decide prescindir de alguno de ellos no se estará realmente haciendo Scrum, algo parecido sí, pero no Scrum.</p>
-            <p>Este tipo de situaciones se conoce como <a href="https://www.scrum.org/ScrumBut" target="_blank" class="post-content-link">ScrumButs</a>, es decir, se modifican las reglas de Scrum para tratar de sortear un problema.</p>
-            <p>Suelen responder a la sintaxis:</p>
-            <p style="text-align:center"><span style="font-weight:bold">(ScrumBut)(Razón)(Solución adoptada)</span></p>
-            <p>Por ejemplo, (Usamos Scrum, pero)(tener un Daily Scrum cada día supone mucha carga de horas)(por eso lo hacemos sólo una vez a la semana).</p>
-            <p>En cualquier caso, lo que estemos haciendo no podrá ser llamado Scrum.</p>
-
+            <h2>El Product Owner</h2>
+            <p>Es el responsable de todo lo que tiene que ver con el producto, es decir, decide y prioriza qué es lo que se va a hacer y aclara cómo debe funcionar. Debe ser capaz de responder a cualquier pregunta que el equipo de desarrollo pueda plantear.</p>
+            <div class="green_text_box">
+                <div class="generic_icon"></div
+                ><div class="generic_text_container">Se podría decir que el Product Owner es el <span style="font-weight:bold">experto en el producto</span>. Debe conocer y ser capaz de explicar la lógica de negocio del mismo hasta sus últimos detalles y es la persona que actúa como puente o intermediario entre el equipo de desarrollo y el cliente, es por ello que este puesto suele ser ocupado por consultores de negocio o, en ocasiones, perfiles relacionados con el mundo comercial.</div>
+            </div>
+            <p>Además de conocer el producto debe conocer las necesidades, criterios y metas del cliente para ser capaz de maximizar el valor, tanto del producto como del trabajo del equipo de desarrollo, es decir, debe ser capaz de conseguir que, en cada incremento, el equipo de desarrollo entregue aquellas funcionalidades que satisfagan en mayor medida las necesidades del cliente a la vez que éste consigue el mayor ROI posible (retorno de inversión) y, por supuesto, que el cliente esté satisfecho con el producto entregado. Esto significa que el producto entregado cumpla la <span style="font-weight:bold">definición de terminado</span> que el cliente acuerde con el Product Owner y que éste último negocie con el equipo de desarrollo.</p>
+            <p>El hecho de que el Product Owner sea el responsable del producto lo convierte, por tanto, en propietario y responsable del Product Backlog, uno de los tres artefactos de Scrum constituido por el listado priorizado y detallado de todos los requerimientos y funcionalidades del producto y que explicaremos en detalle en una sección posterior.</p>
+            <p>Las tareas del Product Owner se pueden resumir en las siguientes:</p>
+            <ul>
+                <li>
+                    <p><span style="font-weight:bold">Mantener el Product Backlog</span>, cuyos ítems recogen todos los requisitos, funcionalidades, prototipos, bugs, etc que es necesario resolver para completar el producto.</p>
+                </li>
+                <li>
+                    <p>Expresar de forma <span style="font-weight:bold">suficientemente clara cada elemento</span> en el Product Backlog.</p>
+                </li>
+                <li>
+                    <p><span style="font-weight:bold">Priorizar</span> los elementos del <span style="font-weight:bold">Product Backlog</span> en la manera en que mejor se puedan alcanzar los objetivos del proyecto, se maximice el ROI, se optimice la carga de trabajo del equipo o cualquier otra razón que el Product Owner considere adecuada.</p>
+                </li>
+                <li>
+                    <p>Asegurarse de que el <span style="font-weight:bold">Product Backlog es visible</span>, claro y <span style="font-weight:bold">transparente</span> para todos los componentes del equipo Scrum.</p>
+                </li>
+                <li>
+                    <p><span style="font-weight:bold">Optimizar el valor del trabajo</span> del equipo de desarrollo.</p>
+                </li>
+                <li>
+                    <p><span style="font-weight:bold">Resolver las dudas</span> que los miembros del equipo de desarrollo puedan tener en cuanto a lógica de negocio del proyecto.</p>
+                </li>
+            </ul>
+            <br>
+            <h2>El equipo de desarrollo</h2>
+            <div class="green_text_box">
+                <div class="generic_icon"></div
+                ><div class="generic_text_container">Está formado por el conjunto de profesionales que cada Sprint trabaja de forma colaborativa para desarrollar un incremento de producto completo y potencialmente entregable.</div>
+            </div>
+            <p>El equipo de desarrollo Scrum tiene las siguientes características:</p>
+            <ul>
+                <li>
+                    <p>Es <span style="font-weight:bold">multi-disciplinar.</span> Una vez que se haya comprometido a entregar una serie de elementos del Product Backlog en un Sprint contará con todas las capacidades necesarias a nivel humano, con conocimientos en todas las disciplinas necesarias, para completar dichos elementos.</p>
+                </li>
+                <li>
+                    <p>Es <span style="font-weight:bold">auto-organizado.</span> Podrá planificar, organizar y priorizar el trabajo en la manera en que, consensuadamente, considere más oportuna, sin que nadie pueda poner objeciones a cómo o en qué orden aborda dichas tareas o en qué medida las divide y asigna a cada uno de sus miembros.</p>
+                </li>
+                <li>
+                    <p><span style="font-weight:bold">No existen sub-equipos</span> dentro de un equipo Scrum ni títulos para sus miembros más allá del de desarrollador, es decir, no hay encargados o responsables dentro del equipo de desarrollo pues la responsabilidad recae siempre en el equipo completo, sin importar quién pueda haber llevado a cabo cada parte del trabajo.</p>
+                </li>
+                <li>
+                    <p>Un equipo de desarrollo estará formado por entre <span style="font-weight:bold">tres y nueve miembros</span>, sin incluir al Product Owner ni al Scrum Master. Equipos menores pueden experimentar dificultades a la hora de contar con todas las habilidades necesarias para completar el trabajo y equipos mayores pueden llegar a ser demasiado difíciles de gestionar.</p>
+                </li>
+            </ul>
+            <br>
+            <h2>El Scrum Master</h2>
+            <div class="green_text_box">
+                <div class="generic_icon"></div
+                ><div class="generic_text_container">Se tiende a pensar que el Scrum Master es el Project Manager moderno, cuando en realidad el Scrum Master es tan sólo el encargado de hacer entender Scrum a todos los implicados y velar por su cumplimiento.</div>
+            </div>
+            <p>El Scrum master debe ser el <span style="font-weight:bold">experto en Scrum</span>, es decir, debe conocer de manera precisa sus roles, eventos y artefactos y sería recomendable que contara con cierta experiencia trabajando con el framework, no obstante, no se trata de una posición que deba estar por encima del resto del equipo Scrum, es decir, no es necesario que sea un jefe de equipo aunque en muchas ocasiones suela coincidir. El rol de Scrum Master podría, perfectamente, ser llevado a cabo por cualquiera de los desarrolladores.</p>
+            <p>Se suele definir al Scrum Master como un líder <span style="font-weight:bold">servil o facilitador</span> para el equipo Scrum y entre sus principales tareas están las de <span style="font-weight:bold">eliminar impedimentos</span> que puedan dificultar la labor del equipo y hacer entender a las personas ajenas al mismo qué interacciones con el equipo son beneficiosas y cuáles no, por ejemplo, el Scrum Master trata de disuadir al cliente de introducir cambios de diseño o funcionalidad a mitad de un Sprint si estos no están debidamente justificados.</p>
+            <br>
+            <h2>El Scrum Master al servicio del Product Owner</h2>
+            <p>Como otro miembro más del equipo, el Scrum Master ayuda al Product Owner a:</p>
+            <ul>
+                <li>
+                    <p>Buscar técnicas que le permitan <span style="font-weight:bold">gestionar el Product Backlog</span> de forma efectiva.</p>
+                </li>
+                <li>
+                    <p>Ayudar al equipo a entender la necesidad de contar con elementos del Product Backlog claramente definidos.</p>
+                </li>
+                <li>
+                    <p><span style="font-weight:bold">Entender</span> la planificación de un producto en un <span style="font-weight:bold">entorno empírico</span>, es decir, ser capaz de planificar el desarrollo completo de un producto en base a la estimación del total de sus funcionalidades y a la velocidad de desarrollo del equipo en lugar de imponer fechas que respondan únicamente a las necesidades del cliente.</p>
+                </li>
+                <li>
+                    <p>Asegurarse de que el Product Owner sabe cómo <span style="font-weight:bold">organizar el Product Backlog</span> para maximizar su valor.</p>
+                </li>
+                <li>
+                    <p>Entender y <span style="font-weight:bold">practicar el agilismo</span>, es decir, iteración, transparencia, inspección y adaptación.</p>
+                </li>
+            </ul>
+            <br>
+            <h2>El Scrum Master al servicio del Equipo de Desarrollo</h2>
+            <p>El Scrum Master sirve y ayuda al equipo de desarrollo en:</p>
+            <ul>
+                <li>
+                    <p>Practicar y entender la <span style="font-weight:bold">auto-organización</span> y la <span style="font-weight:bold">multi-disciplinaridad.</span></p>
+                </li>
+                <li>
+                    <p>Crear productos de <span style="font-weight:bold">alto valor</span>.</p>
+                </li>
+                <li>
+                    <p><span style="font-weight:bold">Eliminar impedimentos</span> que puedan dificultar el progreso del equipo.</p>
+                </li>
+                <li>
+                    <p><span style="font-weight:bold">Facilitar los eventos de Scrum</span> según sean requeridos.</p>
+                </li>
+                <li>
+                    <p>Enseñar Scrum en entornos en los que éste no esté completamente adoptado y comprendido.</p>
+                </li>
+            </ul>
+            <br>
+            <h2>El Scrum Master al servicio de la organización</h2>
+            <p>Además de a los miembros del equipo de Scrum, el Scrum Master debe fomentar los valores y potenciar los eventos y artefactos de Scrum en el seno completo de la organización mediante:</p>
+            <ul>
+                <li>
+                    <p>Liderar y <span style="font-weight:bold">asesorar a la organización</span> en su adopción de Scrum.</p>
+                </li>
+                <li>
+                    <p>Planificar la <span style="font-weight:bold">implementación de Scrum</span> dentro de la organización, es decir, escoger proyectos <span style="font-weight:bold">pilotos de bajo riesgo</span> con los que empezar a hacer Scrum para introducir la mentalidad en el seno de la misma.</p>
+                </li>
+                <li>
+                    <p>Ayudar a los empleados e implicados a <span style="font-weight:bold">entender Scrum</span> y el desarrollo de proyectos de forma empírica.</p>
+                </li>
+                <li>
+                    <p><span style="font-weight:bold">Favorecer el cambio</span> que aumente la productividad de los equipos Scrum.</p>
+                </li>
+                <li>
+                    <p>Trabajar con otros Scrum Master para mejorar la efectividad de la aplicación de Scrum en la compañía.</p>
+                </li>
+            </ul>
             <div class="key_points_text_box">
                 <div class="title_box">
                     <div class="generic_icon_container"></div>
@@ -77,35 +160,42 @@
                 <div class="content_container">
                     <div class="row_container">
                         <div class="bullet"></div>
-                        <div class="text">Scrum es un framework</div>
+                        <div class="text">Un Equipo Scrum está formado por un Product Owner, un Scrum Master y un Equipo de Desarrollo de entre tres y nueve miembros.</div>
                     </div>
                     <div class="row_container">
                         <div class="bullet"></div>
-                        <div class="text">Scrum está compuesto por roles, eventos y artefactos</div>
+                        <div class="text">Los equipos Scrum son auto-organizados y multi-disciplinares.</div>
                     </div>
                     <div class="row_container">
                         <div class="bullet"></div>
-                        <div class="text">Scrum sigue los valores y principios Agile</div>
+                        <div class="text">El Product Owner es el responsable del producto y de mantener claro, actualizado y priorizado el Product Backlog.</div>
                     </div>
                     <div class="row_container">
                         <div class="bullet"></div>
-                        <div class="text">Agile ayuda a gestionar el cambio y controlar el riesgo</div>
+                        <div class="text">El Equipo de Desarrollo está formado por profesionales con todas las competencias necesarias para entregar un incremento de producto potencialmente entregable al final de cada Sprint.</div>
                     </div>
                     <div class="row_container">
                         <div class="bullet"></div>
-                        <div class="text">Scrum se basa en el empirismo</div>
+                        <div class="text">El Scrum Master es el experto en el proceso de Scrum.</div>
                     </div>
                     <div class="row_container">
                         <div class="bullet"></div>
-                        <div class="text">Los principios de Scrum son transparencia, inspección y adaptación Los principios de Scrum son transparencia, inspección y adaptación</div>
+                        <div class="text">El Scrum Master es un líder servil o facilitador de cara al resto del Equipo Scrum.</div>
                     </div>
                     <div class="row_container">
                         <div class="bullet"></div>
-                        <div class="text">Scrum genera equipo</div>
+                        <div class="text">El Scrum Master debe eliminar impedimentos, facilitar eventos y favorecer el agilismo.</div>
                     </div>
                 </div>
             </div>
-            <p style="text-align: right"><a href="[[ROUTE:lean-agile-scrum-]]" class="post-content-link">Eventos de Scrum >></a></p>
+            <div class="links-container">
+                <div class="left-side-link-container">
+                    <a href="[[ROUTE:scrum-framework-one-]]" class="post-content-link">< Scrum. El framework de los roles, eventos y artefactos</a>
+                </div
+                ><!-- <div class="right-side-link-container">
+                    <a href="[[RO_UTE:scrum-framework-three-]]" class="post-content-link">Eventos de Scrum. Sprint ></a>
+                </div> -->
+            </div>
             <br>
         </div>
     </div>
