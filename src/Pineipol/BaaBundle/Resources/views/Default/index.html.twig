@@ -5,7 +5,7 @@
     {% for postContent in posts %}
         <div class="post-container">
             <div class="left-column">
-                <div class="mobile-title"><a href="{{ path(postContent.route.name) }}">{{ postContent.title|raw }}</a></div>
+                <h2><a href="{{ path(postContent.route.name) }}">{{ postContent.title|raw }}</a></h2>
                 <div class="mobile-published-on">{{ postContent.post.created|localizeddate('long', 'none', app.request.locale) }}</div>
                 <div class="image-container">
                     <img class="post-image" src="{{ asset(postContent.image) }}">
@@ -22,7 +22,7 @@
                 </div>
             </div
             ><div class="right-column">
-                <div class="title"><a href="{{ path(postContent.route.name) }}">{{ postContent.title|raw }}</a></div>
+                <h2><a href="{{ path(postContent.route.name) }}">{{ postContent.title|raw }}</a></h2>
                 <div class="published-on">{{ postContent.post.created|localizeddate('long', 'none', app.request.locale) }}</div>
                 <div class="description">{{ postContent.description|raw }}</div>
             </div>
