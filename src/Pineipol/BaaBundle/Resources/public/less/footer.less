@@ -13,18 +13,20 @@
             padding-top: 25px;
             text-align: center;
             .footer_menu_item {
-                color: @light-gray;
-                cursor: pointer;
                 display: inline-block;
-                font: 11px Verdana;
                 margin-bottom: 5px;
-                margin-left: 10px;
-                margin-right: 10px;
-                text-transform: uppercase;
                 @media (max-width: @landscape-tablet-width) {
-                    margin-bottom: 10px;
+                    margin-bottom: 20px;
                     text-align: left;
                     width: @mobile-inner-container-width;
+                }
+                .footer_menu_item_link {
+                    color: @light-gray;
+                    cursor: pointer;
+                    font: 11px Verdana;
+                    margin-left: 20px;
+                    margin-right: 10px;
+                    text-transform: uppercase;
                 }
             }
         }
