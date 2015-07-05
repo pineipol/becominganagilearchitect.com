@@ -1,0 +1,100 @@
+#page-container {
+    .title {
+        font-size: 17px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    .content {
+        font-size: 1em;
+        line-height: 2em;
+        margin-top: 20px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .about-me-prefix {
+        a {
+            &:active {
+                color: @green-text-link;
+                text-decoration: underline;
+            }
+            &:hover {
+                color: @green-text-link;
+                text-decoration: underline;
+            }
+            &:link {
+                color: @green-text-link;
+                text-decoration: underline;
+            }
+            &:visited {
+                color: @green-text-link;
+                text-decoration: underline;
+            }
+        }
+        .h-container {
+            text-align: center;
+            vertical-align: top;
+            width: 100%;
+            h2 {
+                border-bottom: 2px solid @blue-text-soft;
+                color: @blue-text-soft;
+                font: bold 14px Verdana;
+                margin-top: 15px;
+                padding-left: 3px;
+                padding-bottom: 6px;
+                text-align: left;
+                text-transform: uppercase;
+            }
+            .v-half-container {
+                display: inline-block;
+                text-align: center;
+                vertical-align: top;
+                width: 50%;
+            }
+            .v-third-container {
+                color: @blue-text-soft;
+                display: inline-block;
+                padding: 5px;
+                vertical-align: top;
+                text-align: left;
+                width: 33%;
+                @media (max-width: @landscape-tablet-width) {
+                    display: block;
+                    width: 100%;
+                }
+                .third-title {
+                    color: @dark-gray;
+                    font: bold 13px Verdana;
+                    height: 45px;
+                    margin-top: 5px;
+                    text-align: center;
+                    text-transform: uppercase;
+                }
+            }
+            .about-image {
+                box-shadow: 0px 3px 10px @black;
+                height: auto;
+                margin: 20px auto 20px auto;
+                vertical-align: middle;
+                width: 300px;
+                @media (max-width: @landscape-tablet-width) {
+                    width: 100%;
+                }
+            }
+            .experience-brand {
+                font-weight: bold;
+                text-align: left;
+            }
+            .experience-title {
+                font-style: italic;
+                text-align: left;
+                text-decoration: underline;
+            }
+            .experience-description {
+                padding-bottom: 20px;
+                text-align: justify;
+            }
+        }
+
+    }
+}
