@@ -50,6 +50,10 @@
                 text-align: center;
                 vertical-align: top;
                 width: 50%;
+                @media (max-width: @landscape-tablet-width) {
+                    display: block;
+                    width: 100%;
+                }
             }
             .v-third-container {
                 color: @blue-text-soft;
@@ -76,9 +80,9 @@
                 height: auto;
                 margin: 20px auto 20px auto;
                 vertical-align: middle;
-                width: 300px;
+                width: 90%;
                 @media (max-width: @landscape-tablet-width) {
-                    width: 100%;
+                    width: 90%;
                 }
             }
             .experience-brand {
