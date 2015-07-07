@@ -8,7 +8,9 @@
                 <h2><a href="{{ path(postContent.route.name) }}">{{ postContent.title|raw }}</a></h2>
                 <div class="mobile-published-on">{{ postContent.post.created|localizeddate('long', 'none', app.request.locale) }}</div>
                 <div class="image-container">
-                    <img class="post-image" src="{{ asset(postContent.image) }}">
+                    <a href="{{ path(postContent.route.name) }}">
+                        <img class="post-image" src="{{ asset(postContent.image) }}">
+                    </a>
                     <div class="tags-container">
                         {% for category in postContent.post.categories %}
                             <a href="{{ path(category.contents[0].route.name) }}">
