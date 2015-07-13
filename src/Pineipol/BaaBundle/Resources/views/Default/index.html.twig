@@ -26,7 +26,11 @@
             ><div class="right-column">
                 <h2><a href="{{ path(postContent.route.name) }}">{{ postContent.title|raw }}</a></h2>
                 <div class="published-on">{{ postContent.post.created|localizeddate('long', 'none', app.request.locale) }}</div>
-                <div class="description">{{ postContent.description|raw }}</div>
+                <div class="description">
+                    <a href="{{ path(postContent.route.name) }}">
+                        {{ postContent.description|raw }}
+                    </a>
+                </div>
             </div>
         </div>
     {% endfor %}
