@@ -1,4 +1,8 @@
 parameters:
-    meta.home.title:          Becoming An Agile Architect - El blog Agil sobre coaching, Scrum, TDD y Continuous integration
-    meta.home.description:    Un blog práctico sobre Agile Coaching, Scrum, Test Driven Development y cómo llevarlos a cabo mediante explicaciones claras y ejemplos de cada paso
-    meta.home.keywords:       agile lean scrum kanban tdd extreme programming architect arquitectura clean code programacion coaching continuous integration integración continua
+    meta.home.title:        Becoming An Agile Architect - El blog Agil sobre coaching, Scrum, TDD y Continuous integration
+    meta.home.description:  Un blog práctico sobre Agile Coaching, Scrum, Test Driven Development y cómo llevarlos a cabo mediante explicaciones claras y ejemplos de cada paso
+    meta.home.keywords:     agile lean scrum kanban tdd extreme programming architect arquitectura clean code programacion coaching continuous integration integración continua
+
+    emailing:
+        contact:
+            toAddress:      'aaa'

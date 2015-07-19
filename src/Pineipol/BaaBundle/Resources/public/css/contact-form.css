@@ -1,0 +1,51 @@
+#contact-form {
+  padding: 5px;
+}
+#contact-form div {
+  /*border: 1px dotted red;*/
+}
+#contact-form .v-pair {
+  margin: 10px 0 0 0;
+  width: 100%;
+}
+#contact-form .v-pair .vp-label {
+  display: inline-block;
+  font-weight: bold;
+  vertical-align: top;
+  width: 30%;
+}
+#contact-form .v-pair .vp-field {
+  display: inline-block;
+  vertical-align: top;
+  width: 70%;
+}
+#contact-form .v-pair .vp-field .input {
+  width: 100%;
+}
+#contact-form .h-pair {
+  width: 100%;
+}
+#contact-form .h-pair .hp-label {
+  font-weight: bold;
+  margin: 10px 0 0 0;
+  vertical-align: top;
+  width: 100%;
+}
+#contact-form .h-pair .hp-field {
+  margin: 5px 0 0 0;
+  vertical-align: top;
+  width: 100%;
+}
+#contact-form .h-pair .hp-field .input {
+  width: 100%;
+}
+#contact-form .h-pair .hp-field .textarea {
+  width: 100%;
+}
+#contact-form .h-single {
+  margin: 10px 0 0 0;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+}
+/*# sourceMappingURL=contact-form.css.map */

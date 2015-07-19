@@ -27,7 +27,9 @@
                     <div id="middle_outer_container">
                         <div id="inner_container">
                             <div id="left-column_container">
-                                {% block body %}{% endblock %}
+                                {% block middlebody %}
+                                    {% block body %}{% endblock %}
+                                {% endblock %}
                             </div
                             ><div id="right-column_container">
                                 {{ render(controller('PineipolBaaBundle:Layout:rightColumn')) }}

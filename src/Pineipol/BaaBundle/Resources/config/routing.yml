@@ -1,3 +1,7 @@
 pineipol_baa_homepage:
     path:     /
     defaults: { _controller: PineipolBaaBundle:Default:index }
+
+pineipol_baa_contact-form-save:
+    path:     /contact-form-save
+    defaults: { _controller: PineipolBaaBundle:Page:contactForm }
