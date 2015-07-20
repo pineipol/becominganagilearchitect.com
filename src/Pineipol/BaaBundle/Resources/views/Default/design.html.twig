@@ -2,10 +2,10 @@
 
 {% block body %}
     <div id="post-container">
-        <h1>Scrum. El framework de los roles, eventos y artefactos</h1>
-        <div class="published-on">18 de junio de 2015</div>
+        <h1>Daily Scrum</h1>
+        <div class="published-on">2 de mayo de 2015</div>
         <div class="image-container">
-            <img class="post-image" src="{{ asset('uploads/posts/150713_scrum_planning/scrum_planning.jpg') }}">
+            <img class="post-image" src="{{ asset('uploads/posts/150502_lean_agile_scrum_kanban/lean_agile_scrum_kanban.jpg') }}">
             <div class="tags-container">
                 <a href="">
                     <div class="one-tag-container">
@@ -15,75 +15,65 @@
                 </a>
                 <a href="">
                     <div class="one-tag-container">
-                        <div class="pink-tag">Scrum</div>
+                        <div class="pink-tag">Architecture</div>
                         <div class="tag-triangle"></div>
                     </div>
                 </a>
             </div>
         </div>
         <div class="content">
-
-            <p><span style="font-size: 60px">A</span>l comenzar cada nuevo Sprint <span style="font-weight:bold">todo el equipo Scrum</span>, incluídos Product Owner y Scrum Master pero no el cliente, se reúne en lo que se conoce como Planificación de Sprint.
-                Se trata de un evento <span style="font-weight:bold"> time-boxed</span> cuya duración máxima no debe exceder las ocho horas para un Sprint de cuatro semanas y proporcionalmente menor si el Sprint es menor. El Scrum Master garantiza que el evento
-                tenga lugar y que su duración no supere el tiempo máximo planificado.</p>
-            <p>En esta reunión se toman dos decisiones fundamentales:</p>
-            <br>
-            <h2>¿Qué puede ser hecho en este Sprint?</h2>
-            <p>El Product Owner es el encargado de seleccionar qué <span style="font-weight:bold">elementos del Product Backlog</span> serán completados durante el Sprint. </p>
+            <p>
+                <span style="font-size: 60px">S</span>e trata de una reunión <span style="font-weight:bold">time-boxed de 15 minutos</span> que es mantenida todos los días a la misma hora y en el mismo lugar para ayudar a generar regularidad y reducir la complejidad.
+            </p>
             <div class="green_text_box">
                 <div class="generic_icon"></div
-                ><div class="generic_text_container">Antes de empezar a seleccionar elementos se debe fijar cuál será el <span style="font-weight: bold;">objetivo del Sprint</span>, en consecuencia se seleccionarán aquellos elementos del Product Backlog
-                    <span style="font-weight: bold;">coherentes</span> con dicho objetivo.
+                ><div class="generic_text_container">
+                    Cada día el Equipo de Desarrollo se reúne para <span style="font-weight:bold">sincronizar</span> sus tareas y <span style="font-weight:bold">elaborar un plan</span> de trabajo para las próximas 24 horas.
                 </div>
             </div>
-            <p>El <span style="font-weight: bold;">Product Owner</span> decide y <span style="font-weight: bold;">prioriza</span> que items le gustaría ver completados al final del Sprint pero no decide cuáles son los que finalmente se desarrollarán,
-                esta decisión concierne única y exclusivamente al equipo de desarrollo y es lo que se denomina <span style="font-weight: bold;">compromiso de Sprint</span>. Por ejemplo, el Product Owner puede preseleccionar diez elementos del Product Backlog y
-                el <span style="font-weight: bold;">equipo de desarrollo decidir</span> que se puede comprometer con los ocho primeros pero el noveno es demasiado complejo como para poder ser incluído, no obstante el décimo es menor y sí podría ser incluído,
-                en consecuencia, el equipo se compromete a completar los ocho primeros y el décimo.
+            <p>
+                Además de decidir qué tareas serán realizadas en las próximas 24 horas el Daily Scrum es uno de los momentos de <span style="font-weight:bold">inspección y adaptación</span> de Scrum. Si alguno de los miembros del Equipo de Desarrollo detecta algún problema o considera que
+                algo no se está llevando a cabo de la manera correcta debe ponerlo de manifiesto en esta reunión ante lo cual el Scrum Master podrá plantear una de las siguientes opciones:
             </p>
-            <p>Si el product Owner no estuviera de acuerdo podría hacer uso del triángulo <span style="font-weight: bold;">calidad-velocidad-alcance</span>, es decir, podría reducir el alcance de la novena tarea descomponiéndola en dos o más tareas menores de
-                forma que si se pudiera incluir la parte más importante para el cliente.
+            <ul>
+                <li>
+                    <p>Si el problema no es grave y el Equipo puede alcanzar una <span style="font-weight:bold">solución</span> sin hacer peligrar el <span style="font-weight:bold">objetivo de los 15 minutos</span> el Scrum Master permite que se valore el problema en la reunión.</p>
+                </li>
+                <li>
+                    <p>Si la <span style="font-weight:bold">discusión</span> se empieza a prolongar y aparenta ir para más largo el Scrum Master debe <span style="font-weight:bold">cortarla</span> y proponer al Equipo celebrar una <span style="font-weight:bold">Reunión de Grooming</span>
+                        con todas las personas implicadas tan pronto como acabe el Daily Scrum para no consumir tiempo innecesariamente del resto de miembros del Equipo.
+                    </p>
+                </li>
+            </ul>
+            <p>El mismo caso es aplicable a las frecuentes discusiones técnicas sobre cómo llevar a cabo una tarea que pudieran aflorar durante la reunión.</p>
+            <p>Uno de los <span style="font-weight:bold">problemas recurrentes</span> y más frecuentes en Scrum es la <span style="font-weight:bold">transgresión</span> de la <span style="font-weight:bold">duración</span> de los Daily Scrum. Os puedo asegurar que oiremos o leeremos a multitud de
+                grandes gurús en Scrum repetirnos que si la duración de la reunión alcanza los 15 minutos se debe cortar pero, en el mundo real, no es tan fácil. Depende de la pericia y asertividad del Scrum Master ser capaz de <span style="font-weight: bold;">detectar</span> y aislar a tiempo el
+                <span style="font-weight: bold;">motivo de la discusión</span> o la causa que genera la prolongación inusual de la reunión y conseguir <span style="font-weight: bold;">detenerla de forma cordial</span> para proponer la ya mencionada <span style="font-weight: bold;">Reunión de Grooming</span>.
+                Hablaremos de estas reuniones más adelante.
             </p>
             <div class="green_text_box">
                 <div class="generic_icon"></div
-                ><div class="generic_text_container">El <span style="font-weight: bold;">equipo de desarrollo</span> hace uso de su <span style="font-weight: bold;">velocidad estimada</span> de desarrollo para determinar la cantidad de trabajo que se puede
-                    <span style="font-weight: bold;">comprometer</span> a entregar. Dicha estimación procede de la velocidad real alcanzada en Sprints anteriores, es decir, se calcula en base a <span style="font-weight: bold;">resultados empíricos</span>.</div>
+                ><div class="generic_text_container">
+                    <ul>
+                        <li>
+                            <p>¿Qué hice <span style="font-weight: bold;">ayer</span> para ayudar al Equipo a alcanzar la <span style="font-weight: bold;">Meta de Sprint</span>?</p>
+                        </li>
+                        <li>
+                            <p>¿Qué voy a hacer <span style="font-weight: bold;">hoy</span> para ayudar al Equipo a alcanzar la <span style="font-weight: bold;">Meta de Sprint</span>?</p>
+                        </li>
+                        <li>
+                            <p>Me he topado con algún tipo de <span style="font-weight: bold;">impedimento</span> que pueda hacer peligrar la consecución de la M<span style="font-weight: bold;">eta de Sprint</span> por parte del Equipo?</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <p>El <span style="font-weight: bold;">conjunto de elementos</span> del Product Backlog seleccionados para el Sprint recibe el nombre de <span style="font-weight: bold;"> Sprint Backlog</span> sobre el cual también hablaremos
-                en detalle posteriormente.
+            <p>Además el Scrum Master puede ayudar al equipo a revisar el  <span style="font-weight: bold;">progreso</span> del trabajo hacia la consecución del Sprint mediante herramientas como el gráfico  <span style="font-weight: bold;">Sprint Burn Down</span>, herramientas de las que hablaremos en la
+                sección de artefactos.
             </p>
-            <p>Es importante señalar que, además de las siguientes tareas del proyecto en el Product Backlog, se tendrán en cuenta de forma particular las <span style="font-weight: bold;">tareas no completadas</span> en el <span style="font-weight: bold;">Sprint
-                    anterior</span>, si bien es cierto que dichas tareas volverán al Backlog antes de empezar la reunión de planificación, tras la reunión de Revisión de Sprint, como veremos en su correspondiente apartado.
+            <p>Por último, señalar que en esta reunión es imprescindible que todos los miembros del  <span style="font-weight: bold;">Equipo de Desarrollo</span> estén  <span style="font-weight: bold;">presentes</span>, el  <span style="font-weight: bold;">Scrum Master puede</span> o no estarlo y el
+                <span style="font-weight: bold;">Product Owner no debería</span> estar, salvo que sea expresamente invitado por el equipo de desarrollo para tratar algún tema concreto.
             </p>
-            <p>El <span style="font-weight: bold;">Product Owner</span> deberá <span style="font-weight: bold;">explicar</span> al equipo de desarrollo cada uno de los <span style="font-weight: bold;">elementos</span> seleccionados y resolver todas las
-                <span style="font-weight: bold;">dudas</span> que éste pudiera tener.
-            </p>
-            <br>
-            <h2>¿Cómo se va a completar el trabajo seleccionado?</h2>
-            <p>El <span style="font-weight: bold;">Equipo de Desarrollo</span> analiza los elementos del Product Backlog seleccionados y <span style="font-weight: bold;">elabora un plan</span> para llevarlos a cabo.</p>
-            <p>Dicho plan suele incluir <span style="font-weight: bold;">dividir</span> los ítems del Product Backlog, los cuales suelen ser expresados como <span style="font-weight: bold;">Historias de Usuario</span> (User Stories), en <span style="font-weight: bold;">tareas técnicas</span>,
-                es decir, tareas de menor envergadura y mayor entidad a nivel técnico las cuales pueden ser llevadas a cabo por un único desarrollador. Además, se suelen organizar las tareas técnicas de forma que se eliminen <span style="font-weight: bold;">dependencias</span> o se puedan
-                llevar a cabo primero las tareas con mayor cantidad de <span style="font-weight: bold;">incertidumbre</span>. Por ejemplo, si una de las historias de usuario requiere que se muestre un mensaje por pantalla cuando suceda una determinada acción y otra historia requiere que el
-                usuario pueda tomar una decisión de verdadero o falso cuando suceda otra acción, el Equipo puede convenir en extraer una tarea técnica de ambas historias que consista en desarrollar un servicio proveedor de pop-ups, el cual deberá ser desarrollado antes de las dos tareas que
-                lo utilizarán.
-            </p>
-            <p>Otro caso podría ser que una de las historias suponga generar una aplicación nativa para un determinado sistema operativo mobile, tarea que no se ha llevado nunca a cabo con anterioridad por el equipo. Esta tarea concentra un alto grado de incertidumbre, la cual debe ser resuelta
-                lo antes posible pues supone un elevado riesgo no controlado, por tanto el equipo de desarrollo extraerá una tarea técnica que consista en prototipar el desarrollo de un hola mundo como aplicación nativa.
-            </p>
-            <p>Se debe tener cierto cuidado a la hora de <span style="font-weight: bold;">reorganizar prioridades</span>, pues podría darse el caso de que no se llegaran a completar todas las historias de usuario del Sprint y que las historias incompletas tuvieran mayor prioridad o importancia
-                para el Product Owner que otras historias sí finalizadas, lo cual podría chocar con sus expectativas y las del cliente.
-            </p>
-            <p>A lo largo del Sprint el equipo de desarrollo podría seguir descomponiendo las tareas en subtareas o <span style="font-weight: bold;">modificando</span> su <span style="font-weight: bold;">plan</span> de desarrollo a medida que fuera <span style="font-weight: bold;">aprendiendo más</span>
-                sobre el trabajo a llevar a cabo.
-            </p>
-            <p>Tanto durante la reunión de planificación como a lo largo del Sprint el Equipo de Desarrollo puede solicitar al <span style="font-weight: bold;">Product Owner</span> que <span style="font-weight: bold;">clarifique</span> algún detalle sobre las tareas. Si, al hacerlo, ambos se encontraran
-                con que el trabajo es demasiado o demasiado poco para el Sprint podrían renegociar el alcance de forma que se garantizase la predictibilidad del Sprint.
-            </p>
-            <p>Las Reuniones de Planificación suelen ser muy largas, hasta ocho horas de conversaciones técnicas. En muchas ocasiones he encontrado gran <span style="font-weight: bold;">dificultad</span> para mantener al <span style="font-weight: bold;">Product Owner</span> durante toda la duración de
-                la <span style="font-weight: bold;">reunión</span> en la sala debido a lo inhumano del sacrificio para un perfil no técnico. Lo que suelo hacer es <span style="font-weight: bold;">dividir la reunión de planificación</span> en dos partes, la primera de aproximadamente un tercio del total es
-                una <span style="font-weight: bold;">explicación</span> de las historias que se desea desarrollar. En ella el Product Owner explica cada historia de usuario y el Equipo de Desarrollo aclara sus dudas. En la segunda parte el Equipo de Desarrollo inicia el <span style="font-weight: bold;">debate técnico</span>,
-                con las historias claras y frescas, y empieza la descomposición en tareas y la extracción de componentes y tareas de refactorización. Si se adopta esta medida es importante poder contar puntualmente con el Product Owner a mano para resolución de las dudas que puedan surgir.
-            </p>
+
             <div class="key_points_text_box">
                 <div class="title_box">
                     <div class="generic_icon_container"></div>
@@ -92,50 +82,56 @@
                 <div class="content_container">
                     <div class="row_container">
                         <div class="bullet"></div>
-                        <div class="text">La reunión de <span style="font-weight: bold;">planificación</span> de Sprint es un evento <span style="font-weight: bold;">time-boxed</span> de hasta ocho horas de duración.</div>
+                        <div class="text">El <span style="font-weight: bold;">Equipo de Desarrollo</span> se reúne <span style="font-weight: bold;">todos los días</span> para sincronizar sus tareas y elaborar un plan de trabajo.</div>
                     </div>
+                </div>
+                <div class="content_container">
                     <div class="row_container">
                         <div class="bullet"></div>
-                        <div class="text">Durante la planificación se decide <span style="font-weight: bold;">qué puede ser hecho</span> en el Sprint y <span style="font-weight: bold;">cómo se debe hacer</span>.</div>
+                        <div class="text">Debe tener lugar siempre a la <span style="font-weight: bold;">misma hora</span> y en el <span style="font-weight: bold;">mismo lugar</span>.</div>
                     </div>
+                </div>
+                <div class="content_container">
                     <div class="row_container">
                         <div class="bullet"></div>
-                        <div class="text">Se establece un <span style="font-weight: bold;">objetivo de Sprint</span> que dé coherencia a las tareas seleccionadas.</div>
+                        <div class="text">Es un momento Scrum clave de <span style="font-weight: bold;">inspección y adaptación</span>.</div>
                     </div>
+                </div>
+                <div class="content_container">
                     <div class="row_container">
                         <div class="bullet"></div>
-                        <div class="text">El <span style="font-weight: bold;">Product Owner prioriza</span> las tareas pero el <span style="font-weight: bold;">equipo de desarrollo decide</span> cuales se van a hacer.</div>
+                        <div class="text">Es una reunión <span style="font-weight: bold;">time-boxed</span> de 15 minutos.</div>
                     </div>
+                </div>
+                <div class="content_container">
                     <div class="row_container">
                         <div class="bullet"></div>
-                        <div class="text">El <span style="font-weight: bold;">Equipo estima</span> cuántas tareas se completarán en base a su <span style="font-weight: bold;">velocidad estimada de desarrollo</span>.</div>
+                        <div class="text">Si peligra el objetivo de 15 minutos el Scrum Master puede proponer una <span style="font-weight: bold;">Reunión de Grooming</span> al finalizar el Daily Meeting.</div>
                     </div>
+                </div>
+                <div class="content_container">
                     <div class="row_container">
                         <div class="bullet"></div>
-                        <div class="text">El <span style="font-weight: bold;">Sprint Backlog</span> está formado por el conjunto de <span style="font-weight: bold;">elementos seleccionados</span> para completar durante el Sprint.</div>
+                        <div class="text">Cada miembro del equipo comenta que hizo <span style="font-weight: bold;">ayer</span>, que prevé hacer <span style="font-weight: bold;">hoy</span> y si se ha topado con algún <span style="font-weight: bold;">impedimento</span>.</div>
                     </div>
+                </div>
+                <div class="content_container">
                     <div class="row_container">
                         <div class="bullet"></div>
-                        <div class="text">El <span style="font-weight: bold;">Product Owner explica</span> cada tarea que debe ser llevada a cabo.</div>
-                    </div>
-                    <div class="row_container">
-                        <div class="bullet"></div>
-                        <div class="text">El <span style="font-weight: bold;">Equipo de desarrollo</span> elabora un <span style="font-weight: bold;">plan</span> para llevar a cabo el incremento de Sprint.
-                        </div>
+                        <div class="text">A esta reunión <span style="font-weight: bold;">deben asistir</span> todos los miembros del <span style="font-weight: bold;">equipo de desarrollo</span>.</div>
                     </div>
                 </div>
             </div>
 
             <div class="links-container">
                 <div class="left-side-link-container">
-                    <a href="[[ROUTE:scrum-framework-three-]]" class="post-content-link">< Eventos de Scrum. Sprint</a>
+                    <a href="[[ROUTE:scrum-framework-two-]]" class="post-content-link">< El Equipo Scrum. Scrum Master, Product Owner y Developer Team</a>
                 </div
-                ><!--<div class="right-side-link-container">
-                    <a href="[[RO__UTE:scrum-framework-five-]]" class="post-content-link">Eventos de Scrum. Scrum diario o Stand Up Meeting ></a>
-                </div>-->
+                ><div class="right-side-link-container">
+                    <a href="[[ROUTE:scrum-framework-four-]]" class="post-content-link">Eventos de Scrum. Reunión de planificación ></a>
+                </div>
             </div>
             <br>
-
         </div>
     </div>
 {% endblock %}
