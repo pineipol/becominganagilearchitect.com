@@ -5,4 +5,7 @@ parameters:
 
     emailing:
         contact:
-            toAddress:      'aaa'
+            template:       'PineipolBaaBundle:EmailTemplates:contact-form-notification.html.twig'
+            fromAddress:    'alejandro.barba@becominganagilearchitect.com'
+            toAddress:      'abarbaprieto@gmail.com'
+            subject:        'Becoming An Agile Architect - Contact Form request notification'

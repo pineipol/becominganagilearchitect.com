@@ -2,7 +2,7 @@
 
 namespace Pineipol\BaaBundle\Services;
 
-use Symfony\Component\HttpFoundation\Request;
+use Swift_Message;
 
 /**
  *
@@ -21,7 +21,6 @@ class EmailService {
         $this->_container = $container;
     }
 
-
     /**
      *
      * @param type $form
@@ -29,18 +28,20 @@ class EmailService {
      */
     public function sendContactFormEmail(array $contactFormData) {
 
-        echo '<br><br><br><br>';
-        echo $this->_container->getParameter('emailing')['contact']['toAddress'];
-
-
-//$contactFormData['name']
-//$contactFormData['email']
-//$contactFormData['subject']
-//$contactFormData['message']
-
-
-
-
+        $message = Swift_Message::newInstance()
+                ->setContentType("text/html")
+                ->setSubject($this->_container->getParameter('emailing')['contact']['subject'])
+                ->setFrom($this->_container->getParameter('emailing')['contact']['fromAddress'])
+                ->setTo(array(
+                    $this->_container->getParameter('emailing')['contact']['toAddress']
+                ))
+                ->setBody($this->_container->get('twig')->render($this->_container->getParameter('emailing')['contact']['template'], array(
+                    'name' => $contactFormData['name'],
+                    'email' => $contactFormData['email'],
+                    'subject' => $contactFormData['subject'],
+                    'message' => $contactFormData['message'],
+        )));
+        $this->_container->get('mailer')->send($message);
     }
 
 }

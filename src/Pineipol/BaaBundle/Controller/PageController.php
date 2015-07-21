@@ -61,9 +61,15 @@ class PageController extends Controller {
 
             $this->container->get('pineipol_baa.email_service')->sendContactFormEmail($form->getData());
 
-            return $this->render('PineipolBaaBundle:Partials:contact-form.html.twig', array(
-                'form' => $form->createView(),
-            ));
+            try {
+                return $this->render('PineipolBaaBundle:Partials:contact-form-success.html.twig', array(
+                    'form' => $form->createView(),
+                ));
+            } catch (\Exception $e) {
+                return $this->render('PineipolBaaBundle:Partials:contact-form-failure.html.twig', array(
+                    'form' => $form->createView(),
+                ));
+            }
         }
 
         return $this->render('PineipolBaaBundle:Partials:contact-form.html.twig', array(

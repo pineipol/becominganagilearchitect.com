@@ -8,7 +8,7 @@ use Doctrine\DBAL\Schema\Schema;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-class Version20150716233300 extends AbstractMigration {
+class Version20150721233300 extends AbstractMigration {
 
     /**
      * @param Schema $schema
@@ -17,7 +17,7 @@ class Version20150716233300 extends AbstractMigration {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() != "mysql", "Migration can only be executed safely on \"mysql\".");
 
-        $this->addSql("INSERT INTO `labels` (`locale_id`, `label_key`, `translation`, `created`) VALUES ('1', '1', 'pages.contact.form.name', 'Nombre', '2015-07-16 23:32:28');");
+        $this->addSql("INSERT INTO `labels` (`locale_id`, `label_key`, `translation`, `created`) VALUES ('1', 'pages.contact.form.name', 'Nombre', '2015-07-16 23:32:28');");
         $this->addSql("INSERT INTO `labels` (`locale_id`, `label_key`, `translation`, `created`) VALUES ('1', 'pages.contact.form.email', 'Email', '2015-07-16 23:32:28');");
         $this->addSql("INSERT INTO `labels` (`locale_id`, `label_key`, `translation`, `created`) VALUES ('1', 'pages.contact.form.subject', 'Asunto', '2015-07-16 23:32:28');");
         $this->addSql("INSERT INTO `labels` (`locale_id`, `label_key`, `translation`, `created`) VALUES ('1', 'pages.contact.form.message', 'Mensaje', '2015-07-16 23:32:28');");
