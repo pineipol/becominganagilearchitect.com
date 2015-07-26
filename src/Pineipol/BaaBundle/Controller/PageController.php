@@ -2,7 +2,9 @@
 
 namespace Pineipol\BaaBundle\Controller;
 
+use Pineipol\BaaBundle\Form\Type\ContactFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 class PageController extends Controller {
@@ -12,7 +14,7 @@ class PageController extends Controller {
      *
      * @param integer $id
      *
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return Response
      */
     public function getAction($id) {
 
@@ -37,7 +39,57 @@ class PageController extends Controller {
         }
 
         return $this->render('PineipolBaaBundle:Pages:page.html.twig', array(
+                    'layout' => $pageInstance->getRoute()->getLayout()->getFile(),
                     'pageContent' => $pageInstance,
+        ));
+    }
+
+    /**
+     * Renders contact form partial and process its submit
+     *
+     * @return Response
+     */
+    public function contactFormAction() {
+
+        // set home request on flash messages
+        $session = new Session();
+        $session->getFlashBag()->add('request', array(
+            'type' => 'home',
+            'id' => null,
+        ));
+
+        $request = $this->getRequest();
+
+        $form = $this->createForm(new ContactFormType(), null, array(
+            'action' => $this->get('router')->generate('pineipol_baa_contact-form-save')
+        ));
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted()) {
+            if ($form->isValid()) {
+                try {
+                    $this->container->get('pineipol_baa.email_service')->sendContactFormUserEmail($form->getData());
+                    $this->container->get('pineipol_baa.email_service')->sendContactFormNotificationEmail($form->getData());
+
+                    return $this->render('PineipolBaaBundle:Partials:contact-form-success.html.twig', array(
+                        'form' => $form->createView(),
+                    ));
+                } catch (\Exception $e) {
+                    return $this->render('PineipolBaaBundle:Partials:contact-form-failure.html.twig', array(
+                        'form' => $form->createView(),
+                    ));
+                }
+            } else {
+                return $this->render('PineipolBaaBundle:Partials:contact-form.html.twig', array(
+                    'layout' => true,
+                    'form' => $form->createView(),
+                ));
+            }
+        }
+
+        return $this->render('PineipolBaaBundle:Partials:contact-form.html.twig', array(
+            'layout' => false,
+            'form' => $form->createView(),
         ));
     }
 }

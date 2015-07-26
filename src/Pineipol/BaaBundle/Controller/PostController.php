@@ -37,6 +37,7 @@ class PostController extends Controller {
         }
 
         return $this->render('PineipolBaaBundle:Default:post.html.twig', array(
+                    'layout' => $postInstance->getRoute()->getLayout()->getFile(),
                     'postContent' => $postInstance,
         ));
     }

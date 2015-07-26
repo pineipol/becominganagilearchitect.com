@@ -1,4 +1,16 @@
 parameters:
-    meta.home.title:          Becoming An Agile Architect - El blog Agil sobre coaching, Scrum, TDD y Continuous integration
-    meta.home.description:    Un blog práctico sobre Agile Coaching, Scrum, Test Driven Development y cómo llevarlos a cabo mediante explicaciones claras y ejemplos de cada paso
-    meta.home.keywords:       agile lean scrum kanban tdd extreme programming architect arquitectura clean code programacion coaching continuous integration integración continua
+    meta.home.title:        Becoming An Agile Architect - El blog Agil sobre coaching, Scrum, TDD y Continuous integration
+    meta.home.description:  Un blog práctico sobre Agile Coaching, Scrum, Test Driven Development y cómo llevarlos a cabo mediante explicaciones claras y ejemplos de cada paso
+    meta.home.keywords:     agile lean scrum kanban tdd extreme programming architect arquitectura clean code programacion coaching continuous integration integración continua
+
+    emailing:
+        contactNotification:
+            template:       'PineipolBaaBundle:EmailTemplates:contact-form-notification.html.twig'
+            fromAddress:    'alejandro.barba@becominganagilearchitect.com'
+            toAddress:      'abarbaprieto@gmail.com'
+            subject:        'Becoming An Agile Architect - Contact Form request notification'
+
+        contactUserResponse:
+            template:       'PineipolBaaBundle:EmailTemplates:contact-form-user-response.html.twig'
+            fromAddress:    'alejandro.barba@becominganagilearchitect.com'
+            subject:        'Solicitud de contacto recibida - Becoming An Agile Architect'

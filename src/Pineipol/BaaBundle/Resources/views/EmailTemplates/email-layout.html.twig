@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>{% block title %}Becoming An Agile Architect{% endblock %}</title>
+
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('bundles/pineipolbaa/css/styles.css') }}" />
+        {% endblock %}
+    </head>
+    <body>
+        <div style="background-color:#222222;box-shadow:0px 2px 2px #000000;margin:auto;height:100px;max-width:1000px;width:100%;">
+            <div style="padding:43px 20px 0 20px;vertical-align:top;width:311px;">
+                <a href="{{ path('pineipol_baa_homepage') }}">
+                    <img id="header_logo_img" src="http://www.becominganagilearchitect.com/bundles/pineipolbaa/images/logo.png" />
+                </a>
+            </div>
+        </div>
+        <div style="border:1px solid #000000;margin:auto;max-width:1000px;width:100%;">
+            {% block body %}{% endblock %}
+        </div>
+    </body>
+</html>

@@ -1,4 +1,10 @@
 services:
+    pineipol_baa.locale_listener:
+        class: Pineipol\BaaBundle\EventListener\LocaleListener
+        arguments: ["%kernel.default_locale%"]
+        tags:
+            - { name: kernel.event_subscriber }
+
     translation.loader.db:
         class: Pineipol\BaaBundle\Services\DbTranslationLoader
         arguments: [@doctrine.orm.entity_manager]
@@ -11,8 +17,6 @@ services:
         tags:
             - { name: routing.loader }
 
-    pineipol_baa.locale_listener:
-        class: Pineipol\BaaBundle\EventListener\LocaleListener
-        arguments: ["%kernel.default_locale%"]
-        tags:
-            - { name: kernel.event_subscriber }
+    pineipol_baa.email_service:
+        class: Pineipol\BaaBundle\Services\EmailService
+        arguments: ["@service_container"]
