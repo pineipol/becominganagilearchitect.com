@@ -1,52 +1,56 @@
-<div id="contact-form">
-    {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'margin': 0, 'padding': 0, 'style': 'width:100%;'} } ) }}
-    <div class="v-pair">
-        <div class="vp-label">
-            {{ form_label(form.name) }}
-        </div
-        ><div class="vp-field">
-            {{ form_widget(form.name, { 'attr': {'class' : 'input'} }) }}
-            {{ form_errors(form.name) }}
+{% extends layout ? 'PineipolBaaBundle:Layout:home.html.twig' : 'PineipolBaaBundle:Layout:empty-template.html.twig' %}
+
+{% block body %}
+    <div id="contact-form">
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'margin': 0, 'padding': 0, 'style': 'width:100%;'} } ) }}
+        <div class="v-pair">
+            <div class="vp-label">
+                {{ form_label(form.name) }}
+            </div
+            ><div class="vp-field">
+                {{ form_widget(form.name, { 'attr': {'class' : 'input'} }) }}
+                {{ form_errors(form.name, { 'attr': {'class' : 'error'} }) }}
+            </div>
         </div>
-    </div>
-    <div class="v-pair">
-        <div class="vp-label">
-            {{ form_label(form.email) }}
-        </div
-        ><div class="vp-field">
-            {{ form_widget(form.email, { 'attr': {'class' : 'input'} }) }}
-            {{ form_errors(form.email) }}
+        <div class="v-pair">
+            <div class="vp-label">
+                {{ form_label(form.email) }}
+            </div
+            ><div class="vp-field">
+                {{ form_widget(form.email, { 'attr': {'class' : 'input'} }) }}
+                {{ form_errors(form.email) }}
+            </div>
         </div>
-    </div>
-    <div class="h-pair">
-        <div class="hp-label">
-            {{ form_label(form.subject) }}
-        </div
-        ><div class="hp-field">
-            {{ form_widget(form.subject, { 'attr': {'class' : 'input'} }) }}
-            {{ form_errors(form.subject) }}
+        <div class="h-pair">
+            <div class="hp-label">
+                {{ form_label(form.subject) }}
+            </div
+            ><div class="hp-field">
+                {{ form_widget(form.subject, { 'attr': {'class' : 'input'} }) }}
+                {{ form_errors(form.subject) }}
+            </div>
         </div>
-    </div>
-    <div class="h-pair">
-        <div class="hp-label">
-            {{ form_label(form.message) }}
-        </div
-        ><div class="hp-field">
-            {{ form_widget(form.message, { 'attr': {'class' : 'textarea'} }) }}
-            {{ form_errors(form.message) }}
+        <div class="h-pair">
+            <div class="hp-label">
+                {{ form_label(form.message) }}
+            </div
+            ><div class="hp-field">
+                {{ form_widget(form.message, { 'attr': {'class' : 'textarea'} }) }}
+                {{ form_errors(form.message) }}
+            </div>
         </div>
-    </div>
-    {#<div class="v-pair">
-        <div class="vp-label">
-            {{ form_label(form.captcha) }}
-        </div
-        ><div class="vp-field">
-            {{ form_widget(form.captcha) }}
-            {{ form_errors(form.captcha) }}
+        <div class="v-pair">
+            <div class="vp-label">
+                {{ form_label(form.captcha) }}
+            </div
+            ><div class="vp-field">
+                {{ form_widget(form.captcha) }}
+                {{ form_errors(form.captcha) }}
+            </div>
         </div>
-    </div>#}
-    <div class="h-single">
-        {{ form_widget(form.send, { 'attr': {'class' : 'input'} }) }}
+        <div class="h-single">
+            {{ form_widget(form.send, { 'attr': {'class' : 'input'} }) }}
+        </div>
+        {{ form_end(form) }}
     </div>
-    {{ form_end(form) }}
-</div>
+{% endblock %}

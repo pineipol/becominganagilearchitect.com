@@ -1,5 +1,13 @@
 #contact-form {
     padding: 5px;
+    margin: auto;
+    width: 60%;
+    @media (max-width: @landscape-tablet-width) {
+        width: 80%;
+    }
+    @media (max-width: @vertical-tablet-width) {
+        width: 100%;
+    }
     div {
         /*border: 1px dotted red;*/
     }
@@ -11,13 +19,22 @@
             font-weight: bold;
             vertical-align: top;
             width: 30%;
+            @media (max-width: @vertical-tablet-width) {
+                width: 100%;
+            }
         }
         .vp-field {
             display: inline-block;
             vertical-align: top;
             width: 70%;
+            @media (max-width: @vertical-tablet-width) {
+                width: 100%;
+            }
             .input {
                 width: 100%;
+            }
+            .error {
+                color: red;
             }
         }
     }
@@ -46,5 +63,20 @@
         text-align: center;
         vertical-align: top;
         width: 100%;
+    }
+}
+#contact-form-result {
+    height: 100%;
+    padding: 100px 0 0 0;
+    vertical-align: middle;
+    width: 100%;
+    .title {
+        font: bold 20px Verdana;
+        text-align: center;
+    }
+    .message {
+        font: 14px Verdana;
+        padding: 50px 0 0 0;
+        text-align: left;
     }
 }

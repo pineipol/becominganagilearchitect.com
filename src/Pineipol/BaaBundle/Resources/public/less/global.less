@@ -4,10 +4,11 @@
 @image-path : "../images/";
 
 /* Color variables */
+@background-gray: #666666;
 @black: #000000;
 @dark-gray: #222222;
 @light-gray: #AAAAAA;
-@background-gray: #666666;
+@red: red;
 @white: #FFFFFF;
 @leds-green: #B4E767;
 @tag-green: #00CC00;
@@ -54,89 +55,5 @@ a {
     &:visited {
         color: @black;
         text-decoration: none;
-    }
-}
-
-/* Components */
-.generic_text_box() {
-    display: table;
-    margin: 15px 0 15px 0;
-    .generic_icon {
-        background-position: center 20px;
-        background-repeat: no-repeat;
-        display: table-cell;
-        height: 46px;
-        vertical-align: top;
-        width: 75px;
-    }
-    .generic_text_container {
-        display: table-cell;
-        font: 1em Verdana;
-        line-height: 2em;
-        padding: 10px 20px 10px 0px;
-        vertical-align: top;
-    }
-}
-.green_text_box {
-    .generic_text_box();
-    background-color: @green-text-box-background;
-    .generic_icon {
-        background-image: url('@{image-path}icons/important.png');
-    }
-}
-
-
-.text_box() {
-    margin: 15px 0 15px 0;
-    padding-right: 10px;
-    .title_box {
-        display: table;
-        width: 100%;
-        .generic_icon_container {
-            background-position: center 10px;
-            background-repeat: no-repeat;
-            display: table-cell;
-            height: 56px;
-            vertical-align: top;
-            width: 75px;
-        }
-        .generic_title_container {
-            border-bottom: 2px solid @black;
-            display: table-cell;
-            font: bold 1.5em Verdana;
-            padding: 13px 5px 0px 0px;
-            text-align: right;
-            vertical-align: top;
-        }
-    }
-    .content_container {
-        padding: 10px 15px 10px 0;
-        .row_container {
-            display: table;
-            .bullet {
-                background-image: url('@{image-path}icons/green-bullet.png');
-                background-position: center center;
-                background-repeat: no-repeat;
-                display: table-cell;
-                height: 30px;
-                vertical-align: top;
-                width: 74px;
-            }
-            .text {
-                display: table-cell;
-                font: 1em Verdana;
-                padding: 5px 0 5px 0;
-                vertical-align: top;
-            }
-        }
-    }
-}
-.key_points_text_box {
-    .text_box();
-    background-color: @blue-text-box-background;
-    .title_box {
-        .generic_icon_container {
-            background-image: url('@{image-path}icons/key-point.png');
-        }
     }
 }

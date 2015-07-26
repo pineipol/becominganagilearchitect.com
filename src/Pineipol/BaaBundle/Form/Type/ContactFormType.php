@@ -19,28 +19,40 @@ class ContactFormType extends AbstractType {
 
         $builder->setAction($options['action'])
                 ->add('name', 'text', array(
-                    'constraints' => array(new NotBlank()),
+                    'constraints' => array(new NotBlank(array(
+                        'message' => 'El campo Nombre no puede estar en blanco',
+                    ))),
                     'label' => 'pages.contact.form.name',
                 ))
                 ->add('email', 'email', array(
-                    'constraints' => array(new NotBlank(), new Email()),
+                    'constraints' => array(new NotBlank(array(
+                        'message' => 'El campo Email no puede estar en blanco',
+                    )), new Email(array(
+                        'message' => 'El Email no tiene un formato válido',
+                    ))),
                     'label' => 'pages.contact.form.email',
                 ))
                 ->add('subject', 'text', array(
-                    'constraints' => array(new NotBlank()),
+                    'constraints' => array(new NotBlank(array(
+                        'message' => 'El campo Asunto no puede estar en blanco',
+                    ))),
                     'label' => 'pages.contact.form.subject',
                 ))
                 ->add('message', 'textarea', array(
-                    'constraints' => array(new NotBlank()),
+                    'constraints' => array(new NotBlank(array(
+                        'message' => 'El campo Mensaje no puede estar en blanco',
+                    ))),
                     'label' => 'pages.contact.form.message',
                     'attr' => array(
                         'style' => 'height:100px'
                     ),
                 ))
-//                ->add('captcha', 'captcha', array(
-//                    'constraints' => array(new NotBlank()),
-//                    'label' => 'pages.contact.form.captcha',
-//                ))
+                ->add('captcha', 'captcha', array(
+                    'constraints' => array(new NotBlank(array(
+                        'message' => 'El valor introducido no es correcto',
+                    ))),
+                    'label' => 'pages.contact.form.captcha',
+                ))
                 ->add('send', 'submit', array(
                     'label' => 'pages.contact.form.submit',
                     'attr' => array(

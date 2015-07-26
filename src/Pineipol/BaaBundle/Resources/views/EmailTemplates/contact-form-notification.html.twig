@@ -1,11 +1,19 @@
 {% extends 'PineipolBaaBundle:EmailTemplates:email-layout.html.twig' %}
 
 {% block body %}
-    Email de prueba
-
-    Nombre: {{ name }}
-    Email: {{ email }}
-    Subject: {{ subject }}
-    Mensaje: {{ message }}
-    
+    <div style="font:14px Verdana;padding:40px">
+        <div style="font:bold 18px Verdana">
+            Solicitud de contacto recibida<br><br><br>
+        </div>
+        <div>
+            Has recibido una solicitud de contacto de<br><br>
+            {{ name }}<br>
+            {{ email }}<br>
+            {{ subject }}<br>
+            {{ message }}<br><br>
+        </div>
+        <div style="font-style:italic">
+            Alejandro Barba - Becoming An Agile Architect
+        </div>
+    </div>
 {% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'PineipolBaaBundle:EmailTemplates:email-layout.html.twig' %}
+
+{% block body %}
+    <div style="color:#000000;font:14px Verdana;padding:40px">
+        <div style="font:bold 18px Verdana">
+            Solicitud de contacto recibida<br><br><br>
+        </div>
+        <div>
+            Hola {{ name }},<br><br><br>
+        </div>
+        <div>
+            He recibido tu mensaje sobre<br><br>
+            <span style="font-style:italic">{{ subject }}<br><br>
+            {{ message }}</span><br><br>
+        </div>
+        <div>
+            Tendrás noticias mías tan pronto como me sea posible en el email que me has indicado {{ email }}.<br><br><br>
+        </div>
+        <div>
+            Muchas gracias por tu interés y un saludo,<br><br>
+        </div>
+        <div style="font-style:italic">
+            Alejandro Barba - Becoming An Agile Architect
+        </div>
+    </div>
+{% endblock %}

@@ -1,5 +1,6 @@
 #contact-form {
   padding: 5px;
+  width: 70%;
 }
 #contact-form div {
   /*border: 1px dotted red;*/
@@ -47,5 +48,20 @@
   text-align: center;
   vertical-align: top;
   width: 100%;
+}
+#contact-form-result {
+  height: 100%;
+  padding: 100px 0 0 0;
+  vertical-align: middle;
+  width: 100%;
+}
+#contact-form-result .title {
+  font: bold 20px Verdana;
+  text-align: center;
+}
+#contact-form-result .message {
+  font: 14px Verdana;
+  padding: 50px 0 0 0;
+  text-align: left;
 }
 /*# sourceMappingURL=contact-form.css.map */
