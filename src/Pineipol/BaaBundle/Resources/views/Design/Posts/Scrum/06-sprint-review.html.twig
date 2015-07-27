@@ -1,0 +1,131 @@
+{% extends 'PineipolBaaBundle:Layout:home.html.twig' %}
+
+{% block body %}
+    <div id="post-container">
+        <h1>Sprint Review</h1>
+        <div class="published-on">27 de julio de 2015</div>
+        <div class="image-container">
+            <img class="post-image" src="{{ asset('uploads/posts/150727_sprint_review/sprint_review.jpg') }}">
+            <div class="tags-container">
+                <a href="">
+                    <div class="one-tag-container">
+                        <div class="yellow-tag">Agile</div>
+                        <div class="tag-triangle"></div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="one-tag-container">
+                        <div class="pink-tag">Architecture</div>
+                        <div class="tag-triangle"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="content">
+
+            <p>
+                <span style="font-size: 60px">A</span>l <span style="font-weight:bold">final de cada Sprint</span> tiene lugar la reunión de <span style="font-weight:bold">Revisión de Sprint</span>.
+            </p>
+            <div class="green_text_box">
+                <div class="generic_icon"></div
+                ><div class="generic_text_container">
+                    La reunión de revisión de Sprint es un evento <span style="font-weight:bold">time-boxed</span> de un máximo de cuatro horas de duración para Sprints de un mes y proporcionalmente menor en Sprints más cortos.
+                </div>
+            </div>
+            <p>
+                Durante esta reunión <span style="font-weight:bold">se inspeccionan los elementos del Product Backlog</span> incluídos en el Sprint para valorar si <span style="font-weight:bold">cumplen su definición de completado</span>. El <span style="font-weight:bold">Product Owner es el encargado de decidir</span> si un ítem cumple o no con la definición de completado y puede requerir la ayuda del equipo de desarrollo para valorar cuestiones técnicas como, por ejemplo, el nivel de cobertura de tests unitarios del proyecto.
+            </p>
+            <p>
+                Los <span style="font-weight:bold">elementos del Product Backlog pueden estar completos o no</span>, pero en ningún caso podrán estar parcialmente completos. Aquellos elementos que no hayan sido completamente terminados, o que presenten deficiencias, <span style="font-weight:bold">volverán al Product Backlog para ser estimados y priorizados de nuevo</span>. En la práctica suele ocurrir que la mayoría de elementos no completados en el Sprint que termina sean puestos en la cima de la pila del Sprint que empieza, pues suelen ser tareas bien definidas y a las que en muchas ocasiones sólo les restan unas pocas horas de dedicación, no obstante, esto no se cumple siempre o no nos interesa siempre, es por ello que es conveniente que vuelvan al Backlog y sean replanteadas.
+            </p>
+            <p>
+                Por ejemplo, volvamos al caso de una historia de usuario que requiere que una aplicación Web sea encapsulada en forma de aplicación híbrida para IOs. Si es la primera vez que el equipo genera una aplicación híbrida la historia contará con un alto grado de complejidad e incertidumbre para el equipo de desarrollo. Las <span style="font-weight:bold">tareas con gran incertidumbre deben ser abordadas las primeras</span> dentro del proyecto, pues descubrir que una tarea no es viable en un punto avanzado del mismo puede llegar a suponer el fracaso de todo él.<br>
+                Si en la revisión de Sprint se concluye que la tarea no está terminada porque se requiere adaptar los estilos de maquetación para que se visualice correctamente en mobile, lo cual no supone un gran esfuerzo, el Product Owner podría decidir no incluir la tarea en el siguiente Sprint sino re-estimar el trabajo restante y re-priorizarla de forma que se concluya en una etapa más tardía del proyecto en la que el aspecto de la aplicación se encuentre cerrado pues, en otro caso, se correría el riesgo de repetir maquetación cuando la incertidumbre sobre la viabilidad de la tarea, es decir, si la aplicación se podría encapsular como híbrida para IOs ya está resuelta.
+            </p>
+            <p>
+                Ademas de evaluar las tareas llevadas a cabo en el Sprint que termina el <span style="font-weight:bold">Equipo Scrum y los Stakeholders</span> (cliente y demás implicados) colaboran para <span style="font-weight:bold">decidir que elementos del Product Backlog deben ser incluídos en el siguiente Sprint</span> de forma que se maximice su valor.
+            </p>
+            <div class="green_text_box">
+                <div class="generic_icon"></div
+                ><div class="generic_text_container">
+                    El <span style="font-weight:bold">resultado de la reunión es un Product Backlog revisado y re-priorizado</span> que será utilizado como elemento de entrada para la reunión de planificación del siguiente Sprint.
+                </div>
+            </div>
+            <p>
+                Por otro lado el <span style="font-weight:bold">equipo de desarrollo</span> comparte los <span style="font-weight:bold">problemas y dificultades</span> que se haya podido encontrar durante el desarrollo de las tareas y explica <span style="font-weight:bold">cómo los ha resuelto</span>.
+            </p>
+            <div class="key_points_text_box">
+                <div class="title_box">
+                    <div class="generic_icon_container"></div>
+                    <div class="generic_title_container">Key Points</div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Tiene lugar <span style="font-weight:bold">al final de cada Sprint</span>.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Es una reunión <span style="font-weight:bold">time-boxed</span> de un máximo de cuatro horas.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Se analiza cada elemento del Backlog incluído en el Sprint y el <span style="font-weight:bold">Product Owner decide si cumple la definición de completado</span>.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Un elemento del Backlog <span style="font-weight:bold">nunca puede estar parcialmente completado</span>.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Los elementos que no cumplen la definición de completado vuelven al Backlog para ser re-estimados y re-priorizados.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            El equipo y los stakeholders <span style="font-weight:bold">deciden qué elementos del Backlog</span> son priorizados para que puedan ser <span style="font-weight:bold">incluídos en el siguiente Sprint</span>.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Al terminar se cuenta con un <span style="font-weight:bold">Product Backlog revisado</span> y re-priorizado.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="links-container">
+                <div class="left-side-link-container">
+                    <a href="[[ROUTE:scrum-framework-five-]]" class="post-content-link">< Eventos de Scrum. Scrum diario o Stand Up Meeting</a>
+                </div
+                ><div class="right-side-link-container">
+                    <a href="[[ROUTE:scrum-framework-seven-]]" class="post-content-link">Eventos de Scrum. Retrospectiva de Sprint ></a>
+                </div>
+            </div>
+            <br>
+
+        </div>
+    </div>
+{% endblock %}
