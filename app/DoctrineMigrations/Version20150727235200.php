@@ -28,7 +28,6 @@ class Version20150727235200 extends AbstractMigration {
         $this->addSql("UPDATE `post_contents` SET `description`='<p>\r\n    Al <span style=\"font-weight:bold\">final de cada Sprint</span> tiene lugar la reunión de <span style=\"font-weight:bold\">Revisión de Sprint</span>.\r\n</p>\r\n<p>\r\n		La reunión de revisión de Sprint es un evento <span style=\"font-weight:bold\">time-boxed</span> de un máximo de cuatro horas de duración para Sprints de un mes y proporcionalmente menor en Sprints más cortos.\r\n</p>\r\n<p>\r\n    Durante esta reunión <span style=\"font-weight:bold\">se inspeccionan los elementos del Product Backlog</span> incluídos en el Sprint para valorar si <span style=\"font-weight:bold\">cumplen su definición de completado...\r\n</p>' WHERE (`post_content_id`='10');");
         $this->addSql("UPDATE `posts` SET `created`='2015-07-27 23:46:08' WHERE (`post_id`='10');");
         $this->addSql("INSERT INTO `posts_links` (`post_id`, `link_id`) VALUES ('10', '1');");
-        $this->addSql("INSERT INTO `posts_links` (`post_id`, `link_id`) VALUES ('10', '1');");
         $this->addSql("INSERT INTO `posts_links` (`post_id`, `link_id`) VALUES ('10', '3');");
         $this->addSql("INSERT INTO `posts_links` (`post_id`, `link_id`) VALUES ('10', '4');");
         $this->addSql("INSERT INTO `posts_links` (`post_id`, `link_id`) VALUES ('10', '5');");
