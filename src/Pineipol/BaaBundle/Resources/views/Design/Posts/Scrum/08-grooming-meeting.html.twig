@@ -1,0 +1,148 @@
+{% extends 'PineipolBaaBundle:Layout:home.html.twig' %}
+
+{% block body %}
+    <div id="post-container">
+        <h1>Backlog grooming meeting</h1>
+        <div class="published-on">27 de julio de 2015</div>
+        <div class="image-container">
+            <img class="post-image" src="{{ asset('uploads/posts/150727_sprint_review/sprint_review.jpg') }}">
+            <div class="tags-container">
+                <a href="">
+                    <div class="one-tag-container">
+                        <div class="yellow-tag">Agile</div>
+                        <div class="tag-triangle"></div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="one-tag-container">
+                        <div class="pink-tag">Architecture</div>
+                        <div class="tag-triangle"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="content">
+
+            <p>
+                <span style="font-size: 60px">P</span>ese a no ser un evento oficialmente reconocido por Scrum.org el propio Ken Schwaber, uno de los creadores del framework, reconoce la importancia de las reuniones de grooming, también conocidas como <span style="font-weight:bold">reuniones de refinamiento del Backlog</span>.
+            </p>
+            <p>
+                Este tipo de reuniones pueden ser llevadas a cabo <span style="font-weight:bold">en cualquier momento del Sprint</span> y no existe un número predeterminado de sesiones, no obstante se aconseja que su <span style="font-weight:bold">duración total no supere el 10% de la duración del Sprint</span>.
+            </p>
+            <div class="green_text_box">
+                <div class="generic_icon"></div
+                ><div class="generic_text_container">
+                    Es muy recomendable que se mantenga, al menos, <span style="font-weight:bold">una reunión de grooming cuando el Sprint esté llegando a su fin</span>, de dos a cinco días antes para Sprints de un mes de duración, con el objetivo de <span style="font-weight:bold">mantener el Backlog actualizado</span> y optimizar el valor de sus ítems.
+                </div>
+            </div>
+            <p>
+                A las reuniones de grooming <span style="font-weight:bold">suele asistir todo el equipo Scrum, incluyendo Product Owner y Scrum Master</span>. En ellas el equipo revisa cada elemento del Product Backlog y se asegura de que tanto su descripción como los criterios de aceptación del mismo sean precisos y reflejen las necesidades exactas del momento actual del proyecto. Además el <span style="font-weight:bold">Product Owner ajusta la prioridad de cada elemento</span> si fuera preciso.
+            </p>
+            <p>
+                Durante la inspección de los elementos por parte del equipo se <span style="font-weight:bold">identifican aquellos que pudieran haberse quedado obsoletos</span>, bien porque ya no tienen sentido, o bien porque ya se han llevado a cabo como parte de otras tareas. Además, tanto el Product Owner como el resto del equipo, <span style="font-weight:bold">detecta posibles tareas nuevas que hubieran podido surgir al ir aprendiendo más</span> sobre el producto o que pudieran reflejar las necesidades del cliente.
+            </p>
+            <div class="green_text_box">
+                <div class="generic_icon"></div
+                ><div class="generic_text_container">
+                    La reunión de Grooming, pese a no ser oficial de Scrum, podría ser considerada un evento más y <span style="font-weight:bold">ser llevada a cabo de forma regular con una fecha, duración y localización fija</span> pues refleja una necesidad habitual y actúa como elemento de gran valor para permitir controlar el riesgo.
+                </div>
+            </div>
+            <p>
+                Existe <span style="font-weight:bold">otro tipo de reuniones</span> que también podríamos considerar de grooming y cuya utilidad no se puede discutir, las <span style="font-weight:bold">reuniones de gestión del cambio</span>, reuniones en las que se analiza un hecho o requisito imprevisto en concreto. Estas reuniones deben llevarse a cabo tan pronto como se detecte la necesidad de aclarar un cambio o en el momento en que aflore una potencial fuente de riesgo debido a algo que diverge de lo esperado, en general a mitad de un Sprint en curso.
+            </p>
+            <p>
+                Imaginemos el siguiente caso. En medio de un Sprint descubrimos que la tarea de desarrollar el formulario de login de una aplicación no ha sido correctamente definida ya que es necesario que los usuarios se puedan identificar, además de con nombre de usuario y contraseña, mediante certificados digitales.
+            </p>
+            <p>
+                El cambio supone aumentar considerablemente la cantidad de trabajo que es necesario ejecutar para completar la tarea por lo que el desarrollador que está trabajando en ella se lo comunica al Scrum Master. Éste convoca al equipo de desarrollo y al Product Owner a la mencionada reunión de Grooming y en ella, el equipo al completo, vuelve a estimar la tarea para conocer la cantidad de trabajo restante.
+            </p>
+            <p>
+                En función de la nueva estimación el Product Owner debe decidir si considera oportuno desarrollar la tarea pudiendo llegar a prescindir de otras funcionalidades menos prioritarias en el Sprint actual o si, por el contrario, decide llevarla de nuevo al Backlog y asignarle una nueva prioridad.
+            </p>
+            <p>
+                En cualquier caso es <span style="font-weight:bold">extremadamente importante que, ante un riesgo</span> como el expuesto o de cualquier otra naturaleza, <span style="font-weight:bold">el equipo al completo se reúna y decida</span> cuál es la manera idónea de actuar, pues en general este tipo de decisiones suelen ser llevadas a cabo por el desarrollador que descubre el problema y el resultado de las mismas no siempre es el adecuado para el proyecto.
+            </p>
+            <div class="key_points_text_box">
+                <div class="title_box">
+                    <div class="generic_icon_container"></div>
+                    <div class="generic_title_container">Key Points</div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Pese a <span style="font-weight:bold">no ser un evento oficial de Scrum</span> sus creadores reconocen su gran importancia.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Pueden ser llevadas a cabo <span style="font-weight:bold">en cualquier momento del Sprint</span>.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Su duración total no debe superar el 10% de la duración total del Sprint.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Es recomendable que se mantenga <span style="font-weight:bold">cuando el Sprint esté llegando a su fin</span> para mantener el Backlog optimizado.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            El <span style="font-weight:bold">Equipo Scrum al completo revisa la definición de cada elemento del Backlog</span> y su priorización.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Se <span style="font-weight:bold">eliminan elementos obsoletos del Backlog y se añaden nuevos</span> que puedan haber surgido al ir aprendiendo más sobre el proyecto.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Constituye un elemento de <span style="font-weight:bold">gran valor para controlar el riesgo</span>.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Cuando aflora cualquier tipo de riesgo el equipo al completo debe mantener una reunión de control de riesgo en la que decidir cómo actuar.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="links-container">
+                <div class="left-side-link-container">
+                    <a href="[[ROUTE:scrum-framework-seven-]]" class="post-content-link">< Eventos de Scrum. Retrospectiva de Sprint</a>
+                </div
+                ><!--<div class="right-side-link-container">
+                    <a href="[[ROU__TE:scrum-framework-nine-]]" class="post-content-link">Artefactos de Scrum. Product Backlog ></a>
+                </div>-->
+            </div>
+            <br>
+
+        </div>
+    </div>
+{% endblock %}
