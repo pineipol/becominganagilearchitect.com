@@ -38,6 +38,12 @@ class VersionTest extends MigrationTestCase
 
     protected $output;
 
+    public function testConstants()
+    {
+        $this->assertSame('up', Version::DIRECTION_UP);
+        $this->assertSame('down', Version::DIRECTION_DOWN);
+    }
+
     /**
      * Create simple migration
      */
@@ -126,13 +132,13 @@ class VersionTest extends MigrationTestCase
      */
     public function stateProvider()
     {
-        return array(
-            array(Version::STATE_NONE),
-            array(Version::STATE_EXEC),
-            array(Version::STATE_POST),
-            array(Version::STATE_PRE),
-            array(-1),
-        );
+        return [
+            [Version::STATE_NONE],
+            [Version::STATE_EXEC],
+            [Version::STATE_POST],
+            [Version::STATE_PRE],
+            [-1],
+        ];
     }
 
     /**
@@ -147,9 +153,9 @@ class VersionTest extends MigrationTestCase
             'Doctrine\DBAL\Migrations\Tests\Stub\VersionDummy'
         );
         $this->assertNull($version->addSql('SELECT * FROM foo'));
-        $this->assertNull($version->addSql(array('SELECT * FROM foo')));
-        $this->assertNull($version->addSql(array('SELECT * FROM foo WHERE id = ?'), array(1)));
-        $this->assertNull($version->addSql(array('SELECT * FROM foo WHERE id = ?'), array(1), array(\PDO::PARAM_INT)));
+        $this->assertNull($version->addSql(['SELECT * FROM foo']));
+        $this->assertNull($version->addSql(['SELECT * FROM foo WHERE id = ?'], [1]));
+        $this->assertNull($version->addSql(['SELECT * FROM foo WHERE id = ?'], [1], [\PDO::PARAM_INT]));
     }
 
     /**

@@ -30,9 +30,11 @@ use Doctrine\ORM\Tools\Setup as OrmSetup;
 use Doctrine\ORM\Tools\Console\Helper\EntityManagerHelper;
 use Doctrine\DBAL\Migrations\AbstractMigration;
 use Doctrine\DBAL\Migrations\MigrationsVersion;
+use Doctrine\DBAL\Migrations\Finder\RecursiveRegexFinder;
 use Doctrine\DBAL\Migrations\Provider\SchemaProviderInterface;
 use Doctrine\DBAL\Migrations\Provider\StubSchemaProvider;
 use Doctrine\DBAL\Migrations\Tools\Console\Command as MigrationCommands;
+use Doctrine\DBAL\Migrations\Tests\Helper;
 use Doctrine\DBAL\Migrations\Tests\MigrationTestCase;
 use Symfony\Component\Console\Output\StreamOutput;
 
@@ -58,7 +60,7 @@ class CliTest extends MigrationTestCase
         $output = $this->executeCommand('migrations:latest');
         $this->assertContains('20150426000000', $output);
 
-        $this->executeCommand('migrations:migrate', array('--no-interaction'));
+        $this->executeCommand('migrations:migrate', 'config.yml', ['--no-interaction']);
         $this->assertSuccessfulExit();
 
         $output = $this->executeCommand('migrations:status');
@@ -79,6 +81,18 @@ class CliTest extends MigrationTestCase
         $this->assertRegExp('/available migrations:\s+2/im', $output);
     }
 
+    public function testGenerateCommandAddsNewMigrationOrganizedByYearAndMonth()
+    {
+        $this->assertVersionCount(0, 'Should start with no versions');
+        $this->executeCommand('migrations:generate', 'config_organize_by_year_and_month.xml');
+        $this->assertSuccessfulExit();
+        $this->assertVersionCount(1, 'generate command should add one version');
+
+        $output = $this->executeCommand('migrations:status', 'config_organize_by_year_and_month.xml');
+        $this->assertSuccessfulExit();
+        $this->assertRegExp('/available migrations:\s+1/im', $output);
+    }
+
     public function testMigrationDiffWritesNewMigrationWithExpectedSql()
     {
         $this->withDiffCommand(new StubSchemaProvider($this->getSchema()));
@@ -91,16 +105,15 @@ class CliTest extends MigrationTestCase
         $this->assertSuccessfulExit();
         $this->assertRegExp('/available migrations:\s+2/im', $output);
 
-        $versions = $this->globVersions();
-        $contents = file_get_contents($versions[0]);
+        $versionClassContents = $this->getFileContentsForLatestVersion();
 
-        $this->assertContains('CREATE TABLE bar', $contents);
-        $this->assertContains('DROP TABLE bar', $contents);
+        $this->assertContains('CREATE TABLE bar', $versionClassContents);
+        $this->assertContains('DROP TABLE bar', $versionClassContents);
     }
 
     public function testMigrationDiffWithEntityManagerGeneratesMigrationFromEntities()
     {
-        $config = OrmSetup::createXMLMetadataConfiguration(array(__DIR__.'/_files/entities'), true);
+        $config = OrmSetup::createXMLMetadataConfiguration([__DIR__.'/_files/entities'], true);
         $entityManager = EntityManager::create($this->conn, $config);
         $this->application->getHelperSet()->set(
             new EntityManagerHelper($entityManager),
@@ -117,11 +130,9 @@ class CliTest extends MigrationTestCase
         $this->assertSuccessfulExit();
         $this->assertRegExp('/available migrations:\s+2/im', $output);
 
-        $versions = $this->globVersions();
-        $contents = file_get_contents($versions[0]);
-
-        $this->assertContains('CREATE TABLE sample_entity', $contents);
-        $this->assertContains('DROP TABLE sample_entity', $contents);
+        $versionClassContents = $this->getFileContentsForLatestVersion();
+        $this->assertContains('CREATE TABLE sample_entity', $versionClassContents);
+        $this->assertContains('DROP TABLE sample_entity', $versionClassContents);
     }
 
     public function testDiffCommandWithSchemaFilterOnlyWorksWithTablesThatMatchFilter()
@@ -141,12 +152,14 @@ class CliTest extends MigrationTestCase
         $this->assertSuccessfulExit();
         $this->assertVersionCount(1, 'diff command should add one version');
 
-        $versions = $this->globVersions();
-        $contents = file_get_contents($versions[0]);
-
-        $this->assertContains('CREATE TABLE bar', $contents);
-        $this->assertContains('DROP TABLE bar', $contents);
-        $this->assertNotContains('CREATE TABLE foo', $contents, 'should ignore the "foo" table due to schema asset filter');
+        $versionClassContents = $this->getFileContentsForLatestVersion();
+        $this->assertContains('CREATE TABLE bar', $versionClassContents);
+        $this->assertContains('DROP TABLE bar', $versionClassContents);
+        $this->assertNotContains(
+            'CREATE TABLE foo',
+            $versionClassContents,
+            'should ignore the "foo" table due to schema asset filter'
+        );
     }
 
     /**
@@ -166,8 +179,8 @@ class CliTest extends MigrationTestCase
 
         $schema = new Schema();
         $t = $schema->createTable('FOO');
-        $t->addColumn('id', 'integer', array('autoincrement' => true));
-        $t->setPrimaryKey(array('id'));
+        $t->addColumn('id', 'integer', ['autoincrement' => true]);
+        $t->setPrimaryKey(['id']);
 
         $this->withDiffCommand(new StubSchemaProvider($schema));
         $this->assertVersionCount(0, 'should start with no versions');
@@ -175,21 +188,21 @@ class CliTest extends MigrationTestCase
         $this->assertSuccessfulExit();
         $this->assertVersionCount(1, 'diff command should add one version');
 
-        $versions = $this->globVersions();
-        $contents = file_get_contents($versions[0]);
-
-        $this->assertContains('CREATE TABLE FOO', $contents);
-        $this->assertContains('DROP TABLE FOO', $contents);
+        $versionClassContents = $this->getFileContentsForLatestVersion();
+        $this->assertContains('CREATE TABLE FOO', $versionClassContents);
+        $this->assertContains('DROP TABLE FOO', $versionClassContents);
     }
 
     protected function setUp()
     {
-        if (file_exists(__DIR__.'/_files/migrations.db')) {
-            @unlink(__DIR__.'/_files/migrations.db');
+        $migrationsDbFilePath =
+            __DIR__ . DIRECTORY_SEPARATOR . '_files ' . DIRECTORY_SEPARATOR . 'migrations.db';
+        if (file_exists($migrationsDbFilePath)) {
+            @unlink($migrationsDbFilePath);
         }
-        foreach ($this->globVersions() as $file) {
-            @unlink($file);
-        }
+        Helper::deleteDir(
+            __DIR__ . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'migrations'
+        );
 
         $this->conn = $this->getSqliteConnection();
         $this->application = new Application('Doctrine Migrations Test', MigrationsVersion::VERSION());
@@ -199,14 +212,14 @@ class CliTest extends MigrationTestCase
             new ConnectionHelper($this->conn),
             'connection'
         );
-        $this->application->addCommands(array(
+        $this->application->addCommands([
             new MigrationCommands\ExecuteCommand(),
             new MigrationCommands\GenerateCommand(),
             new MigrationCommands\LatestCommand(),
             new MigrationCommands\MigrateCommand(),
             new MigrationCommands\StatusCommand(),
             new MigrationCommands\VersionCommand(),
-        ));
+        ]);
     }
 
     protected function withDiffCommand(SchemaProviderInterface $provider=null)
@@ -214,12 +227,15 @@ class CliTest extends MigrationTestCase
         $this->application->add(new MigrationCommands\DiffCommand($provider));
     }
 
-    protected function executeCommand($commandName, array $args = array())
+    protected function executeCommand($commandName, $configFile = 'config.yml', array $args = [])
     {
-        $input = new ArrayInput(array_merge(array(
-            'command'               => $commandName,
-            '--configuration'       => __DIR__.'/_files/config.yml',
-        ), $args));
+        $input = new ArrayInput(array_merge(
+            [
+                'command'         => $commandName,
+                '--configuration' => __DIR__ . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . $configFile,
+            ],
+            $args
+        ));
         $output = $this->getOutputStream();
 
         $this->lastExit = $this->application->run($input, $output);
@@ -234,28 +250,23 @@ class CliTest extends MigrationTestCase
 
     protected function assertVersionCount($count, $msg='')
     {
-        $this->assertCount($count, $this->globVersions(), $msg);
-    }
-
-    protected function globVersions()
-    {
-        return glob(__DIR__.'/_files/migrations/Version*.php');
+        $this->assertCount($count, $this->findMigrations(), $msg);
     }
 
     protected function getSchema()
     {
         $s = new Schema();
         $t = $s->createTable('foo');
-        $t->addColumn('id', 'integer', array(
+        $t->addColumn('id', 'integer', [
             'autoincrement' => true,
-        ));
-        $t->setPrimaryKey(array('id'));
+        ]);
+        $t->setPrimaryKey(['id']);
 
         $t = $s->createTable('bar');
-        $t->addColumn('id', 'integer', array(
+        $t->addColumn('id', 'integer', [
             'autoincrement' => true,
-        ));
-        $t->setPrimaryKey(array('id'));
+        ]);
+        $t->setPrimaryKey(['id']);
 
         return $s;
     }
@@ -263,6 +274,38 @@ class CliTest extends MigrationTestCase
     protected function isDbalOld()
     {
         return DbalVersion::compare('2.2.0') > 0;
+    }
+
+    /**
+     * @param string $namespace
+     * @return array|\string[]
+     */
+    private function findMigrations($namespace = 'TestMigrations')
+    {
+        $finder = new RecursiveRegexFinder();
+
+        return $finder->findMigrations(
+            __DIR__ . DIRECTORY_SEPARATOR . '_files' . DIRECTORY_SEPARATOR . 'migrations',
+            $namespace
+        );
+    }
+
+    /**
+     * @return string file content for latest version
+     */
+    private function getFileContentsForLatestVersion()
+    {
+        $versions = $this->findMigrations();
+        $this->assertCount(
+            1,
+            $versions,
+            'This method is designed to work for one existing version, you have ' . count($versions) . ' versions'
+        );
+
+        $versionClassName = reset($versions);
+        $versionClassReflected = new \ReflectionClass($versionClassName);
+
+        return file_get_contents($versionClassReflected->getFileName());
     }
 }
 

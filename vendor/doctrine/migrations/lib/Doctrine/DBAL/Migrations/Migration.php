@@ -84,7 +84,7 @@ class Migration
             $to = $this->configuration->getLatestVersion();
         }
 
-        $direction = $from > $to ? 'down' : 'up';
+        $direction = $from > $to ? Version::DIRECTION_DOWN : Version::DIRECTION_UP;
 
         $this->outputWriter->write(sprintf("# Migrating from %s to %s\n", $from, $to));
 
@@ -125,11 +125,11 @@ class Migration
          * migrations.
          */
         $migrations = $this->configuration->getMigrations();
-        if ( ! isset($migrations[$to]) && $to > 0) {
+        if (!isset($migrations[$to]) && $to > 0) {
             throw MigrationException::unknownMigrationVersion($to);
         }
 
-        $direction = $from > $to ? 'down' : 'up';
+        $direction = $from > $to ? Version::DIRECTION_DOWN : Version::DIRECTION_UP;
         $migrationsToExecute = $this->configuration->getMigrationsToExecute($direction, $to);
 
         /**
@@ -141,7 +141,7 @@ class Migration
          * to signify that there is nothing left to do.
          */
         if ($from === $to && empty($migrationsToExecute) && !empty($migrations)) {
-            return array();
+            return [];
         }
 
         $output = $dryRun ? 'Executing dry run of migration' : 'Migrating';
@@ -155,7 +155,7 @@ class Migration
             throw MigrationException::noMigrationsToExecute();
         }
 
-        $sql = array();
+        $sql = [];
         $time = 0;
         foreach ($migrationsToExecute as $version) {
             $versionSql = $version->execute($direction, $dryRun, $timeAllQueries);
