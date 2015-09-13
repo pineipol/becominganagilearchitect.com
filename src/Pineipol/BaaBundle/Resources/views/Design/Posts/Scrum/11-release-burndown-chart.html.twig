@@ -1,0 +1,99 @@
+{% extends 'PineipolBaaBundle:Layout:home.html.twig' %}
+
+{% block body %}
+    <div id="post-container">
+        <h1>Artefactos de Scrum. Gráfico Release Burndown</h1>
+        <div class="published-on">27 de julio de 2015</div>
+        <div class="image-container">
+            <img class="post-image" src="{{ asset('uploads/posts/150913_release_burndown/release_burndown.jpg') }}">
+            <div class="tags-container">
+                <a href="">
+                    <div class="one-tag-container">
+                        <div class="yellow-tag">Agile</div>
+                        <div class="tag-triangle"></div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="one-tag-container">
+                        <div class="pink-tag">Architecture</div>
+                        <div class="tag-triangle"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="content">
+            <p>
+                <span style="font-size: 60px">C</span>omo hemos mencionado, un <span style="font-weight:bold">Product Backlog cuyos ítems se encuentren estimados</span> y cuyas estimaciones se actualicen regularmente unido a un <span style="font-weight:bold">Equipo con una velocidad de desarrollo cuantificable</span> dan como resultado un <span style="font-weight:bold">pronóstico de entrega del proyecto</span>. El total de las estimaciones y su evolución a lo largo de los Sprints pueden ser <span style="font-weight:bold">fácilmente representables mediante una gráfica</span>, dicha gráfica recibe el nombre de <span style="font-weight:bold">Release Burndown Chart o Sprints Burndown Chart</span>.
+            </p>
+            <p>
+                Pese a <span style="font-weight:bold">no ser un artefacto oficial de Scrum, se reconoce su utilidad y se recomienda su uso</span>. Tanto el Release Burndown como el Sprints Burndown ayudan a visualizar la evolución del proyecto y a detectar sus desviaciones con lo que constituyen potentes herramientas a la hora de <span style="font-weight:bold">controlar el riesgo</span>.
+            </p>
+            <p>
+                El eje de ordenadas, o <span style="font-weight:bold">eje vertical, representa el esfuerzo</span> restante para completar el proyecto por lo que puede indicar tanto el número de historias de usuario como el número de puntos de historia total que hace falta completar para finalizar el proyecto. Si se usan los puntos de historia se consiguen valores más homogéneos con lo que se refleja de forma más precisa la evolución de la productividad del Equipo de Desarrollo.
+            </p>
+            <p>
+                El eje de abscisas, o <span style="font-weight:bold">eje horizontal, representa el tiempo</span> transcurrido el cual se suele agrupar, ya sea por Sprints o por Releases.
+            </p>
+            <div class="green_text_box">
+                <div class="generic_icon"></div
+                ><div class="generic_text_container">
+                    Una <span style="font-weight:bold">Release es una versión de producto que normalmente llega a ser desplegada en producción</span>, es decir, una versión que llega al usuario final.
+                </div>
+            </div>
+            <p>
+                En función de las características del proyecto se podría liberar una release cada Sprint, cada varios Sprints o como una combinación de ambos.
+            </p>
+            <p>
+                En la imagen superior se muestra una agrupación mixta por Sprints y Releases.
+            </p>
+            <div class="key_points_text_box">
+                <div class="title_box">
+                    <div class="generic_icon_container"></div>
+                    <div class="generic_title_container">Key Points</div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Un Product Backlog debidamente estimado junto con un Equipo de desarrollo con velocidad medible dan lugar a un preciso pronóstico para el proyecto.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            La evolución de las estimaciones y el trabajo restante se pueden representar mediante las gráficas Release Burndown Chart o Sprints Burndown Chart.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Dichas gráficas no constituyen artefactos oficiales de Scrum pero se reconoce su utilidad y se recomienda su uso a la hora de controlar el riesgo del proyecto.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            El eje vertical representa el esfuerzo restante como historias de usuario o puntos de historia y el eje horizontal el tiempo transcurrido como Sprints o Releases.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="links-container">
+                <div class="left-side-link-container">
+                    <a href="[[ROUTE:scrum-framework-ten-]]" class="post-content-link">< Artefactos de Scrum. Historias de Usuario en el Product Backlog</a>
+                </div
+                ><!--<div class="right-side-link-container">
+                    <a href="[[ROU__TE:scrum-framework-twelve-]]" class="post-content-link">Artefactos de Scrum. Sprint Backlog ></a>
+                </div>-->
+            </div>
+            <br>
+
+        </div>
+    </div>
+{% endblock %}
