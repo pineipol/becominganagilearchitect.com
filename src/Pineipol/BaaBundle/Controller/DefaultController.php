@@ -35,7 +35,7 @@ class DefaultController extends Controller {
 //                ->getRepository('PineipolBaaBundle:Category')
 //                ->findAll();
 
-//        return $this->render('PineipolBaaBundle:Design/Posts/Scrum:11-release-burndown-chart.html.twig');
+//        return $this->render('PineipolBaaBundle:Design/Posts/Scrum:14-sprint-taskboard.html.twig');
         return $this->render('PineipolBaaBundle:Default:index.html.twig', array(
             'posts' => $postCollection,
         ));

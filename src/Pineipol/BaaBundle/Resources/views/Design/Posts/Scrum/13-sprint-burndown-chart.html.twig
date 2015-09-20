@@ -1,0 +1,91 @@
+{% extends 'PineipolBaaBundle:Layout:home.html.twig' %}
+
+{% block body %}
+    <div id="post-container">
+        <h1>Artefactos de Scrum. Gráfico Sprint Burndown</h1>
+        <div class="published-on">20 de septiembre de 2015</div>
+        <div class="image-container">
+            <img class="post-image" src="{{ asset('uploads/posts/150930_sprint_burndown_chart/sprint_burndown_chart.jpg') }}">
+            <div class="tags-container">
+                <a href="">
+                    <div class="one-tag-container">
+                        <div class="yellow-tag">Agile</div>
+                        <div class="tag-triangle"></div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="one-tag-container">
+                        <div class="pink-tag">Architecture</div>
+                        <div class="tag-triangle"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="content">
+            <p>
+                <span style="font-size: 60px">A</span>l igual que el <a href="[[ROUTE:scrum-framework-nine-]]" class="post-content-link">Product Backlog</a> y el proyecto completo cuenta con un gráfico <a href="[[ROUTE:scrum-framework-eleven-]]" class="post-content-link">Release Burndown o Sprints Burndown</a> existe otro similar para cada Sprint llamado <span style="font-weight:bold">Sprint Burndown Chart</span>. Nótese que el nombre de éste último es singular mientras que el release burndown chart puede también ser llamado sprints burndown chart, es por ello que yo prefiero el nombre Release Burndown Chart para evitar ambigüedades.
+            </p>
+            <div class="green_text_box">
+                <div class="generic_icon"></div
+                ><div class="generic_text_container">
+                    El <span style="font-weight:bold">Sprint Burndown Chart</span> muestra en el eje vertical los puntos de historia u horas de tarea seleccionados para el Sprint y en el eje horizontal los días transcurridos del Sprint.
+                </div>
+            </div>
+            <p>
+                Además de mostrar si el Sprint avanza según lo esperado, el gráfico <span style="font-weight:bold">muestra la proyección del Sprint</span> y qué día terminará si todo sigue como hasta hoy, proyección que se actualiza cada día.
+            </p>
+            <h2>
+                Incremento de trabajo
+            </h2>
+            <p>
+                Scrum incluye un último artefacto de manera oficial, el <span style="font-weight:bold">incremento de trabajo</span>.
+            </p>
+            <p>
+                El incremento de trabajo <span style="font-weight:bold">está formado por todos los ítems completados durante un Sprint que cumplen la definición de completado</span>, es decir, todos aquellos elementos que, al final del Sprint, estuvieron listos para ser desplegados en un entorno de producción y utilizados por el usuario final.
+            </p>
+            <p>
+                En términos prácticos podríamos decir que <span style="font-weight:bold">el Sprint Backlog representa una predicción de lo que se puede hacer</span> en un Sprint mientras que <span style="font-weight:bold">el incremento representa lo que finalmente se hizo</span>, es decir, el incremento se refiera a un hecho empírico.
+            </p>
+            <div class="key_points_text_box">
+                <div class="title_box">
+                    <div class="generic_icon_container"></div>
+                    <div class="generic_title_container">Key Points</div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            El Sprint Burndown Chart muestra en el eje vertical los puntos de historia y en el eje horizontal los días transcurridos del Sprint.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Representa el avance del Sprint y su proyección, proyección que se actualiza cada día.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            El incremento de trabajo está formado por todos los ítems completados durante un Sprint que cumplen la definición de completado.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="links-container">
+                <div class="left-side-link-container">
+                    <a href="[[ROUTE:scrum-framework-twelve-]]" class="post-content-link">< Artefactos de Scrum. Sprint Backlog</a>
+                </div
+                ><!--<div class="right-side-link-container">
+                    <a href="[[ROU__TE:scrum-framework-fouteen-]]" class="post-content-link">Artefactos de Scrum. Sprint Taskboard ></a>
+                </div>-->
+            </div>
+            <br>
+
+        </div>
+    </div>
+{% endblock %}

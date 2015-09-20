@@ -1,0 +1,165 @@
+{% extends 'PineipolBaaBundle:Layout:home.html.twig' %}
+
+{% block body %}
+    <div id="post-container">
+        <h1>Artefactos de Scrum. Sprint Backlog</h1>
+        <div class="published-on">20 de septiembre de 2015</div>
+        <div class="image-container">
+            <img class="post-image" src="{{ asset('uploads/posts/150923_sprint_backlog/sprint_backlog.jpg') }}">
+            <div class="tags-container">
+                <a href="">
+                    <div class="one-tag-container">
+                        <div class="yellow-tag">Agile</div>
+                        <div class="tag-triangle"></div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="one-tag-container">
+                        <div class="pink-tag">Architecture</div>
+                        <div class="tag-triangle"></div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="content">
+            <p>
+                <span style="font-size: 60px">A</span>l principio de cada Sprint, durante el <a href="[[ROUTE:scrum-framework-four-]]" class="post-content-link">evento de planificación o Sprint Planning</a>, el <a href="[[ROUTE:scrum-framework-two-]]" class="post-content-link">Equipo Scrum</a> al completo se reúne para generar el Sprint Backlog.
+            </p>
+            <div class="green_text_box">
+                <div class="generic_icon"></div
+                ><div class="generic_text_container">
+                    El Sprint Backlog está constituído por los elementos del Product Backlog seleccionados para realizar durante el Sprint, un plan para desarrollarlos y un objetivo de Sprint.
+                </div>
+            </div>
+            <p>
+                El Equipo selecciona ítems de entre aquellos de mayor prioridad del Backlog hasta alcanzar un compromiso sobre cuántos ítems podrán ser completados durante el Sprint. <span style="font-weight:bold">El Equipo de Desarrollo acuerda con el Product Owner qué ítems se seleccionan</span>, pues éste querrá incluir cuántos más mejor pero el <span style="font-weight:bold">Equipo de Desarrollo</span> deberá basarse en la <span style="font-weight:bold">velocidad alcanzada durante los últimos Sprints para determinar cuántos ítems puede comprometerse</span> a completar.
+            </p>
+            <div class="green_text_box">
+                <div class="generic_icon"></div
+                ><div class="generic_text_container">
+                    <span style="font-weight:bold">La estimación de cuantos elementos</span> del Product Backlog pueden ser elegidos puede hacerse, una vez más, <span style="font-weight:bold">en base a puntos de historia o a horas</span>.
+                </div>
+            </div>
+            <p>
+                Desde mi experiencia y perspectiva recomiendo <span style="font-weight:bold">los puntos de historia pues miden complejidad, incertidumbre, esfuerzo y productividad</span>. Este tipo de medida tiene un cierto grado de anticipación de imprevistos (téngase en cuenta la incertidumbre) mientras que las estimaciones en horas se basan más en la idea de que todo salga como hemos pensado, incluso los imprevistos, para los cuales provisionamos una bolsa de horas concreta.
+            </p>
+            <p>
+                Si estimamos cuántos ítems seleccionar en puntos de historia podemos elegirlos del Product Backlog rápidamente y pasar de inmediato a generar el plan de trabajo, mientras que si nos basamos en horas debemos ir generando el plan a medida que estimamos cuántas horas dedicaremos a cada tarea, por lo que no sabremos cuántas historias de usuario podemos elegir hasta haber terminado toda la planificación.
+            </p>
+            <div class="green_text_box">
+                <div class="generic_icon"></div
+                ><div class="generic_text_container">
+                    En el apartado de Sprint Planning comentamos cómo <span style="font-weight:bold">cada Sprint debe contar con un objetivo que dé coherencia al trabajo realizado durante el mismo</span>. Dicho objetivo servirá como referencia a la hora de seleccionar elementos del Product Backlog para generar el Sprint Backlog.
+                </div>
+            </div>
+            <p>
+                Además de seleccionar los elementos del Product Backlog el <span style="font-weight:bold">Equipo de Desarrollo elabora un plan</span> para llevarlos a cabo. Dicho plan consiste en analizar uno a uno cada elemento seleccionado y dividirlo en tareas técnicas de forma que cada componente necesario para completar una historia de usuario pueda ser llevado a cabo por un desarrollador, favoreciendo así el trabajo en paralelo y la generación de subtareas más fácilmente abordables y de incertidumbre acotada.
+            </p>
+            <p>
+                Las <span style="font-weight:bold">historias de usuario</span> se refieren al Equipo Scrum al completo y al cliente, es decir, <span style="font-weight:bold">deben ser concebidas para facilitar la comprensión y la comunicación entre perfiles heterogéneos</span>. Por otro lado las tareas técnicas, o simplemente tareas, son cosa del Equipo de Desarrollo. Ellos suelen referirse siempre a ellas hasta el punto de asimilar las unas con las otras.
+            </p>
+            <p>
+                Una vez finalizado el análisis y la generación de tareas técnicas el equipo puede reordenarlas ignorando la prioridad dada a las historias de usuario, localizando dependencias entre tareas y colocando éstas asegurándose que las tareas dependientes se abordan siempre después de las que generan la dependencia. <span style="font-weight:bold">El Equipo también puede asignar tareas a miembros concretos del Equipo de Desarrollo para optimizar el proceso</span>, aunque se <span style="font-weight:bold">debe ser cuidadoso y evitar la generación de islas de conocimiento</span> asignando siempre a la misma persona todas las tareas similares.
+            </p>
+            <p>
+                Una vez empezado el Sprint, y a medida que el Equipo aprende más sobre el trabajo necesario para desarrollar las tareas, puede decidir añadir tareas técnicas al Sprint Backlog o refinar las existentes si lo considera necesario así como replantear su orden.
+            </p>
+            <div class="key_points_text_box">
+                <div class="title_box">
+                    <div class="generic_icon_container"></div>
+                    <div class="generic_title_container">Key Points</div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            El Equipo Scrum al completo se encarga de generar el Sprint Backlog durante la reunión Sprint Planning.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Lo forman los elementos del Product Backlog seleccionados para realizar durante el Sprint, un plan para desarrollarlos y un objetivo de Sprint.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            El Equipo de Desarrollo acuerda con el Product Owner qué ítems se seleccionan pero es el Equipo de Desarrollo quien determina cuántos ítems puede comprometerse a completar.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            La estimación de cuantos elementos pueden ser elegidos puede hacerse en base a puntos de historia o a horas aunque se recomienda utilizar los puntos de historia.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Los puntos de historia miden complejidad, incertidumbre, esfuerzo y productividad por lo que aportan un cierto grado de anticipación de imprevistos.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Cada Sprint debe contar con un objetivo que dé coherencia al trabajo realizado durante el mismo.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            El Equipo de Desarrollo elabora un plan el Sprint que consiste en dividir cada elemento en tareas técnicas de forma que se favorezca el trabajo en paralelo.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Las historias de usuario se refieren al Equipo Scrum y al cliente, las tareas técnicas son cosa del Equipo de Desarrollo.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            El equipo puede reordenar las tareas localizando dependencias y puede asignar tareas a miembros concretos del Equipo de Desarrollo para optimizar el proceso. Se debe ser cuidadoso para evitar la generación de islas de conocimiento.
+                        </div>
+                    </div>
+                </div>
+                <div class="content_container">
+                    <div class="row_container">
+                        <div class="bullet"></div>
+                        <div class="text">
+                            Durante el Sprint el Equipo puede decidir añadir tareas al Sprint Backlog, refinar las existentes o replantear su orden.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="links-container">
+                <div class="left-side-link-container">
+                    <a href="[[ROUTE:scrum-framework-eleven-]]" class="post-content-link">< Artefactos de Scrum. Gráfico Release Burndown</a>
+                </div
+                ><!--<div class="right-side-link-container">
+                    <a href="[[ROU__TE:scrum-framework-thirteen-]]" class="post-content-link">Artefactos de Scrum. Gráfico Sprint Burndown ></a>
+                </div>-->
+            </div>
+            <br>
+
+        </div>
+    </div>
+{% endblock %}
