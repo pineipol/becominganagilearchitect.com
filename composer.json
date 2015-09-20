@@ -19,7 +19,7 @@
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
         "doctrine/migrations": "1.0.*@dev",
-        "doctrine/doctrine-migrations-bundle": "2.1.*@dev",
+        "doctrine/doctrine-migrations-bundle": "dev-master",
         "gregwar/captcha-bundle": "dev-master"
     },
     "require-dev": {
