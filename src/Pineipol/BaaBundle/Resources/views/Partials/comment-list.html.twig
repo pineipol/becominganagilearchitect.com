@@ -1,0 +1,16 @@
+{% block body %}
+    <div id="comment-list">
+        <div class="links-title-box">{{ comments|length }} {% trans %}pages.comment.list.title{% endtrans %}</div>
+        <div id="comments-container">
+            {% for comment in comments %}
+                <div class="comment-container">
+                    <div class="user-label">{{ comment.user.name }}</div>
+                    <div class="date-label">{{ comment.created|localizeddate('long', 'none', app.request.locale) }}</div>
+                    <div class="comment-label">
+                        {{ comment.content }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

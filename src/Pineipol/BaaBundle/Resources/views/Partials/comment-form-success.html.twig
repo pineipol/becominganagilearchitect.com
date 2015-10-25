@@ -1,0 +1,17 @@
+{% extends 'PineipolBaaBundle:Layout:home.html.twig' %}
+
+{% block body %}
+    <div id="comment-form-result">
+        <div class="title">
+            {% trans %}pages.comment.result.success.subject{% endtrans %}
+        </div>
+        <div class="message">
+            {% trans %}pages.comment.result.success.content{% endtrans %}
+        </div>
+        <div class="link-container">
+            <a href="{{ path(route) }}" class="link">
+                {% trans %}pages.comment.result.success.link{% endtrans %}
+            </a>
+        </div>
+    </div>
+{% endblock %}

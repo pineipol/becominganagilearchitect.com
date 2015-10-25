@@ -7,7 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Email;
 
-class ContactFormType extends AbstractType {
+class CommentFormType extends AbstractType {
 
     /**
      *
@@ -17,47 +17,41 @@ class ContactFormType extends AbstractType {
      */
     public function buildForm(FormBuilderInterface $builder, array $options) {
 
-
         $builder->setAction($options['action'])
+                ->add('postId', 'hidden', array())
                 ->add('name', 'text', array(
                     'constraints' => array(new NotBlank(array(
-                        'message' => 'pages.contact.form.name.validate_blank',
+                        'message' => 'pages.comment.form.name.validate_blank',
                     ))),
-                    'label' => 'pages.contact.form.name',
+                    'label' => 'pages.comment.form.name',
                 ))
                 ->add('email', 'email', array(
                     'constraints' => array(new NotBlank(array(
-                        'message' => 'pages.contact.form.email.validate_blank',
+                        'message' => 'pages.comment.form.email.validate_blank',
                     )), new Email(array(
-                        'message' => 'pages.contact.form.email.validate_invalid_format',
+                        'message' => 'pages.comment.form.email.validate_invalid_format',
                     ))),
-                    'label' => 'pages.contact.form.email',
-                ))
-                ->add('subject', 'text', array(
-                    'constraints' => array(new NotBlank(array(
-                        'message' => 'pages.contact.form.subject.validate_blank',
-                    ))),
-                    'label' => 'pages.contact.form.subject',
+                    'label' => 'pages.comment.form.email',
                 ))
                 ->add('message', 'textarea', array(
                     'constraints' => array(new NotBlank(array(
-                        'message' => 'pages.contact.form.message.validate_blank',
+                        'message' => 'pages.comment.form.message.validate_blank',
                     ))),
-                    'label' => 'pages.contact.form.message',
+                    'label' => 'pages.comment.form.message',
                     'attr' => array(
                         'style' => 'height:100px'
                     ),
                 ))
                 ->add('captcha', 'captcha', array(
                     'constraints' => array(new NotBlank(array(
-                        'message' => 'pages.contact.form.captcha.validate_error',
+                        'message' => 'pages.comment.form.captcha.validate_error',
                     ))),
-                    'label' => 'pages.contact.form.captcha',
+                    'label' => 'pages.comment.form.captcha',
                 ))
                 ->add('send', 'submit', array(
-                    'label' => 'pages.contact.form.submit',
+                    'label' => 'pages.comment.form.submit',
                     'attr' => array(
-                        'class' => 'contact-form-submit'
+                        'class' => 'comment-form-submit'
                     ),
         ));
     }
@@ -67,7 +61,7 @@ class ContactFormType extends AbstractType {
      * @return string
      */
     public function getName() {
-        return 'contactForm';
+        return 'commentForm';
     }
 
 }

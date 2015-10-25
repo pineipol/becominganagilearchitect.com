@@ -1,4 +1,6 @@
-<div id="links-title-box">Enlaces relevantes</div>
+<div class="links-title-box">
+    {% trans %}pages.right-column.title{% endtrans %}
+</div>
 <div id="links-container">
     {% for link in links %}
         <a class="link"
@@ -8,16 +10,22 @@
     {% endfor %}
 </div>
 <br><br>
-<div id="links-title-box">Certificaciones</div>
+<div class="links-title-box">
+    {% trans %}pages.right-column.certifications.title{% endtrans %}
+</div>
 <div id="badges-container">
     <div class="badge">
-        <div class="title">Certified Scrum Master</div>
+        <div class="title">
+            Certified Scrum Master
+        </div>
         <div class="image-container">
             <img alt="Certified Scrum Master" src="{{ asset('/bundles/pineipolbaa/images/badges/professional_scrum_master_one.png') }}">
         </div>
     </div>
     <div class="badge">
-        <div class="title">Sun Certified Java Programmer</div>
+        <div class="title">
+            Sun Certified Java Programmer
+        </div>
         <div class="image-container">
             <img alt="Sun Certified Java Programmer" src="{{ asset('/bundles/pineipolbaa/images/badges/sun_certified_programmer.gif') }}">
         </div>

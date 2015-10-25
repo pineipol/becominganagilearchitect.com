@@ -1,0 +1,7 @@
+{% extends 'PineipolBaaBundle:Layout:home.html.twig' %}
+
+{% block middlebody %}
+    {% block body %}{% endblock %}
+    {{ render(controller('PineipolBaaBundle:Comment:commentList')) }}
+    {{ render(controller('PineipolBaaBundle:Comment:commentForm')) }}
+{% endblock %}

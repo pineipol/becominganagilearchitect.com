@@ -1,0 +1,165 @@
+#comment-list {
+    width: 100%;
+    .links-title-box {
+        .links-title-box();
+        margin-left: 0%;
+        width: 220px;
+    }
+    #comments-container {
+        padding-left: 40px;
+        @media (max-width: @landscape-tablet-width) {
+            padding-left: 5px;
+        }
+        @media (max-width: @vertical-tablet-width) {
+            padding-left: 5px;
+        }
+        .comment-container {
+            margin-top: 40px;
+            .user-label {
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .date-label {
+                color: @light-gray;
+                font-size: 13px;
+                font-style: italic;
+                margin-top: 10px;
+            }
+            .comment-label {
+                margin-right: 5px;
+                margin-top: 10px;
+                text-align: justify;
+            }
+        }
+    }
+}
+#comment-form {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    width: 100%;
+    .links-title-box {
+        .links-title-box();
+        margin-bottom: 50px;
+        margin-left: 0%;
+        width: 220px;
+    }
+    .field() {
+        margin-top: 20px;
+        padding-left: 40px;
+        @media (max-width: @vertical-tablet-width) {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .input {
+            margin-bottom: 5px;
+            border: 1px solid @black;
+            height: 30px;
+            width: 50%;
+            @media (max-width: @vertical-tablet-width) {
+                width: 100%;
+            }
+        }
+        .textarea {
+            border: 1px solid @black;
+            margin-top: 20px;
+            width: 100%;
+        }
+        .error {
+            color: red;
+        }
+    }
+    .field {
+        .field();
+    }
+    .bottom-container {
+        width: 100%;
+        .field {
+            .field();
+            display: inline-block;
+            vertical-align: top;
+            width: 70%;
+            @media (max-width: @vertical-tablet-width) {
+                display: block;
+                width: 100%;
+            }
+        }
+        .right-side-container {
+            display: inline-block;
+            margin-top: 30px;
+            padding-left: 10px;
+            vertical-align: top;
+            width: 30%;
+            @media (max-width: @vertical-tablet-width) {
+                display: block;
+                width: 100%;
+            }
+            .captcha-container {
+                text-align: center;
+                width: 100%;
+                img {
+                    margin-left: 18%;
+                    vertical-align: top;
+                    @media (max-width: @vertical-tablet-width) {
+                        display: block;
+                        margin: auto;
+                    }
+                }
+                .input {
+                    border: 1px solid black;
+                    height: 30px;
+                    margin-left: 18%;
+                    margin-top: 5px;
+                    text-align: center;
+                    vertical-align: top;
+                    width: 130px;
+                    @media (max-width: @vertical-tablet-width) {
+                        display: block;
+                        margin: auto;
+                    }
+                }
+            }
+            .button-container {
+                text-align: center;
+                width: 100%;
+                .button {
+                    background-color: @black;
+                    color: @white;
+                    height: 30px;
+                    margin-left: 18%;
+                    margin-top: 5px;
+                    text-transform: uppercase;
+                    width: 130px;
+                    @media (max-width: @vertical-tablet-width) {
+                        margin: auto;
+                    }
+                }
+            }
+
+        }
+    }
+}
+#comment-form-result {
+    height: 100%;
+    font: 14px Verdana;
+    padding: 100px 0 0 0;
+    vertical-align: middle;
+    width: 100%;
+    .title {
+        font: bold 20px Verdana;
+        text-align: center;
+    }
+    .message {
+        padding: 50px 0 0 0;
+        text-align: left;
+    }
+    .link-container {
+        padding: 50px 0 0 0;
+        text-align: center;
+        .link {
+            color: @black;
+            /*display: block;*/
+            /*margin-bottom: 8px;*/
+            text-decoration: underline;
+        }
+    }
+}

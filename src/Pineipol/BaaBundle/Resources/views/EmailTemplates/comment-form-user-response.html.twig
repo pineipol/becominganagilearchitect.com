@@ -1,0 +1,25 @@
+{% extends 'PineipolBaaBundle:EmailTemplates:email-layout.html.twig' %}
+
+{% block body %}
+    <div style="color:#000000;font:14px Verdana;padding:40px">
+        <div style="font:bold 18px Verdana">
+            {% trans %}email.templates.comment.form.user-response.part1{% endtrans %}<br><br><br>
+        </div>
+        <div>
+            {% trans %}email.templates.comment.form.user-response.part2{% endtrans %} {{ name }},<br><br><br>
+        </div>
+        <div>
+            {% trans %}email.templates.comment.form.user-response.part3{% endtrans %}:<br><br>
+            {{ message }}</span><br><br>
+        </div>
+        <div>
+            {% trans %}email.templates.comment.form.user-response.part4{% endtrans %}<br><br><br>
+        </div>
+        <div>
+            {% trans %}email.templates.comment.form.user-response.part5{% endtrans %}<br><br>
+        </div>
+        <div style="font-style:italic">
+            {% trans %}email.templates.signature{% endtrans %}
+        </div>
+    </div>
+{% endblock %}

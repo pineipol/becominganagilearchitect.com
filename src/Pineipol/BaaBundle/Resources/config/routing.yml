@@ -5,3 +5,7 @@ pineipol_baa_homepage:
 pineipol_baa_contact-form-save:
     path:     /contact-form-save
     defaults: { _controller: PineipolBaaBundle:Page:contactForm }
+
+pineipol_baa_comment-form-save:
+    path:     /comment-form-save
+    defaults: { _controller: PineipolBaaBundle:Comment:commentForm }

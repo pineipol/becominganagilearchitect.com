@@ -3,10 +3,10 @@
 {% block body %}
     <div id="contact-form-result">
         <div class="title">
-            Se ha producido un error al enviar el formulario
+            {% trans %}pages.contact.result.failure.subject{% endtrans %}
         </div>
         <div class="message">
-            Algo extraño ha sucedido. Por favor, vuélvelo a intentar dentro de unos minutos.
+            {% trans %}pages.contact.result.failure.content{% endtrans %}
         </div>
     </div>
 {% endblock %}

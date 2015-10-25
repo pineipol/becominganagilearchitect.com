@@ -20,3 +20,7 @@ services:
     pineipol_baa.email_service:
         class: Pineipol\BaaBundle\Services\EmailService
         arguments: ["@service_container"]
+
+    pineipol_baa.comment_service:
+        class: Pineipol\BaaBundle\Services\CommentService
+        arguments: ["@service_container", @doctrine.orm.entity_manager]

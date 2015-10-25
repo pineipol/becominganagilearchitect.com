@@ -1,0 +1,33 @@
+{% extends layout ? 'PineipolBaaBundle:Layout:home.html.twig' : 'PineipolBaaBundle:Layout:empty-template.html.twig' %}
+
+{% block body %}
+    <div id="comment-form">
+        <div class="links-title-box">{% trans %}pages.comment.form.title{% endtrans %}</div>
+
+        {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'margin': 0, 'padding': 0, 'style': 'width:100%;'} } ) }}
+        <div class="field">
+            {{ form_widget(form.name, { 'attr': {'class' : 'input', 'placeholder' : 'pages.comment.form.name' } }) }}
+            {{ form_errors(form.name, { 'attr': {'class' : 'error'} }) }}
+        </div>
+        <div class="field">
+            {{ form_widget(form.email, { 'attr': {'class' : 'input', 'placeholder' : 'pages.comment.form.email'} }) }}
+            {{ form_errors(form.email) }}
+        </div>
+        <div class="bottom-container">
+            <div class="field">
+                {{ form_widget(form.message, { 'attr': {'class' : 'textarea', 'placeholder' : 'pages.comment.form.message'} }) }}
+                {{ form_errors(form.message) }}
+            </div
+            ><div class="right-side-container">
+                <div class="captcha-container">
+                    {{ form_widget(form.captcha, { 'attr': {'class' : 'input', 'placeholder' : 'pages.comment.form.captcha'} }) }}
+                    {{ form_errors(form.captcha) }}
+                </div>
+                <div class="button-container">
+                    {{ form_widget(form.send, { 'attr': {'class' : 'button', 'placeholder' : 'pages.comment.form.submit'} }) }}
+                </div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}
