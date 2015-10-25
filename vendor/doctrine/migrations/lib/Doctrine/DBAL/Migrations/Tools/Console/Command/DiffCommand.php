@@ -117,7 +117,7 @@ EOT
     private function buildCodeFromSql(Configuration $configuration, array $sql)
     {
         $currentPlatform = $configuration->getConnection()->getDatabasePlatform()->getName();
-        $code = [];
+        $code = array();
         foreach ($sql as $query) {
             if (stripos($query, $configuration->getMigrationsTableName()) !== false) {
                 continue;

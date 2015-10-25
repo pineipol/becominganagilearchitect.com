@@ -110,9 +110,9 @@ abstract class AbstractMigration
     public function warnIf($condition, $message = '')
     {
         if ($condition) {
-            $message = $message ?: 'Unknown Reason';
+            $message = $message?: 'Unknown Reason';
             $this->outputWriter->write(sprintf(
-                '    <comment>Warning during %s: %s</comment>',
+                '    <warning>Warning during %s: %s</warning>',
                 $this->version->getExecutionState(),
                 $message
             ));
@@ -168,7 +168,7 @@ abstract class AbstractMigration
     abstract public function up(Schema $schema);
     abstract public function down(Schema $schema);
 
-    protected function addSql($sql, array $params = [], array $types = [])
+    protected function addSql($sql, array $params = array(), array $types = array())
     {
         $this->version->addSql($sql, $params, $types);
     }

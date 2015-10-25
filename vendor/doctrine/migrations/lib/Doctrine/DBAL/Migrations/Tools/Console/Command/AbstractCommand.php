@@ -19,7 +19,6 @@
 
 namespace Doctrine\DBAL\Migrations\Tools\Console\Command;
 
-use Doctrine\DBAL\DriverManager;
 use Doctrine\DBAL\Migrations\Configuration\Configuration;
 use Doctrine\DBAL\Migrations\OutputWriter;
 use Doctrine\DBAL\Migrations\Tools\Console\Helper\ConfigurationHelper;
@@ -101,12 +100,7 @@ abstract class AbstractCommand extends Command
     protected function getMigrationConfiguration(InputInterface $input, OutputInterface $output)
     {
         if (!$this->migrationConfiguration) {
-            if ($this->getHelperSet()->has('configuration')
-                && $this->getHelperSet()->get('configuration') instanceof ConfigurationHelper) {
-                $configHelper = $this->getHelperSet()->get('configuration');
-            } else {
-                $configHelper = new ConfigurationHelper($this->getConnection($input), $this->configuration);
-            }
+            $configHelper = new ConfigurationHelper($this->getConnection($input), $this->configuration);
             $this->migrationConfiguration = $configHelper->getMigrationConfig($input, $this->getOutputWriter($output));
         }
 
@@ -124,11 +118,11 @@ abstract class AbstractCommand extends Command
      */
     protected function askConfirmation($question, InputInterface $input, OutputInterface $output)
     {
-        if (!$this->getHelperSet()->has('question')) {
-            return $this->getHelper('dialog')->askConfirmation($output, '<question>' . $question . '</question>', false);
+        if ($this->getHelperSet()->has('question')) {
+            return $this->getHelper('question')->ask($input, $output, new ConfirmationQuestion($question));
+        } else {
+            return $this->getHelper('dialog')->askConfirmation($output, '<question>' .  $question . '</question>', false);
         }
-
-        return $this->getHelper('question')->ask($input, $output, new ConfirmationQuestion($question));
     }
 
     /**
@@ -139,7 +133,7 @@ abstract class AbstractCommand extends Command
     private function getOutputWriter(OutputInterface $output)
     {
         if (!$this->outputWriter) {
-            $this->outputWriter = new OutputWriter(function($message) use ($output) {
+            $this->outputWriter = new OutputWriter(function ($message) use ($output) {
                 return $output->writeln($message);
             });
         }
@@ -165,13 +159,13 @@ abstract class AbstractCommand extends Command
                 if (!is_array($params)) {
                     throw new \InvalidArgumentException('The connection file has to return an array with database configuration parameters.');
                 }
-                $this->connection = DriverManager::getConnection($params);
+                $this->connection = \Doctrine\DBAL\DriverManager::getConnection($params);
             } elseif (file_exists('migrations-db.php')) {
                 $params = include 'migrations-db.php';
                 if (!is_array($params)) {
                     throw new \InvalidArgumentException('The connection file has to return an array with database configuration parameters.');
                 }
-                $this->connection = DriverManager::getConnection($params);
+                $this->connection = \Doctrine\DBAL\DriverManager::getConnection($params);
             } elseif ($this->getHelperSet()->has('connection')) {
                 $this->connection = $this->getHelper('connection')->getConnection();
             } elseif ($this->configuration) {

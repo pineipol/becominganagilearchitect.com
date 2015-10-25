@@ -19,8 +19,6 @@
 
 namespace Doctrine\DBAL\Migrations\Configuration;
 
-use Doctrine\DBAL\Migrations\MigrationException;
-
 /**
  * Load migration configuration information from a XML configuration file.
  *
@@ -36,36 +34,25 @@ class XmlConfiguration extends AbstractFileConfiguration
      */
     protected function doLoad($file)
     {
-        libxml_use_internal_errors(true);
-        $xml = new \DOMDocument();
-        $xml->load($file);
-        if (!$xml->schemaValidate(__DIR__ . DIRECTORY_SEPARATOR . "XML" . DIRECTORY_SEPARATOR . "configuration.xsd")) {
-            libxml_clear_errors();
-            throw MigrationException::configurationNotValid('XML configuration did not pass the validation test.');
-        }
-
-        $xml = simplexml_load_file($file, "SimpleXMLElement", LIBXML_NOCDATA);
-        $config = [];
-
+        $xml = simplexml_load_file($file);
         if (isset($xml->name)) {
-            $config['name'] = (string) $xml->name;
+            $this->setName((string) $xml->name);
         }
         if (isset($xml->table['name'])) {
-            $config['table_name'] = (string) $xml->table['name'];
+            $this->setMigrationsTableName((string) $xml->table['name']);
         }
         if (isset($xml->{'migrations-namespace'})) {
-            $config['migrations_namespace'] = (string) $xml->{'migrations-namespace'};
-        }
-        if (isset($xml->{'organize-migrations'})) {
-            $config['organize_migrations'] = $xml->{'organize-migrations'};
+            $this->setMigrationsNamespace((string) $xml->{'migrations-namespace'});
         }
         if (isset($xml->{'migrations-directory'})) {
-            $config['migrations_directory'] = $this->getDirectoryRelativeToFile($file, (string) $xml->{'migrations-directory'});
+            $migrationsDirectory = $this->getDirectoryRelativeToFile($file, (string) $xml->{'migrations-directory'});
+            $this->setMigrationsDirectory($migrationsDirectory);
+            $this->registerMigrationsFromDirectory($migrationsDirectory);
         }
         if (isset($xml->migrations->migration)) {
-            $config['migrations'] = $xml->migrations->migration;
+            foreach ($xml->migrations->migration as $migration) {
+                $this->registerMigration((string) $migration['version'], (string) $migration['class']);
+            }
         }
-
-        $this->setConfiguration($config);
     }
 }

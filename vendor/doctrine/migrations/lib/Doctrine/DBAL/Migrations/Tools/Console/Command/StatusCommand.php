@@ -19,7 +19,6 @@
 
 namespace Doctrine\DBAL\Migrations\Tools\Console\Command;
 
-use Doctrine\DBAL\Migrations\Configuration\AbstractFileConfiguration;
 use Doctrine\DBAL\Migrations\Configuration\Configuration;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -59,8 +58,8 @@ EOT
     {
         $configuration = $this->getMigrationConfiguration($input, $output);
 
-        $formattedVersions = [];
-        foreach (['prev', 'current', 'next', 'latest'] as $alias) {
+        $formattedVersions = array();
+        foreach (array('prev', 'current', 'next', 'latest') as $alias) {
             $version = $configuration->resolveVersionAlias($alias);
             if ($version === null) {
                 if ($alias == 'next') {
@@ -83,11 +82,11 @@ EOT
 
         $output->writeln("\n <info>==</info> Configuration\n");
 
-        $info = [
+        $info = array(
             'Name'                              => $configuration->getName() ? $configuration->getName() : 'Doctrine Database Migrations',
             'Database Driver'                   => $configuration->getConnection()->getDriver()->getName(),
             'Database Name'                     => $configuration->getConnection()->getDatabase(),
-            'Configuration Source'              => $configuration instanceof AbstractFileConfiguration ? $configuration->getFile() : 'manually configured',
+            'Configuration Source'              => $configuration instanceof \Doctrine\DBAL\Migrations\Configuration\AbstractFileConfiguration ? $configuration->getFile() : 'manually configured',
             'Version Table Name'                => $configuration->getMigrationsTableName(),
             'Migrations Namespace'              => $configuration->getMigrationsNamespace(),
             'Migrations Directory'              => $configuration->getMigrationsDirectory(),
@@ -99,7 +98,7 @@ EOT
             'Executed Unavailable Migrations'   => $numExecutedUnavailableMigrations > 0 ? '<error>'.$numExecutedUnavailableMigrations.'</error>' : 0,
             'Available Migrations'              => count($availableMigrations),
             'New Migrations'                    => $newMigrations > 0 ? '<question>' . $newMigrations . '</question>' : 0
-        ];
+        );
         foreach ($info as $name => $value) {
             $output->writeln('    <comment>>></comment> ' . $name . ': ' . str_repeat(' ', 50 - strlen($name)) . $value);
         }
@@ -119,7 +118,7 @@ EOT
         }
     }
 
-    private function showVersions($migrations, Configuration $configuration, OutputInterface $output)
+    private function showVersions($migrations, Configuration $configuration, $output)
     {
         $migratedVersions = $configuration->getMigratedVersions();
 
