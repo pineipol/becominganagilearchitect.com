@@ -9,13 +9,10 @@
     <target name="build-back" depends="lint,phploc,pdepend,phpcpd,phpmd-ci,phpcs-ci,phpunit,phpcb"/>
 
     <target name="clean" description="Cleanup build artifacts">
-        <delete dir="${basedir}/build/api"/>
         <delete dir="${basedir}/build/code-browser"/>
         <delete dir="${basedir}/build/coverage"/>
         <delete dir="${basedir}/build/logs"/>
         <delete dir="${basedir}/build/pdepend"/>
-        <delete dir="${basedir}/build/phpdox"/>
-        <delete dir="${basedir}/web/js/tests/reports"/>
     </target>
 
     <target name="composer" unless="composer.exists">
@@ -31,12 +28,10 @@
     </target>
 
     <target name="prepare" depends="clean,vendors" description="Prepare for build">
-        <mkdir dir="${basedir}/build/api"/>
         <mkdir dir="${basedir}/build/code-browser"/>
         <mkdir dir="${basedir}/build/coverage"/>
         <mkdir dir="${basedir}/build/logs"/>
         <mkdir dir="${basedir}/build/pdepend"/>
-        <mkdir dir="${basedir}/build/phpdox"/>
     </target>
 
     <target name="parameters" description="Copy distribution parameter files">
