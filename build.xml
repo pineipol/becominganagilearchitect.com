@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Becoming-An-Agile-Architect" default="build" basedir=".">
+
     <property name="composer.path" value="composer" />
     <available property="composer.exists" file="${composer.path}" />
 
-    <!--<target name="build" depends="prepare,build-db,build-back"/>-->
-    <target name="build" depends="prepare,build-db"/>
+    <target name="build" depends="prepare,build-db,build-back"/>
     <target name="build-db" depends="parameters,int-db-migrate,cache-clear"/>
     <target name="build-back" depends="lint,phploc,pdepend,phpcpd,phpmd-ci,phpcs-ci,phpunit,phpcb"/>
 
     <target name="clean" description="Cleanup build artifacts">
-        <delete dir="${basedir}/build/code-browser"/>
         <delete dir="${basedir}/build/coverage"/>
         <delete dir="${basedir}/build/logs"/>
         <delete dir="${basedir}/build/pdepend"/>
@@ -28,7 +27,6 @@
     </target>
 
     <target name="prepare" depends="clean,vendors" description="Prepare for build">
-        <mkdir dir="${basedir}/build/code-browser"/>
         <mkdir dir="${basedir}/build/coverage"/>
         <mkdir dir="${basedir}/build/logs"/>
         <mkdir dir="${basedir}/build/pdepend"/>
@@ -168,14 +166,4 @@
         </exec>
     </target>
 
-    <target name="phpcb" description="Aggregate tool output with PHP_CodeBrowser">
-        <exec executable="phpcb">
-            <arg value="--log" />
-            <arg path="${basedir}/build/logs" />
-            <arg value="--source" />
-            <arg path="${basedir}/src" />
-            <arg value="--output" />
-            <arg path="${basedir}/build/code-browser" />
-        </exec>
-    </target>
 </project>
